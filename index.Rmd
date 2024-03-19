@@ -1,0 +1,435 @@
+---
+title: "Climate Hazards for Hapori Māori"
+---
+
+<style type="text/css">
+.main-container {
+    max-width: 90% !important;
+    margin: auto;
+}
+body {
+    text-align: justify
+}
+.container {
+    width: 100%;
+}
+.navbar-default {
+    background-color: #007C9D;
+    border-color: #005469;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fbfbfb;
+    background-color: #00a4d0;
+}
+.navbar-default .navbar-brand {
+    color: #fbfbfb;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #cbcbcb;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fbfbfb;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #cbcbcb;
+    background-color: transparent;
+}
+.caption {
+    margin-top: -45px;
+    color: #80c6d9;
+    margin-left: 10px;
+}
+        [tooltip] {
+            position: relative;
+        }
+        /* Applies to all tooltips */
+        [tooltip]::before,
+        [tooltip]::after {
+            text-transform: none;
+            font-size: 12px;
+            font-style: normal;
+            line-height: 1.5;
+            user-select: none;
+            pointer-events: none;
+            position: absolute;
+            display: none;
+            opacity: 0;
+        }
+        [tooltip]::before {
+            content: '';
+            border: 5px solid transparent;
+            z-index: 1001;
+        }
+        [tooltip]::after {
+            content: attr(tooltip);
+            font-family: Helvetica, sans-serif;
+            text-align: justify;
+            width: max-content;
+            max-width: 300px;
+            white-space: break-spaces;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 1ch 1.5ch;
+            border-radius: .3ch;
+            box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+            background: #333;
+            color: #fff;
+            z-index: 1000;
+        }
+        /* Make the tooltips respond to hover */
+        [tooltip]:hover::before,
+        [tooltip]:hover::after {
+            display: block;
+        }
+        /* Don't show empty tooltips */
+        [tooltip='']::before,
+        [tooltip='']::after {
+            display: none !important;
+        }
+        /* Flow: up */
+        [tooltip]:not([flow])::before,
+        [tooltip][flow^='up']::before {
+            bottom: 100%;
+            border-bottom-width: 0;
+            border-top-color: #333;
+            top: calc(0em - 10px);
+        }
+        [tooltip]:not([flow])::after,
+        [tooltip][flow^='up']::after {
+            bottom: calc(100% + 10px);
+        }
+        [tooltip]:not([flow])::before,
+        [tooltip]:not([flow])::after,
+        [tooltip][flow^='up']::before,
+        [tooltip][flow^='up']::after {
+            left: 50%;
+            transform: translate(-50%, -.5em);
+        }
+        /* Flow: down */
+        [tooltip][flow^='down']::before {
+            top: 100%;
+            border-top-width: 0;
+            border-bottom-color: #333;
+            bottom: calc(0em - 10px);
+        }
+        [tooltip][flow^='down']::after {
+            top: calc(100% + 10px);
+        }
+        [tooltip][flow^='down']::before,
+        [tooltip][flow^='down']::after {
+            left: 50%;
+            transform: translate(-50%, .5em);
+        }
+        /* Flow: left */
+        [tooltip][flow^='left']::before {
+            top: 50%;
+            border-right-width: 0;
+            border-left-color: #333;
+            left: calc(0em - 10px);
+            transform: translate(-.5em, -50%);
+        }
+        [tooltip][flow^='left']::after {
+            top: 50%;
+            right: calc(100% + 10px);
+            transform: translate(-.5em, -50%);
+        }
+        [tooltip][flow^='right']::before {
+            top: 50%;
+            border-left-width: 0;
+            border-right-color: #333;
+            right: calc(0em - 10px);
+            transform: translate(.5em, -50%);
+        }
+        [tooltip][flow^='right']::after {
+            top: 50%;
+            left: calc(100% + 10px);
+            transform: translate(.5em, -50%);
+        }
+        /* Flow: topright */
+        [tooltip][flow^='topright']::before {
+            top: calc(0% + 5px);
+            border-left-width: 0;
+            border-right-color: #333;
+            right: calc(0em - 10px);
+            transform: translate(.5em, 0em);
+        }
+        [tooltip][flow^='topright']::after {
+            top: 5px;
+            left: calc(100% + 10px);
+            transform: translate(.5em, 0em);
+        }
+        /* Keyframes */
+        @keyframes tooltips-vert {
+            to {
+                opacity: .9;
+                transform: translate(0%, 0);
+            }
+        }
+        @keyframes tooltips-horz {
+            to {
+                opacity: .9;
+                transform: translate(0, -50%);
+            }
+        }
+        /* Rest of stuff */ 
+        [tooltip]:not([flow]):hover::before,
+        [tooltip]:not([flow]):hover::after,
+        [tooltip][flow^='up']:hover::before,
+        [tooltip][flow^='up']:hover::after,
+        [tooltip][flow^='down']:hover::before,
+        [tooltip][flow^='down']:hover::after {
+            animation: tooltips-vert 300ms ease-out forwards;
+        }
+        [tooltip][flow^='left']:hover::before,
+        [tooltip][flow^='left']:hover::after,
+        [tooltip][flow^='right']:hover::before,
+        [tooltip][flow^='right']:hover::after {
+            animation: tooltips-horz 300ms ease-out forwards;
+        }
+        [tooltip][flow^='topright']:hover::before,
+        [tooltip][flow^='topright']:hover::after {
+            animation: tooltips-vert 300ms ease-out forwards;
+        }
+              .pvtAxisContainer li span.pvtAttr {
+          font-size: 14px;
+          -webkit-text-size-adjust: 100%;
+          background: #F3F3F3;
+          border: 1px solid #8F8F8F;
+          padding: 2px 5px;
+          white-space: nowrap;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+      }
+      .pvtAxisContainer li.pvtFilteredAttribute span.pvtAttr {
+          filter: brightness(85%);
+          z-index: 99;
+      }
+      .pvtRendererArea {
+          padding: 0px;
+      }
+      .pvtUi {
+          border-spacing: 4px;
+          padding-bottom: 10px;
+      }
+      .pvtRenderer, .pvtAggregator, .pvtAttrDropdown {
+          padding: 3px;
+          border-radius: 4px;
+      }
+      .pvtRenderer {
+          margin-bottom: 7px;
+          margin-left: 5px;
+      }
+      .pvtAxisContainer, .pvtVals {
+          border: 1px solid gray;
+          border-radius: 3px;
+          background: #CDCDCD;
+          padding: 5px;
+          min-width: 20px;
+          min-height: 20px;
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -khtml-user-select: none;
+          -ms-user-select: none;
+      }
+      .pvtVals {
+          text-align: left;
+          white-space: nowrap;
+          padding: 11px 11px 11px 11px !important;
+      }
+      table.pvtTable {
+          border-collapse: separate;
+          border-spacing: 0;
+      }
+      table.pvtTable tbody tr td {
+          color: #3D3D3D;
+          padding: 5px;
+          background-color: #FFF;
+          border-right: 1px solid #CDCDCD;
+          border-bottom: 1px solid #CDCDCD;
+          border-left: none;
+          border-top: none;
+          vertical-align: top;
+          text-align: right;
+      }
+      table.pvtTable tbody tr th, table.pvtTable thead tr th {
+          background-color: #737373;
+          border-right: 1px solid #CDCDCD;
+          border-bottom: 1px solid #CDCDCD;
+          border-left: none;
+          border-top: none;
+          color: white;
+          font-size: 8pt;
+          padding: 7px;
+      }
+      table.pvtTable thead tr:first-child th:first-child {
+          border-top-left-radius: 5px;
+      }
+      table.pvtTable tr:first-child th:last-child {
+          border-top-right-radius: 5px;
+      }
+      table.pvtTable tbody tr:last-of-type th:first-of-type {
+          border-bottom-left-radius: 5px;
+      }
+      table.pvtTable tr:last-child td:last-child {
+          border-bottom-right-radius: 5px;
+      }
+      table.pvtTable thead {
+          position: -webkit-sticky; /* for Safari */
+          position: sticky;
+          top: 0;
+      }
+      .pvtUi {
+          border-collapse: separate !important;
+      }
+      .pvtFilterBox {
+          position: absolute;
+      }
+      label {
+          font-weight: 100 !important;
+      }
+</style>
+
+```{js, echo=FALSE}
+
+$('.title').css('color', '#007C9D');
+$('.tabset').css('color', '#007C9D');
+$(document).ready(function() {
+    $head = $('#navbar');
+    $head.prepend('<img src=\"tpk_logo.svg\" style=\"height:40px;top:5px;right:15px;position:absolute;\"/>');
+    document.querySelector(".rpivotTable").setAttribute('style', 'position:relative;');
+});
+```
+
+<br>
+<span style="color:#007C9D;font-size:medium"> <em>
+Climate change presents significant challenges that necessitate robust policies
+and implementable strategies to support resilience and avoid maladaptation.
+The first step towards effective policy interventions is gaining a
+comprehensive understanding of the risks faced by our communities. By tailoring
+adaptation actions to address these risks, we can better serve our communities.
+</em></span>
+<br><br>
+
+We have embarked on an initial exploratory analysis to examine what risks exist
+specifically for hapori Māori. By assessing the socio-economic
+circumstances and resilience of hapori Māori exposed to various climate hazards,
+the findings presented in this report offer valuable insights to inform the
+immediate shaping of future climate change policy design.
+This page includes key visualisations from this study. We have included a
+comprehensive map of the climate hazards projected to affect the greatest
+number of Māori households in the future, namely heatwaves, droughts, extreme
+hot days, wet spells, extreme rainfall and sea level rise. It also covers the
+hazards already significantly impacting Māori households, such as flooding.
+Furthermore, the page delves into the socio-economic circumstances and
+resilience of Māori communities exposed to these climate hazards, shedding
+light on disparities and areas that may require targeted policies. For instance,
+it emphasizes the vulnerability of hapori Māori in coastal areas due to sea 
+level rise, as well as the challenges faced by older Māori households with lower
+adaptability due to factors like social isolation and lack of support systems.
+
+<br>
+Click on the following tabs to see the results:
+<br>
+
+<!-- ::: {.column width="65%"} -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.cap="Photo: Hawke's Bay showing flooding damage after Cyclone Gabrielle hit in 2023. Photo courtesy of NZDF."} -->
+<!-- knitr::include_graphics("flood_image.jpg") -->
+<!-- ``` -->
+<!-- ::: -->
+
+<!-- ### <span style="color:#007C9D;font-size:medium">Results</span> {.tabset} -->
+
+### <span></span> {.tabset}
+
+#### Maps
+
+:::::: {.columns}
+::: {.column width="25%"}
+These maps are based on the climate datasets provided by the National Institute
+of Water and Atmospheric Research <a href="https://niwa.co.nz/" target="_blank">(NIWA)</a>.
+We obtained climate maps for a
+baseline period from 1986 to 2005 and projected changes averaged over time.
+The projections for this analysis were based on a low-moderate global emission
+trajectory called Representative Concentration Pathways (RCP), developed by
+IPCC and used in global climate models.
+
+For flooding, we obtained the 2021 composite flood hazard area maps from NIWA,
+with consent from district and regional councils. These were created from
+modelled and historic flood hazard maps and flood prone soil maps, publicly
+available in August 2018.
+
+These maps also include various socio-economic filter layers that can be
+overlaid on climate information. To construct household-level measures of
+socio-economic circumstances, we utilized the Integrated Data Infrastructure
+<a href="https://www.stats.govt.nz/integrated-data/integrated-data-infrastructure/" target="_blank">(IDI)</a>.
+The social indicators were selected based on their ability to capture
+the resilience and adaptive capacity of hapori Māori. These indicators included
+variables such as income, employment, education, health, and housing.
+Statistical techniques and feedback from subject matter experts were used to
+consolidate the numerous social indicators (approximately 100) into composite
+indices representing different aspects of socio-economic risk.
+
+<h5 style="color:#007C9D">How to use:</h5>
+* Zoom in/out using the buttons or the mouse scroll wheel, move by dragging
+* Fullscreen and reset view buttons
+* Download button to export the map with current view to a PNG file
+* Layer control for base and overlay maps, and toggling marker locations (marae)
+* Search button/toolbar based on SA2 names
+* Detect location button to highlight user’s location (permission required)
+* Hover and popup information for shapes and markers
+
+:::
+::: {.column width="2%"}
+\
+<!-- an empty Div (with a white space), serving as a column separator -->
+:::
+::: {.column width="73%"}
+```{r out.width='100%', out.height='750px', echo=FALSE}
+library(leaflet)
+readRDS("../processed_data/national_maps/overall_base_widget.rds")
+# leaflet() %>% addTiles() %>%
+#   setView(-93.65, 42.0285, zoom = 17) %>%
+#   addPopups(
+#     -93.65, 42.0285,
+#     'Here is the <b>Department of Statistics</b>, ISU'
+#   )
+```
+:::
+::::::
+
+#### Tables
+:::::: {.columns}
+::: {.column width="25%"}
+
+This visualisation enables data exploration and analysis by turning the project's dataset
+into a summary table and then optionally adding a true 2-d drag'n'drop UI to
+allow users to manipulate this summary table, turning it into a pivot table,
+very similar to the one found in older versions of Microsoft Excel with a bunch
+of extra developer-oriented features and some visualization effects.
+We have also included several add-ons, with which the summary table can be
+rendered as various kinds of charts, turning the pivot table into a pivot chart.
+
+<h5 style="color:#007C9D">How to use:</h5>
+* Select a plugin from top left dropdown menu, e.g., Table, Bar Chart, etc.
+* Select an aggregator method from the next dropdown menu, e.g., Count, Integer Sum, etc.
+* Drag'n'drop desired attributes in a row or column container
+* Filter by categories for each of the attributes 
+* Sort the results by count or alphabetically
+* Click <a href="https://shorturl.at/beEY3" target="_blank">here</a> for a visualised guide 
+
+:::
+::: {.column width="2%"}
+\
+<!-- an empty Div (with a white space), serving as a column separator -->
+:::
+::: {.column style="width:73%;overflow:scroll;"}
+```{r, out.width='100%', out.height='750px', echo=FALSE}
+# htmltools::includeHTML("climate_resilience_widget.html")
+# library(rpivotTable)
+# readRDS("pivot_widget.rds")
+```
+:::
+::::::

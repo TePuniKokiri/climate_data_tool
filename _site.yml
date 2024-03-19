@@ -1,0 +1,11 @@
+name: "Climate Resilience Data Tool"
+output_dir: docs
+navbar:
+  title: "Climate Resilience"
+  left:
+    - text: "Home"
+      href: index.html
+output: 
+  html_document:
+    includes:
+      in_header: "favicon.html"
