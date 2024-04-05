@@ -5,7 +5,112 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: Regional Maps
+      menu:
+      - text: Area Outside Region
+        menu:
+          - text: Climate
+            href: maps/aor_cli.html
+          - text: Socio-economic
+            href: maps/aor_ses.html
+      - text: Auckland Region
+        menu:
+          - text: Climate
+            href: maps/akl_cli.html
+          - text: Socio-economic
+            href: maps/akl_ses.html
+      - text: Bay of Plenty Region
+        menu:
+          - text: Climate
+            href: maps/bop_cli.html
+          - text: Socio-economic
+            href: maps/bop_ses.html
+      - text: Canterbury Region
+        menu:
+          - text: Climate
+            href: maps/cty_cli.html
+          - text: Socio-economic
+            href: maps/cty_ses.html
+      - text: Gisborne Region
+        menu:
+          - text: Climate
+            href: maps/gis_cli.html
+          - text: Socio-economic
+            href: maps/gis_ses.html
+      - text: "Hawke's Bay Region"
+        menu:
+          - text: Climate
+            href: maps/hkb_cli.html
+          - text: Socio-economic
+            href: maps/hkb_ses.html
+      - text: "Manawatū-Whanganui Region"
+        menu:
+          - text: Climate
+            href: maps/mwa_cli.html
+          - text: Socio-economic
+            href: maps/mwa_ses.html
+      - text: Marlborough Region
+        menu:
+          - text: Climate
+            href: maps/mrl_cli.html
+          - text: Socio-economic
+            href: maps/mrl_ses.html
+      - text: Nelson Region
+        menu:
+          - text: Climate
+            href: maps/nel_cli.html
+          - text: Socio-economic
+            href: maps/nel_ses.html
+      - text: Northland Region
+        menu:
+          - text: Climate
+            href: maps/ntl_cli.html
+          - text: Socio-economic
+            href: maps/ntl_ses.html
+      - text: Otago Region
+        menu:
+          - text: Climate
+            href: maps/otg_cli.html
+          - text: Socio-economic
+            href: maps/otg_ses.html
+      - text: Southland Region
+        menu:
+          - text: Climate
+            href: maps/stl_cli.html
+          - text: Socio-economic
+            href: maps/stl_ses.html
+      - text: Taranaki Region
+        menu:
+          - text: Climate
+            href: maps/tki_cli.html
+          - text: Socio-economic
+            href: maps/tki_ses.html
+      - text: Tasman Region
+        menu:
+          - text: Climate
+            href: maps/tas_cli.html
+          - text: Socio-economic
+            href: maps/tas_ses.html
+      - text: Waikato Region
+        menu:
+          - text: Climate
+            href: maps/wko_cli.html
+          - text: Socio-economic
+            href: maps/wko_ses.html
+      - text: Wellington Region
+        menu:
+          - text: Climate
+            href: maps/wgn_cli.html
+          - text: Socio-economic
+            href: maps/wgn_ses.html
+      - text: West Coast Region
+        menu:
+          - text: Climate
+            href: maps/wes_cli.html
+          - text: Socio-economic
+            href: maps/wes_ses.html
 output: 
   html_document:
     includes:
       in_header: "favicon.html"
+    css: style.css

@@ -1,0 +1,270 @@
+.main-container {
+     max-width: 90% !important;
+     margin: auto;
+}
+ body {
+     text-align: justify 
+}
+ .container {
+     width: 100%;
+}
+ .navbar-default {
+     background-color: #007C9D;
+     border-color: #005469;
+}
+ .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+     color: #fbfbfb;
+     background-color: #00a4d0;
+}
+ .navbar-default .navbar-brand {
+     color: #fbfbfb;
+}
+ .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+     color: #cbcbcb;
+     background-color: transparent;
+}
+ .navbar-default .navbar-nav>li>a {
+     color: #fbfbfb;
+}
+ .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+     color: #cbcbcb;
+     background-color: transparent;
+}
+ .caption {
+     margin-top: -45px;
+     color: #80c6d9;
+     margin-left: 10px;
+}
+ [tooltip] {
+     position: relative;
+}
+/* Applies to all tooltips */
+ [tooltip]::before, [tooltip]::after {
+     text-transform: none;
+     font-size: 12px;
+     font-style: normal;
+     line-height: 1.5;
+     user-select: none;
+     pointer-events: none;
+     position: absolute;
+     display: none;
+     opacity: 0;
+}
+ [tooltip]::before {
+     content: '';
+     border: 5px solid transparent;
+     z-index: 1001;
+}
+ [tooltip]::after {
+     content: attr(tooltip);
+     font-family: Helvetica, sans-serif;
+     text-align: justify;
+     width: max-content;
+     max-width: 300px;
+     white-space: break-spaces;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     padding: 1ch 1.5ch;
+     border-radius: .3ch;
+     box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+     background: #333;
+     color: #fff;
+     z-index: 1000;
+}
+/* Make the tooltips respond to hover */
+ [tooltip]:hover::before, [tooltip]:hover::after {
+     display: block;
+}
+/* Don't show empty tooltips */
+ [tooltip='']::before, [tooltip='']::after {
+     display: none !important;
+}
+/* Flow: up */
+ [tooltip]:not([flow])::before, [tooltip][flow^='up']::before {
+     bottom: 100%;
+     border-bottom-width: 0;
+     border-top-color: #333;
+     top: calc(0em - 10px);
+}
+ [tooltip]:not([flow])::after, [tooltip][flow^='up']::after {
+     bottom: calc(100% + 10px);
+}
+ [tooltip]:not([flow])::before, [tooltip]:not([flow])::after, [tooltip][flow^='up']::before, [tooltip][flow^='up']::after {
+     left: 50%;
+     transform: translate(-50%, -.5em);
+}
+/* Flow: down */
+ [tooltip][flow^='down']::before {
+     top: 100%;
+     border-top-width: 0;
+     border-bottom-color: #333;
+     bottom: calc(0em - 10px);
+}
+ [tooltip][flow^='down']::after {
+     top: calc(100% + 10px);
+}
+ [tooltip][flow^='down']::before, [tooltip][flow^='down']::after {
+     left: 50%;
+     transform: translate(-50%, .5em);
+}
+/* Flow: left */
+ [tooltip][flow^='left']::before {
+     top: 50%;
+     border-right-width: 0;
+     border-left-color: #333;
+     left: calc(0em - 10px);
+     transform: translate(-.5em, -50%);
+}
+ [tooltip][flow^='left']::after {
+     top: 50%;
+     right: calc(100% + 10px);
+     transform: translate(-.5em, -50%);
+}
+ [tooltip][flow^='right']::before {
+     top: 50%;
+     border-left-width: 0;
+     border-right-color: #333;
+     right: calc(0em - 10px);
+     transform: translate(.5em, -50%);
+}
+ [tooltip][flow^='right']::after {
+     top: 50%;
+     left: calc(100% + 10px);
+     transform: translate(.5em, -50%);
+}
+/* Flow: topright */
+ [tooltip][flow^='topright']::before {
+     top: calc(0% + 5px);
+     border-left-width: 0;
+     border-right-color: #333;
+     right: calc(0em - 10px);
+     transform: translate(.5em, 0em);
+}
+ [tooltip][flow^='topright']::after {
+     top: 5px;
+     left: calc(100% + 10px);
+     transform: translate(.5em, 0em);
+}
+/* Keyframes */
+ @keyframes tooltips-vert {
+     to {
+         opacity: .9;
+         transform: translate(0%, 0);
+    }
+}
+ @keyframes tooltips-horz {
+     to {
+         opacity: .9;
+         transform: translate(0, -50%);
+    }
+}
+/* Rest of stuff */
+ [tooltip]:not([flow]):hover::before, [tooltip]:not([flow]):hover::after, [tooltip][flow^='up']:hover::before, [tooltip][flow^='up']:hover::after, [tooltip][flow^='down']:hover::before, [tooltip][flow^='down']:hover::after {
+     animation: tooltips-vert 300ms ease-out forwards;
+}
+ [tooltip][flow^='left']:hover::before, [tooltip][flow^='left']:hover::after, [tooltip][flow^='right']:hover::before, [tooltip][flow^='right']:hover::after {
+     animation: tooltips-horz 300ms ease-out forwards;
+}
+ [tooltip][flow^='topright']:hover::before, [tooltip][flow^='topright']:hover::after {
+     animation: tooltips-vert 300ms ease-out forwards;
+}
+ .pvtAxisContainer li span.pvtAttr {
+     font-size: 14px;
+     -webkit-text-size-adjust: 100%;
+     background: #F3F3F3;
+     border: 1px solid #8F8F8F;
+     padding: 2px 5px;
+     white-space: nowrap;
+     -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+     border-radius: 4px;
+}
+ .pvtAxisContainer li.pvtFilteredAttribute span.pvtAttr {
+     filter: brightness(85%);
+     z-index: 99;
+}
+ .pvtRendererArea {
+     padding: 0px;
+}
+ .pvtUi {
+     border-spacing: 4px;
+     padding-bottom: 10px;
+}
+ .pvtRenderer, .pvtAggregator, .pvtAttrDropdown {
+     padding: 3px;
+     border-radius: 4px;
+}
+ .pvtRenderer {
+     margin-bottom: 7px;
+     margin-left: 5px;
+}
+ .pvtAxisContainer, .pvtVals {
+     border: 1px solid gray;
+     border-radius: 3px;
+     background: #CDCDCD;
+     padding: 5px;
+     min-width: 20px;
+     min-height: 20px;
+     user-select: none;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -khtml-user-select: none;
+     -ms-user-select: none;
+}
+ .pvtVals {
+     text-align: left;
+     white-space: nowrap;
+     padding: 11px 11px 11px 11px !important;
+}
+ table.pvtTable {
+     border-collapse: separate;
+     border-spacing: 0;
+}
+ table.pvtTable tbody tr td {
+     color: #3D3D3D;
+     padding: 5px;
+     background-color: #FFF;
+     border-right: 1px solid #CDCDCD;
+     border-bottom: 1px solid #CDCDCD;
+     border-left: none;
+     border-top: none;
+     vertical-align: top;
+     text-align: right;
+}
+ table.pvtTable tbody tr th, table.pvtTable thead tr th {
+     background-color: #737373;
+     border-right: 1px solid #CDCDCD;
+     border-bottom: 1px solid #CDCDCD;
+     border-left: none;
+     border-top: none;
+     color: white;
+     font-size: 8pt;
+     padding: 7px;
+}
+ table.pvtTable thead tr:first-child th:first-child {
+     border-top-left-radius: 5px;
+}
+ table.pvtTable tr:first-child th:last-child {
+     border-top-right-radius: 5px;
+}
+ table.pvtTable tbody tr:last-of-type th:first-of-type {
+     border-bottom-left-radius: 5px;
+}
+ table.pvtTable tr:last-child td:last-child {
+     border-bottom-right-radius: 5px;
+}
+ table.pvtTable thead {
+     position: -webkit-sticky;
+    /* for Safari */
+     position: sticky;
+     top: 0;
+}
+ .pvtUi {
+     border-collapse: separate !important;
+}
+ .pvtFilterBox {
+     position: absolute;
+}
+ label {
+     font-weight: 100 !important;
+}
