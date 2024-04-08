@@ -50,14 +50,6 @@ adaptability due to factors like social isolation and lack of support systems.
 Click on the following tabs to see the results:
 <br>
 
-<!-- ::: {.column width="65%"} -->
-<!-- ```{r, echo=FALSE, out.width="100%", fig.cap="Photo: Hawke's Bay showing flooding damage after Cyclone Gabrielle hit in 2023. Photo courtesy of NZDF."} -->
-<!-- knitr::include_graphics("flood_image.jpg") -->
-<!-- ``` -->
-<!-- ::: -->
-
-<!-- ### <span style="color:#007C9D;font-size:medium">Results</span> {.tabset} -->
-
 ### <span></span> {.tabset}
 
 #### Maps
@@ -99,19 +91,12 @@ indices representing different aspects of socio-economic risk.
 
 :::
 ::: {.column width="2%"}
-\
-<!-- an empty Div (with a white space), serving as a column separator -->
+
 :::
 ::: {.column width="73%"}
 ```{r out.width='100%', out.height='750px', echo=FALSE}
 library(leaflet)
-readRDS("../processed_data/national_maps/overall_base_widget.rds")
-# leaflet() %>% addTiles() %>%
-#   setView(-93.65, 42.0285, zoom = 17) %>%
-#   addPopups(
-#     -93.65, 42.0285,
-#     'Here is the <b>Department of Statistics</b>, ISU'
-#   )
+readRDS("../../processed_data/national_maps/overall_base_widget.rds")
 ```
 :::
 ::::::
@@ -134,18 +119,17 @@ rendered as various kinds of charts, turning the pivot table into a pivot chart.
 * Drag'n'drop desired attributes in a row or column container
 * Filter by categories for each of the attributes 
 * Sort the results by count or alphabetically
-* Click <a href="https://shorturl.at/beEY3" target="_blank">here</a> for a visualised guide 
+* Click <a href="https://camo.githubusercontent.com/b26592afe00593d868948da3311b553d3c40fd6922b3875a51b31e7123baacce/68747470733a2f2f7069766f747461626c652e6a732e6f72672f696d616765732f616e696d6174696f6e2e676966" target="_blank">here</a> for a visualised guide 
 
 :::
 ::: {.column width="2%"}
 \
 <!-- an empty Div (with a white space), serving as a column separator -->
 :::
-::: {.column style="width:73%;overflow:scroll;"}
+::: {.column style="width:73%;overflow:scroll;padding-top:7px"}
 ```{r, out.width='100%', out.height='750px', echo=FALSE}
-# htmltools::includeHTML("climate_resilience_widget.html")
-# library(rpivotTable)
-# readRDS("pivot_widget.rds")
+library(rpivotTable)
+readRDS("../../processed_data/pivot_table/pivot_widget.rds")
 ```
 :::
 ::::::
