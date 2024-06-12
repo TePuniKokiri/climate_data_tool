@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Climate Hazards for Hapori Māori</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!--<link rel=icon href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/svgs/solid/wind.svg>-->
+<link rel=icon href="img/wind.svg">
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style/style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Climate Resilience</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Regional Maps
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Area Outside Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/aor_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/aor_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Auckland Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/akl_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/akl_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bay of Plenty Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/bop_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/bop_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Canterbury Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/cty_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/cty_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gisborne Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/gis_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/gis_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hawke's Bay Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/hkb_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/hkb_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manawatū-Whanganui Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/mwa_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/mwa_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marlborough Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/mrl_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/mrl_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nelson Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/nel_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/nel_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Northland Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/ntl_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/ntl_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Otago Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/otg_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/otg_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Southland Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/stl_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/stl_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Taranaki Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/tki_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/tki_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tasman Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/tas_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/tas_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Waikato Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/wko_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/wko_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Wellington Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/wgn_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/wgn_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">West Coast Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/wes_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/wes_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="data.html">Methodology and Data</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Disclaimer</h1>
+
+</div>
+
+
+<p>These results are not official statistics. They have been created for
+research purposes from the Integrated Data Infrastructure (IDI) which is
+carefully managed by Stats NZ. For more information about the IDI please
+visit
+<a href=https://www.stats.govt.nz/integrated-data/integrated-data-infrastructure/ target="_blank">here</a>.</p>
+<p>The results are based in part on tax data supplied by Inland Revenue
+to Stats NZ under the Tax Administration Act 1994 for statistical
+purposes. Any discussion of data limitations or weaknesses is in the
+context of using the IDI for statistical purposes, and is not related to
+the data’s ability to support Inland Revenue’s core operational
+requirements.</p>
+<p>For inquiries or feedback, please contact us via
+<a href=mailto:matawhanui@tpk.govt.nz>email</a>.</p>
+
+<script>
+  $(document).ready(function() {
+  	setTimeout(function() {
+  		$(".navbar-brand")[0].removeAttribute("href");
+  		var navbar = document.getElementById("navbar");
+  		var logo = document.createElement("a");
+  		logo.setAttribute("href", "https://www.tpk.govt.nz/en");
+  		logo.setAttribute("target", "_blank");
+  		logo.innerHTML = '<img class="logo" style="height:50px;top:5px;right:15px;position:absolute;">';
+  		navbar.appendChild(logo);
+  		var localLinks = document.querySelectorAll('a[href^="maps');
+  		for (var i = 0; i < localLinks.length; i++) {
+  			localLinks[i].setAttribute('target', '_blank');
+  		}
+  		document.querySelector(".main-container")
+  			.insertAdjacentHTML('afterend', '<div id="footer" style="left:0;bottom:0;width:calc(100% - 15px)"><h6 style="background-color:#333333;color:white;margin-top: 3px;margin-bottom: 0px;line-height: 60px;margin-left: 0px;margin-right: -15px;padding-left: 15px;font-size: 0.8em;"> Te Puni Kōkiri <span style="color:gray"> Te Puni Whakahaere Tikanga, <a href="mailto:matawhanui@tpk.govt.nz" style="color:gray">Data & Insights</a> - May 2024 </span><a href="https://www.tpk.govt.nz/" target="_blank"><img src="img/footer_logo.svg" style="height:22px;float:right;margin-top:19px;margin-right:15px;" /></a></h6></div>');
+  	}, 20);
+  });
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

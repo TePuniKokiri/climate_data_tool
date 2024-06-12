@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Climate Hazards for Hapori Māori</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.27/datatables.js"></script>
+<link href="site_libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<!--<link rel=icon href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/svgs/solid/wind.svg>-->
+<link rel=icon href="img/wind.svg">
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style/style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Climate Resilience</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Regional Maps
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Area Outside Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/aor_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/aor_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Auckland Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/akl_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/akl_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bay of Plenty Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/bop_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/bop_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Canterbury Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/cty_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/cty_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gisborne Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/gis_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/gis_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hawke's Bay Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/hkb_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/hkb_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manawatū-Whanganui Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/mwa_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/mwa_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marlborough Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/mrl_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/mrl_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nelson Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/nel_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/nel_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Northland Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/ntl_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/ntl_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Otago Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/otg_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/otg_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Southland Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/stl_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/stl_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Taranaki Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/tki_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/tki_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tasman Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/tas_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/tas_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Waikato Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/wko_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/wko_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Wellington Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/wgn_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/wgn_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">West Coast Region</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="maps/wes_cli.html.gz">Climate</a>
+        </li>
+        <li>
+          <a href="maps/wes_ses.html.gz">Socio-economic</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="data.html">Methodology and Data</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Methodology and Data</h1>
+
+</div>
+
+
+<div id="background" class="section level3">
+<h3>Background</h3>
+<p>The primary objective of this study and its accompanying data tool is
+to assess the resilience of Māori communities in response to climate
+change. Climate change is attributed to both natural factors and changes
+resulting from human behaviour, leading to climate hazards such as sea
+level rise and extreme heat events. These hazards are projected to
+escalate in the future, and communities face varying degrees of exposure
+depending on their geographical location. The risk of adverse impacts
+arises from both climate-related hazards and the vulnerability and
+exposure of communities. Our research focuses on the interaction between
+these two factors, depicted as the white intersection area in the middle
+of the schematic, where we investigate the exposure of Māori communities
+to projected climate hazards in relation to their current socio-economic
+circumstances.</p>
+<figure style="display:table;" class="img-right">
+<img src="img/schematic.svg">
+<figcaption>
+<span style="color:#007c9d;">Figure: </span> The schematic, based on
+Figure 19-1 in Emergent Risks and Key Vulnerabilities (Impacts,
+Adaptation, and Vulnerability. Part A, p. 1039-1099), by Oppenheimer et
+al., 2014, Cambridge University Press, has served as the methodological
+framework for this project. In this initial exploratory phase, we do not
+consider adaptation and mitigation actions/plans, governance, or changes
+in community resilience over time.
+</figcaption>
+</figure>
+</div>
+<div id="climate-hazards" class="section level3">
+<h3>Climate Hazards</h3>
+<p>We focused on climate hazards projected to have the most substantial
+and immediate impact on human lives based on the identification of
+significant risks to human wellbeing outlined in the 2020 National
+Climate Change Risk Assessment
+<a href=https://environment.govt.nz/publications/national-climate-change-risk-assessment-for-new-zealand-main-report/ target="_blank">report</a>
+published by the Ministry for the Environment (MfE). These hazards
+include floods, sea level rise, and changes in the frequency of
+heatwaves, extreme hot days, wet spells, extreme rainfall, and droughts.
+The climate hazard information is based on datasets provided by the
+National Institute of Water and Atmospheric Research
+<a href=https://niwa.co.nz/ target="_blank">(NIWA)</a>. We obtained
+climate datasets for both a baseline period from 1986 to 2005 and
+projected changes averaged over the period from 2031 to 2050
+(mid-century). Except for the flood data, all the climate indicators
+presented in this tool are based on mid-century projections. These
+projections are mostly based on a low-moderate global emission
+trajectory called Representative Concentration Pathways 4.5 (RCP 4.5),
+developed by the Intergovernmental Panel on Climate Change (IPCC) and
+used in global climate models.</p>
+<p>For this study, we have aggregated climate data to the 2022
+Statistical Area (SA2) geographical divisions. The SA2 geography,
+typically inhabited by 1,000 to 4,000 residents, is designed to reflect
+communities that interact socially and economically. We opted for SA2
+over a smaller geographic area to ensure that a comprehensive set of
+descriptive characteristics about households and communities can be
+derived from the Integrated Data Infrastructure (IDI).</p>
+<p>The majority of climate data, excluding sea level rise, was provided
+in the form of spatial grid (raster) files. To transform this data to
+the SA2 level, we extracted the maximum value of each climate variable
+within the SA2 area. Sea level rise data was supplied as shapefiles,
+which we overlaid with SA2s and summarised to calculate the area of
+overlap per layer. It is important to note that the climate data does
+not fully cover all the SA2s. For our exploratory analysis, we imputed
+climate data for these missing areas (except for the Chatham Islands) by
+referencing the nearest SA2 area with non-missing climate data.</p>
+<p>The climate indicators used in this study are briefly discussed
+below.</p>
+<h4 style="color:#007c9d;">
+<img src="img/floods.svg" style="margin-right:10px;" alt="Floods"/>
+Floods
+</h4>
+<p>Flooding has significant direct and indirect impacts on people’s
+health and wellbeing. Floods can cause extensive physical damage to
+employment sites, personal property, and critical infrastructure,
+including homes, roads, and utilities. Our research focused on examining
+areas prone to flooding by using composite flood hazard area maps
+provided by regional and district councils to NIWA. These maps were
+created from modelled and historic flood hazard maps and flood-prone
+soil maps, publicly available in August 2018. There are no future
+projections available at this stage, although work is underway to
+produce these in the next couple of years. The flood data in this tool
+is represented as a percentage of an area that is either known or
+potentially flood-prone land. The data is organised into twenty levels,
+each spanning a 5% width. The pivot table presents flood information in
+levels with a width of 10%. In some cases, categories with lower counts
+may have been combined in the maps or tables.</p>
+<h4 style="color:#007c9d;">
+<img src="img/wet_spells.svg" style="margin-right:10px;" alt="Wet Spells"/>
+Wet Spells
+</h4>
+<p>In this work, a wet spell is defined as a period of five consecutive
+days during which the total daily rainfall exceeds 1 mm. The wet spells
+can have both direct and indirect adverse health effects, such as
+increased mould growth in housing due to prolonged dampness,
+contamination of drinking water sources, and reduced mental health
+stemming from decreased exposure to sunlight. The wet spell data in this
+tool is represented by the number of days per year that fall within a
+wet spell - defined as previously described. The data is categorised
+into levels with a width of twenty days. In some cases, categories with
+lower counts may have been combined in the maps or tables.</p>
+<h4 style="color:#007c9d;">
+<img src="img/rainfall.svg" style="margin-right:10px;" alt="Extreme Rainfall"/>
+Extreme Rainfall
+</h4>
+<p>Extreme rainfall is expected to rise as a result of climate change,
+driven by the capacity of a warmer atmosphere to retain greater
+moisture. These intense rain events are often linked to storms and can
+significantly impact people and communities by causing hazards such as
+flooding, landslides, and damage to buildings and infrastructure. In
+this tool, extreme rainfall is defined as the number of days per year
+when rainfall exceeds 30 mm in a day. The indicator is categorised into
+five-day and ten-day bins in the pivot table and maps, respectively.
+Some categories may have been merged due to low counts.</p>
+<h4 style="color:#007c9d;">
+<img src="img/heatwave.svg" style="margin-right:10px;" alt="Heatwave"/>
+Heatwave
+</h4>
+<p>A heatwave is characterised by sustained and significantly higher
+temperatures than the usual climate values of a specific location.
+Global warming has contributed to the increased frequency and intensity
+of heatwaves worldwide. Heatwaves often occur alongside other climate
+hazards, such as droughts and wildfires. The impacts of heatwaves
+encompass social, environmental, and economic dimensions, including
+surge in heat-related deaths, pressure on water and energy resources,
+and challenges to food and livelihood security. In this study, a
+heatwave is defined as a period of three consecutive days (or more)
+during which the temperature exceeds 25 degrees Celsius. The heatwave
+data is categorised into five-day and ten-day bins in the maps and the
+pivot table, respectively. Note that categories with lower counts may
+have been combined in the maps or tables.</p>
+<h4 style="color:#007c9d;">
+<img src="img/hot_days.svg" style="margin-right:10px;" alt="Extreme Hot Days"/>
+Extreme Hot Days
+</h4>
+<p>Extreme hot days can significantly impact human health; prolonged
+exposure to high temperatures can lead to heat-related illnesses,
+exacerbate existing conditions, and increase the mortality rate.
+Vulnerable groups, including the elderly, infants, outdoor workers, and
+those in poverty, are particularly susceptible. Additionally, heatwaves
+strain health services, disrupt infrastructure, and reduce productivity.
+In this context, extreme hot days refers to the number of days per year
+where the daily maximum temperature exceeds 30 degrees Celsius. This
+indicator is categorised into one-day and two-day bins in the maps and
+the table, respectively. Lower count levels may have been merged.</p>
+<h4 style="color:#007c9d;">
+<img src="img/droughts.svg" style="margin-right:10px;" alt="Droughts"/>
+Droughts
+</h4>
+<p>Droughts occur due to inadequate precipitation over an extended
+period, resulting in soil dryness and reduced water levels in rivers,
+streams, lakes, and dams. The impacts of droughts encompass economic,
+environmental, and social dimensions. Specifically, droughts severely
+affect agriculture, leading to limited food and water availability for
+both crops and animals. Increased fire risk is another consequence of
+drought conditions. Challenges related to water quality and availability
+also arise during droughts. Moreover, droughts directly impact human
+physical health by reducing water availability and compromising water
+quality.</p>
+<p>The Probability of Potential Evapotranspiration Deficit (PED) serves
+as a commonly used indicator for assessing drought conditions. It
+quantifies the difference between the potential water loss from the soil
+through evapotranspiration and the actual available water. Measured in
+millimetres, PED represents the rainfall shortfall necessary to maintain
+pastures at their optimal growth levels. In this research, the drought
+indicator is presented as the probability of PED exceeding 200 mm and is
+categorised into 10% and 20% width bins in the maps and the table,
+respectively.</p>
+<h4 style="color:#007c9d;">
+<img src="img/sea_rise.svg" style="margin-right:10px;" alt="Sea Level Rise"/>
+Sea Level Rise
+</h4>
+<p>Sea level rise poses a significant concern for communities,
+especially those residing in coastal areas. The physical consequences of
+sea level rise include beach erosion, coastal inundation, and the loss
+of marshes and wetlands. Coastal inundation refers to the flooding of
+typically dry, low-lying coastal land. This inundation results in
+various effects, such as the flooding of roads, walking paths, and
+reserves, infrastructure damage, and the degradation of drinking water
+due to saltwater intrusion. Moreover, it has profound implications for
+the social, cultural, and spiritual wellbeing of communities, as it can
+lead to the loss of land, cultural sites, and the displacement of
+communities.</p>
+<p>In our study, sea level rise information is expressed as a percentage
+of the area likely to be inundated due to a 50 cm sea level rise.
+Notably, this threshold value surpasses the mid-century RCP 4.5
+estimation of 26 cm. We chose this higher value to address the
+limitation that the available inundation maps do not account for
+vertical land motion. This data is categorised into 1% and 2% width bins
+in the maps and the table, respectively.</p>
+<h4 style="color:#007c9d;">
+<img src="img/overall_climate.svg" style="margin-right:10px;" alt="Overall Climate Risk Index"/>
+Overall Climate Risk Index
+</h4>
+<p>The overall climate risk index was created by combining all seven
+climate hazards included in this study. For each SA2, we ranked its
+exposure to various climate hazards and calculated the average rank for
+each area. This combined score is scaled from 0 to 1, where a higher
+number corresponds to a relatively higher exposure to climate hazards.
+In the maps, the climate risk index is presented in ten levels, each
+spanning a 0.1 width. The pivot table summarises the overall climate
+information into five levels, with the same number of SA2s in each level
+(quintiles).</p>
+</div>
+<div id="socio-economic-resilience" class="section level3">
+<h3>Socio-economic Resilience</h3>
+<p>Our overarching goal for this project was to evaluate the resilience
+of Māori communities in the face of climate change. By understanding
+their adaptive capacity, we aimed to pinpoint areas where targeted
+support would be most impactful. Specifically, our focus centred on
+community-level responses rather than individual ones.</p>
+<p>The study population in this work consisted of all individuals who
+lived in a Māori household during 2021. We adopted an inclusive
+definition for Māori households, encompassing any household where at
+least one occupant self-identified as Māori. This approach ensured that
+individuals from diverse ethnic backgrounds were part of our analysis. A
+household, as defined for our study, included all people residing at the
+same address during the reference year. We sourced this information from
+the most recent address records available through the Statistics New
+Zealand Administrative Population Census (APC) for the year 2021. Note
+that SA2s with 30 or fewer Māori households were excluded from the
+analysis.</p>
+<p>Social indicators were extracted from data within the IDI, utilising
+the most recent datasets available (as of 2022). Our approach involved
+employing Principal Component Analysis (PCA) and clustering analysis to
+distil the extensive set of nearly 100 indicators into concise
+summaries. These summary indices capture various facets of resilience,
+encompassing dimensions such as poverty, health, justice and protection,
+and the capacity to adapt to climate change. The latter was derived from
+measures that were not already included in other indices but might be
+associated with adaptation issues. For instance, these measures
+encompassed having vulnerable members in the household (such as older
+individuals), not being enrolled in education or training, unemployment
+(which could lead to social isolation), lacking the highest
+qualification (a proxy for literacy issues), and having no access to
+telecommunication services. The health and justice indices were divided
+into adult and child-related versions due to the strong age-dependence
+of the underlying social indicators. Households without children or
+youth were assigned a value of zero for child-related indices, as the
+risk was considered negligible.</p>
+<p>All the socio-economic indicators are categorised into ten groups,
+each containing the same number of SA2s (deciles 1 to 10). A higher
+decile number corresponds to a greater risk level. In the the pivot
+table, these decile categories are combined to form five levels. In
+addition, we have created an overall socio-economic risk index by
+aggregating the six domain-related indices. For each SA2, a combined
+score was obtained by averaging its percentage rank based on each of the
+six indicators. Additionally, a weighting factor of 0.5 was assigned to
+each variable that measured adult and child indices separately. The
+resulting score is then scaled into a range of 0 to 1, where a higher
+number indicates an area facing relatively greater risk due to
+socio-economic factors. On the maps, the overall socio-economic risk
+index is depicted across ten levels, each covering a 0.1 width.
+Meanwhile, the pivot table presents this information in five levels,
+each containing an equal number of SA2s.</p>
+<p>The following table provides a summary of the information used to
+construct the resilience indicators.</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-da6c8d99ea1405c58368" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-da6c8d99ea1405c58368">{"x":{"filter":"none","vertical":false,"caption":"<caption style=\"caption-side: top; text-align: Left; text-align: justify !important;\"><span style='color:#007c9d;'>Table: <\/span>\n           <span> Resilience indicators are defined at the household level.\n           Most of these indicators were derived by selecting the maximum value\n           from person-level indicators across all household members. In some\n           cases, variables were obtained by summing or averaging the values for\n           each individual member. Some indicators are specific to certain age\n           ranges of household members, as indicated in the right-hand columns.\n           If there are no household members within the relevant age range, the\n           indicators will be zero. <\/span><\/caption>","data":[["<span style=\"text-shadow:0.1px 0px 0px black; color:#007c9d;\">Poverty Risk Index<\/span>","<span style=\"text-shadow:0.1px 0px 0px black; color:#007c9d;\">Health Risk Index<\/span>","<span style=\"text-shadow:0.1px 0px 0px black; color:#007c9d;\">Justice Risk Index<\/span>","<span style=\"text-shadow:0.1px 0px 0px black; color:#007c9d;\">Adaptability Risk Index<\/span>"],["<ul>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Main Working Age Benefit:<\/span> Indicates whether any household member received a main working age benefit in the year ending March 2022 (from APC).<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Government Income Support and 'Other' Benefits:<\/span> Quantifies the amount of government income support and 'other' benefits (e.g., Tiers 2, 3, Paid Parental Leave, Working for Families) for the year ending March 2022 (from APC).<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Low Total Household Taxable Income Indicator:<\/span> Flags households with low total taxable income (from APC).<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Kāinga Ora Housing Application:<\/span> Determines whether any household member applied for Kāinga Ora housing since 2020 or is a current resident.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">High Deprivation Area:<\/span> Identifies whether the household is located in an area of high deprivation (NZDep2018 ≥ 8).<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Child Support Duration:<\/span> Measures the proportion of time a household member was supported on benefit during childhood (up to 18 years).<\/li>\n<\/ul>","<span style=\"text-shadow:0.1px 0px 0px black; color:#007c9d; padding-left:20px;\">Adult Version:<\/span>\n<ul>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Ambulatory Sensitive Hospitalisations (ASH):<\/span> Records the number of ASH incidents for adult household members over the last five years.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Indicators of ASH Events by Type:<\/span> Includes indicators for specific ASH events, i.e., respiratory-related, diabetes, strokes, cardiovascular-related, and asthma.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Serious Mental Health Diagnosis Indicator:<\/span> Indicates whether an individual aged 16 and older has received a serious mental health diagnosis based on various data sources over the past two years.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Disability Indicator:<\/span> Indicates whether households include members with a disability in the past three years.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Residential Care History:<\/span> Determines whether any household member lived in residential care during 2021.<\/li>\n<\/ul>\n<span style=\"text-shadow:0.1px 0px 0px black; color:#007c9d; padding-left:20px;\">Child Version:<\/span>\n<ul>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">ASH:<\/span> Records the number of ASH incidents experienced during childhood (up to 18 years old) over the last five years.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Serious Mental Health Diagnosis Indicator:<\/span> Indicates whether an individual aged under 16 has received a serious mental health diagnosis over the past two years.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Prior Year Primary Health Organization (PHO) Enrollment:<\/span> Identifies whether the child was enrolled in a PHO during the prior year.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Health-Related School Support:<\/span> Indicates whether any household member has ever received health-related support at school (e.g., High Health Needs, ORS, IRF, physical disability).<\/li>\n<\/ul>","<span style=\"text-shadow:0.1px 0px 0px black; color:#007c9d; padding-left:20px;\">Adult Version:<\/span>\n<ul>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Victimisation:<\/span> Indicates whether any household member was recorded as a victim in the police Recorded Crime Victims Statistics dataset where the offense occurred to a person in the past 10 years.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Community Sentence Duration:<\/span> Measures the proportion of time spent by a household member in the community over the past 10 years, including post-release sentences and parole.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Custodial Sentence:<\/span> Determines whether any household member spent time in custody (including prison or on remand) or home detention within the last 10 years.<\/li>\n<\/ul>\n<span style=\"text-shadow:0.1px 0px 0px black; color:#007c9d; padding-left:20px;\">Child Version:<\/span>\n<ul>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Oranga Tamariki (OT) Youth Justice Events:<\/span> Records the number of OT youth justice-related events experienced during childhood (up to 18 years old).<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">OT Care and Protection (CNP) Events:<\/span> Records the number of OT care and protection-related events experienced during childhood (up to 18 years old).<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">OT CNP Placement or CNP Custody/Guardianship:<\/span> Indicates whether any household member had an OT CNP placement or spell in CNP custody/guardianship at any point.<\/li>\n<\/ul>","<ul>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Qualification:<\/span> Indicates whether any household member holds any qualification, serving as a proxy for literacy.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Urban/Rural Area:<\/span> Determines whether the household is situated in a rural area.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Internet or Phone Access:<\/span> Indicates whether households have access to the internet or phone services.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Household Amenities:<\/span> Indicates that the household lacks access to any of the amenities listed in the 2018 Census.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Employment:<\/span> Flags households where no one is employed or engaged in education.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Caregiver for Disabled or Ill Individuals:<\/span> Indicates that someone in the household is caring for disabled or ill family members.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Household Composition (1):<\/span> Identifies households with only one resident (single-person households).<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Household Composition (2):<\/span> Identifies households where a single adult is responsible for caring for children.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Age Composition (1):<\/span> Flags households where only older individuals (aged 65 or older) reside.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Age Composition (2):<\/span> Identifies households containing at least one person aged 65 or older.<\/li>\n<li><span style=\"text-shadow:0.1px 0px 0px black;\">Truancy:<\/span> Determines whether any child or youth in the household was flagged for truancy issues at school.<\/li>\n<\/ul>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Domain<\/th>\n      <th>Included Indicators<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"ordering":false,"paging":false,"searching":false,"info":false,"columnDefs":[{"className":"dt-nowrap","targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":{"render":[{"code":"\n    function(el, x) {\n      setTimeout(function () {\n        $(\"th:contains('Included Indicators')[class^='sorting_disabled']\")[0]\n        .style.paddingLeft = '33px';\n      }, 20);\n    }\n    ","data":null}]}}</script>
+</div>
+<div id="dataset" class="section level3">
+<h3>Dataset</h3>
+<p>The dataset used to create this tool and its accompanying paper
+includes geographical, demographic, climate, and socio-economic
+information for 2,163 SA2 boundaries in 2022, as defined by Statistics
+NZ. This list excludes SA2s with null geometries or those with zero land
+area. In addition to climate and socio-economic indicators, our tool
+incorporates data on marae, whenua (Māori freehold land), and Māori
+businesses. These are visualised through layers on the maps or
+aggregated information in the pivot table, offering insights into the
+characteristics and locations of these entities.</p>
+<p>The complete dataset can be downloaded from
+<a href="data/cli_ses_dataset.xlsx" download>here</a>.</p>
+</div>
+
+<script>
+  $(document).ready(function() {
+  	setTimeout(function() {
+  		$(".navbar-brand")[0].removeAttribute("href");
+  		var navbar = document.getElementById("navbar");
+  		var logo = document.createElement("a");
+  		logo.setAttribute("href", "https://www.tpk.govt.nz/en");
+  		logo.setAttribute("target", "_blank");
+  		logo.innerHTML = '<img class="logo" style="height:50px;top:5px;right:15px;position:absolute;">';
+  		navbar.appendChild(logo);
+  		var localLinks = document.querySelectorAll('a[href^="maps');
+  		for (var i = 0; i < localLinks.length; i++) {
+  			localLinks[i].setAttribute('target', '_blank');
+  		}
+  		document.querySelector(".main-container")
+  			.insertAdjacentHTML('afterend', '<div id="footer" style="left:0;bottom:0;width:calc(100% - 15px)"><h6 style="background-color:#333333;color:white;margin-top: 3px;margin-bottom: 0px;line-height: 60px;margin-left: 0px;margin-right: -15px;padding-left: 15px;font-size: 0.8em;"> Te Puni Kōkiri <span style="color:gray"> Te Puni Whakahaere Tikanga, <a href="mailto:matawhanui@tpk.govt.nz" style="color:gray">Data & Insights</a> - May 2024 </span><a href="https://www.tpk.govt.nz/" target="_blank"><img src="img/footer_logo.svg" style="height:22px;float:right;margin-top:19px;margin-right:15px;" /></a></h6></div>');
+  	}, 20);
+  });
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

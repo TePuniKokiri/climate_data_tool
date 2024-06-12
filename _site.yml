@@ -10,107 +10,115 @@ navbar:
       - text: Area Outside Region
         menu:
           - text: Climate
-            href: maps/aor_cli.html
+            href: maps/aor_cli.html.gz
           - text: Socio-economic
-            href: maps/aor_ses.html
+            href: maps/aor_ses.html.gz
       - text: Auckland Region
         menu:
           - text: Climate
-            href: maps/akl_cli.html
+            href: maps/akl_cli.html.gz
           - text: Socio-economic
-            href: maps/akl_ses.html
+            href: maps/akl_ses.html.gz
       - text: Bay of Plenty Region
         menu:
           - text: Climate
-            href: maps/bop_cli.html
+            href: maps/bop_cli.html.gz
           - text: Socio-economic
-            href: maps/bop_ses.html
+            href: maps/bop_ses.html.gz
       - text: Canterbury Region
         menu:
           - text: Climate
-            href: maps/cty_cli.html
+            href: maps/cty_cli.html.gz
           - text: Socio-economic
-            href: maps/cty_ses.html
+            href: maps/cty_ses.html.gz
       - text: Gisborne Region
         menu:
           - text: Climate
-            href: maps/gis_cli.html
+            href: maps/gis_cli.html.gz
           - text: Socio-economic
-            href: maps/gis_ses.html
+            href: maps/gis_ses.html.gz
       - text: "Hawke's Bay Region"
         menu:
           - text: Climate
-            href: maps/hkb_cli.html
+            href: maps/hkb_cli.html.gz
           - text: Socio-economic
-            href: maps/hkb_ses.html
+            href: maps/hkb_ses.html.gz
       - text: "Manawatū-Whanganui Region"
         menu:
           - text: Climate
-            href: maps/mwa_cli.html
+            href: maps/mwa_cli.html.gz
           - text: Socio-economic
-            href: maps/mwa_ses.html
+            href: maps/mwa_ses.html.gz
       - text: Marlborough Region
         menu:
           - text: Climate
-            href: maps/mrl_cli.html
+            href: maps/mrl_cli.html.gz
           - text: Socio-economic
-            href: maps/mrl_ses.html
+            href: maps/mrl_ses.html.gz
       - text: Nelson Region
         menu:
           - text: Climate
-            href: maps/nel_cli.html
+            href: maps/nel_cli.html.gz
           - text: Socio-economic
-            href: maps/nel_ses.html
+            href: maps/nel_ses.html.gz
       - text: Northland Region
         menu:
           - text: Climate
-            href: maps/ntl_cli.html
+            href: maps/ntl_cli.html.gz
           - text: Socio-economic
-            href: maps/ntl_ses.html
+            href: maps/ntl_ses.html.gz
       - text: Otago Region
         menu:
           - text: Climate
-            href: maps/otg_cli.html
+            href: maps/otg_cli.html.gz
           - text: Socio-economic
-            href: maps/otg_ses.html
+            href: maps/otg_ses.html.gz
       - text: Southland Region
         menu:
           - text: Climate
-            href: maps/stl_cli.html
+            href: maps/stl_cli.html.gz
           - text: Socio-economic
-            href: maps/stl_ses.html
+            href: maps/stl_ses.html.gz
       - text: Taranaki Region
         menu:
           - text: Climate
-            href: maps/tki_cli.html
+            href: maps/tki_cli.html.gz
           - text: Socio-economic
-            href: maps/tki_ses.html
+            href: maps/tki_ses.html.gz
       - text: Tasman Region
         menu:
           - text: Climate
-            href: maps/tas_cli.html
+            href: maps/tas_cli.html.gz
           - text: Socio-economic
-            href: maps/tas_ses.html
+            href: maps/tas_ses.html.gz
       - text: Waikato Region
         menu:
           - text: Climate
-            href: maps/wko_cli.html
+            href: maps/wko_cli.html.gz
           - text: Socio-economic
-            href: maps/wko_ses.html
+            href: maps/wko_ses.html.gz
       - text: Wellington Region
         menu:
           - text: Climate
-            href: maps/wgn_cli.html
+            href: maps/wgn_cli.html.gz
           - text: Socio-economic
-            href: maps/wgn_ses.html
+            href: maps/wgn_ses.html.gz
       - text: West Coast Region
         menu:
           - text: Climate
-            href: maps/wes_cli.html
+            href: maps/wes_cli.html.gz
           - text: Socio-economic
-            href: maps/wes_ses.html
-output: 
+            href: maps/wes_ses.html.gz
+    - text: "Methodology and Data"
+      href: data.html
+    - text: "About"
+      href: about.html
+output:
   html_document:
+    theme: flatly
     includes:
-      in_header: "favicon.html"
-    css: style.css
+      in_header: misc/favicon.html
+      after_body:
+        - script/script.js
+    css: style/style.css
+exclude: ["script", "misc"]

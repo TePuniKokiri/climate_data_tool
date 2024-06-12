@@ -1,0 +1,544 @@
+body {
+    text-align: justify;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*position: relative;*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding-bottom: 0px !important;
+}
+.main-container {
+    max-width: 90% !important;
+    margin: auto;
+    
+    margin-top: 0;
+}
+.container {
+    width: 100%;
+}
+table {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.title {
+    color: #007c9d;
+}
+.navbar-default {
+    background-color: #007c9d;
+    border-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: #004e62;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: #004e62;
+    color: #ffffff;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #005d76;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #89e6ff;
+    background-color: transparent;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffffff;
+    background-color: transparent;
+}
+#the_map, #the_table {
+    margin-right: 0px;
+}
+#the_table {
+    background-color: white;
+    margin-bottom: 20px;
+}
+#tables {
+    padding-top: 0px;
+}
+@-webkit-keyframes shine {
+    0%, 10% {
+		    background-position: -1000px;
+    }
+    20% {
+		    background-position: top left;
+    }
+    90% {
+        background-position: top right;
+    }
+    100% {
+        background-position: 1000px;
+    }
+}
+@media (max-width: 992px){
+    #the_map, #the_table {
+        margin-right: 15px;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-9 {
+        width: 74%;
+    }
+}
+@media (min-width: 890px) {
+    .logo {
+        content: url("../img/tpk_logo.svg");
+    }
+}
+@media (min-width: 767px) and (max-width: 890px) {
+    .logo {
+        content: url("../img/tpk_short_logo.svg");
+    }
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ffffff;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #89e6ff;
+        background-color: transparent;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #ffffff;
+        background-color: #1a242f;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #cccccc;
+        background-color: transparent;
+    }
+}
+.img-right {
+    float: right;
+    margin-left: 30px;
+    margin-right: 0px;
+}
+@media (max-width: 1400px) {
+    .img-right {
+        float: none;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+h1 {
+    margin-top: 21px;
+    margin-bottom: 21px;
+}
+a {
+    color: #007c9d;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: #007c9d;
+    text-decoration: underline;
+}
+.caption {
+    margin-top: -45px;
+    color: #80c6d9;
+    margin-left: 10px;
+}
+figcaption {
+    color: #797979;
+    font-size: 14px;
+    margin-bottom: 12px;
+    
+    display: table-caption;
+    caption-side: bottom;
+}
+caption {
+    color: #797979 !important;
+    font-size: 14px;
+}
+li::marker {
+  color: #007c9d;
+}
+[tooltip] {
+    position: relative;
+}
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+    text-transform: none;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 1.5;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+[tooltip]::before {
+    content: "";
+    border: 5px solid transparent;
+    z-index: 1001;
+}
+[tooltip]::after {
+    content: attr(tooltip);
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial,
+        sans-serif !important;
+    text-align: justify;
+    width: max-content;
+    max-width: 300px;
+    white-space: break-spaces;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1ch 1.5ch;
+    border-radius: 0.3ch;
+    box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+    background: #333;
+    color: #fff;
+    z-index: 1000;
+}
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+    display: block;
+}
+/* Don't show empty tooltips */
+[tooltip=""]::before,
+[tooltip=""]::after {
+    display: none !important;
+}
+/* Flow: up */
+[tooltip]:not([flow])::before,
+[tooltip][flow^="up"]::before {
+    bottom: 100%;
+    border-bottom-width: 0;
+    border-top-color: #333;
+    top: calc(0em - 10px);
+}
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::after {
+    bottom: calc(100% + 10px);
+}
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::before,
+[tooltip][flow^="up"]::after {
+    left: 50%;
+    transform: translate(-50%, -0.5em);
+}
+/* Flow: down */
+[tooltip][flow^="down"]::before {
+    top: 100%;
+    border-top-width: 0;
+    border-bottom-color: #333;
+    bottom: calc(0em - 10px);
+}
+[tooltip][flow^="down"]::after {
+    top: calc(100% + 10px);
+}
+[tooltip][flow^="down"]::before,
+[tooltip][flow^="down"]::after {
+    left: 50%;
+    transform: translate(-50%, 0.5em);
+}
+/* Flow: left */
+[tooltip][flow^="left"]::before {
+    top: 50%;
+    border-right-width: 0;
+    border-left-color: #333;
+    left: calc(0em - 10px);
+    transform: translate(-0.5em, -50%);
+}
+[tooltip][flow^="left"]::after {
+    top: 50%;
+    right: calc(100% + 10px);
+    transform: translate(-0.5em, -50%);
+}
+[tooltip][flow^="right"]::before {
+    top: 50%;
+    border-left-width: 0;
+    border-right-color: #333;
+    right: calc(0em - 10px);
+    transform: translate(0.5em, -50%);
+}
+[tooltip][flow^="right"]::after {
+    top: 50%;
+    left: calc(100% + 10px);
+    transform: translate(0.5em, -50%);
+}
+/* Flow: topright */
+[tooltip][flow^="topright"]::before {
+    top: calc(0% + 5px);
+    border-left-width: 0;
+    border-right-color: #333;
+    right: calc(0em - 10px);
+    transform: translate(0.5em, 0em);
+}
+[tooltip][flow^="topright"]::after {
+    top: 5px;
+    left: calc(100% + 10px);
+    transform: translate(0.5em, 0em);
+}
+/* Keyframes */
+@keyframes tooltips-vert {
+    to {
+        opacity: 0.9;
+        transform: translate(0%, 0);
+    }
+}
+@keyframes tooltips-horz {
+    to {
+        opacity: 0.9;
+        transform: translate(0, -50%);
+    }
+}
+/* Rest of stuff */
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+    animation: tooltips-vert 300ms ease-out forwards;
+}
+[tooltip][flow^="left"]:hover::before,
+[tooltip][flow^="left"]:hover::after,
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+    animation: tooltips-horz 300ms ease-out forwards;
+}
+[tooltip][flow^="topright"]:hover::before,
+[tooltip][flow^="topright"]:hover::after {
+    animation: tooltips-vert 300ms ease-out forwards;
+}
+.pvtAxisContainer li {
+    padding: 6px 6px !important;
+}
+.pvtAxisContainer li span.pvtAttr {
+    font-size: 14px !important;
+    -webkit-text-size-adjust: 100% !important;
+    border: 1px solid #a3a3a3 !important;
+    padding: 2px 5px !important;
+    white-space: nowrap !important;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    border-radius: 4px !important;
+}
+.pvtAxisContainer li.pvtFilteredAttribute span.pvtAttr {
+    filter: brightness(85%);
+    z-index: 99;
+}
+.pvtRendererArea {
+    padding: 0px;
+}
+.pvtUi {
+    border-collapse: separate !important;
+    border-spacing: 4px;
+    padding-bottom: 10px;
+}
+.pvtRenderer,
+.pvtAggregator,
+.pvtAttrDropdown {
+    padding: 3px;
+    border-radius: 4px;
+}
+.pvtRenderer {
+    margin-bottom: 12px;
+    margin-left: 5px;
+}
+.pvtAxisContainer,
+.pvtVals {
+    border: 1px solid gray !important;
+    border-radius: 3px !important;
+    background: #dddddd !important;
+    padding: 5px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+}
+.pvtVals {
+    text-align: left !important;
+    white-space: nowrap !important;
+    padding: 11px 11px 11px 11px !important;
+}
+table.pvtTable {
+    border-collapse: separate !important;
+    border-spacing: 0;
+}
+table.pvtTable tbody tr td {
+    color: #3d3d3d;
+    padding: 5px;
+    background-color: #fff;
+    border-right: 1px solid #dddddd !important;
+    border-bottom: 1px solid #dddddd !important;
+    border-left: none !important;
+    border-top: none !important;
+    vertical-align: middle !important;
+    text-align: right;
+}
+table.pvtTable tbody tr th,
+table.pvtTable thead tr th {
+    background-color: #636363 !important;
+    border-right: 1px solid #dddddd !important;
+    border-bottom: 1px solid #dddddd !important;
+    border-left: none !important;
+    border-top: none !important;
+    color: white;
+    font-size: 8pt !important;
+    padding: 7px !important;
+}
+table.pvtTable thead tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+}
+table.pvtTable tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+}
+table.pvtTable tbody tr:last-of-type th:first-of-type {
+    border-bottom-left-radius: 5px;
+}
+table.pvtTable tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
+.pvtTable thead {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 2;
+    top: -8px;
+}
+.pvtTable thead .pvtAxisLabel {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 3;
+    top: -8px;
+}
+.pvtTable tbody tr .pvtRowLabel {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1;
+    /*vertical-align: middle;*/
+}
+.pvtTable tbody tr .pvtColTotalLabel {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 3;
+    left: -12px;
+}
+.pvtTable thead tr:first-child th:first-child {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 3;
+    left: -12px;
+    top: -8px;
+}
+.pvtTable thead tr:last-child th:last-child {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 3;
+}
+table.pvtTable .pvtRowLabel {
+    /*vertical-align: top;*/
+    white-space: nowrap;
+}
+table.pvtTable .pvtAxisLabel, table.pvtTable .pvtColLabel {
+    white-space: nowrap;
+}
+.pvtFilterBox {
+    white-space: normal;
+}
+.pvtColOrder,
+.pvtRowOrder {
+    text-decoration: none !important;
+}
+.node {
+    border: solid 1px white;
+    font-size: 10px;
+    line-height: 12px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 2px;
+    padding-top: 1px;
+    padding-left: 3px;
+}
+.pvtUiCell {
+    white-space: nowrap;
+}
+.pvtFilterBox h4 {
+    padding-top: 5px !important;
+}
+label {
+    font-weight: 100 !important;
+}
+.leaflet-container {
+    font: 12px/1.5 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.info {
+    font: 14px/16px "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.leaflet-popup-content {
+    margin: 13px 19px;
+    line-height: 1.4;
+}
+.leaflet-popup-content > table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px !important;
+    border-color: gray;
+}
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+.leaflet-popup-content > table tr td div {
+    margin-left: 2px;
+}
+.leaflet-control-layers-selector {
+    margin-top: 2px;
+    position: relative;
+    top: 1px;
+    height: 12px;
+}
+.bottom-arrow {
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+.bottom-arrow:before {
+    content: '';
+    position: absolute;
+    right: calc(100% - 6px);
+    bottom: -4px;
+    margin: 0 auto;
+    width: 0;
+    border-bottom: 4px solid transparent;
+    border-right: 11px solid #555;
+    border-top: 4px solid transparent;
+}
+.odd {
+    background: #eaf6f9 !important;
+}
+table.dataTable.no-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}

@@ -1,39 +1,47 @@
 ---
 title: "Climate Hazards for Hapori Māori"
+output:
+  html_document:
+    theme: flatly
+    includes:
+      after_body:
+        - script/index_script.js
+        - script/script.js
 ---
 
-```{js, echo=FALSE}
-
-$('.title').css('color', '#007C9D');
-$('.tabset').css('color', '#007C9D');
-$(document).ready(function() {
-    $head = $('#navbar');
-    $head.prepend('<img src=\"tpk_logo.svg\" style=\"height:40px;top:5px;right:15px;position:absolute;\"/>');
-    setTimeout(function(){
-      var localLinks = document.querySelectorAll('a[href^="maps');
-      for(var i = 0; i < localLinks.length; i++) {
-        localLinks[i].setAttribute('target', '_blank');
-      }
-    }, 20);
-    document.querySelector(".rpivotTable").setAttribute('style', 'position:relative;');
-});
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+paper_link <-
+  paste0(
+    "https://www.tpk.govt.nz",
+    "/en/o-matou-mohiotanga",
+    "/climate/understanding-climate-hazards-for-hapori-maori-ins"
+  )
+guide_link <-
+  paste0(
+    "https://camo.githubusercontent.com",
+    "/b26592afe00593d868948da3311b553d3c40fd6922b3875a51b31e7123baacce",
+    "/68747470733a2f2f7069766f747461626c652e6a732e6f72672f696d616765732f616e696d6174696f6e2e676966"
+  )
 ```
 
-<br>
-<span style="color:#007C9D;font-size:medium"> <em>
-Climate change presents significant challenges that necessitate robust policies
-and implementable strategies to support resilience and avoid maladaptation.
-The first step towards effective policy interventions is gaining a
-comprehensive understanding of the risks faced by our communities. By tailoring
-adaptation actions to address these risks, we can better serve our communities.
-</em></span>
-<br><br>
+<div style="color:#007C9D;font-size:medium;margin-bottom: 21px;"> <em>
+    Climate change presents significant challenges that necessitate robust
+    policies and implementable strategies to support resilience and avoid
+    maladaptation. The first step towards effective policy interventions is
+    gaining a comprehensive understanding of the risks faced by our communities.
+    By tailoring adaptation actions to address these risks, we can better serve
+    our communities.
+    </em>
+</div>
 
 We have embarked on an initial exploratory analysis to examine what risks exist
 specifically for hapori Māori. By assessing the socio-economic
 circumstances and resilience of hapori Māori exposed to various climate hazards,
-the findings presented in this report offer valuable insights to inform the
-immediate shaping of future climate change policy design.
+the findings published in <a href=`r paper_link` target="_blank">this</a>
+report offer valuable insights to inform the immediate shaping of future climate
+change policy design.
+
 This page includes key visualisations from this study. We have included a
 comprehensive map of the climate hazards projected to affect the greatest
 number of Māori households in the future, namely heatwaves, droughts, extreme
@@ -42,94 +50,73 @@ hazards already significantly impacting Māori households, such as flooding.
 Furthermore, the page delves into the socio-economic circumstances and
 resilience of Māori communities exposed to these climate hazards, shedding
 light on disparities and areas that may require targeted policies. For instance,
-it emphasizes the vulnerability of hapori Māori in coastal areas due to sea 
+it emphasises the vulnerability of hapori Māori in coastal areas due to sea 
 level rise, as well as the challenges faced by older Māori households with lower
 adaptability due to factors like social isolation and lack of support systems.
 
-<br>
-Click on the following tabs to see the results:
-<br>
+<br> Before using this application, please take a moment to read the Methodology
+and Data section. Click on the following tabs to see the results: <br>
 
 ### <span></span> {.tabset}
 
 #### Maps
-
-:::::: {.columns}
-::: {.column width="25%"}
-These maps are based on the climate datasets provided by the National Institute
-of Water and Atmospheric Research <a href="https://niwa.co.nz/" target="_blank">(NIWA)</a>.
-We obtained climate maps for a
-baseline period from 1986 to 2005 and projected changes averaged over time.
-The projections for this analysis were based on a low-moderate global emission
-trajectory called Representative Concentration Pathways (RCP), developed by
-IPCC and used in global climate models.
-
-For flooding, we obtained the 2021 composite flood hazard area maps from NIWA,
-with consent from district and regional councils. These were created from
-modelled and historic flood hazard maps and flood prone soil maps, publicly
-available in August 2018.
-
-These maps also include various socio-economic filter layers that can be
-overlaid on climate information. To construct household-level measures of
-socio-economic circumstances, we utilized the Integrated Data Infrastructure
-<a href="https://www.stats.govt.nz/integrated-data/integrated-data-infrastructure/" target="_blank">(IDI)</a>.
-The social indicators were selected based on their ability to capture
-the resilience and adaptive capacity of hapori Māori. These indicators included
-variables such as income, employment, education, health, and housing.
-Statistical techniques and feedback from subject matter experts were used to
-consolidate the numerous social indicators (approximately 100) into composite
-indices representing different aspects of socio-economic risk.
+<div class="row">
+<div class="col-md-3">
+This map provides both overall climate and socio-economic information at a
+regional level. You can use the layers control icon to switch between these two
+layers on the map. Additionally, we have included more detailed maps for each
+regional council at the Statistical Area 2 (SA2) level. These maps can be
+accessed via popup windows by clicking on a region or using the navbar at the
+top of this page. The climate-based maps for SA2s include various socio-economic
+filter layers that can be overlaid on climate information. Similarly, the
+socio-economic-based maps can be masked by climate filter layers. Note that a
+higher decile number corresponds to a greater risk level in these maps.
 
 <h5 style="color:#007C9D">How to use:</h5>
 * Zoom in/out using the buttons or the mouse scroll wheel, move by dragging
 * Fullscreen and reset view buttons
 * Download button to export the map with current view to a PNG file
-* Layer control for base and overlay maps, and toggling marker locations (marae)
+* Layer control for base (and overlay) maps, and toggling marker locations
+(marae)
 * Search button/toolbar based on SA2 names
-* Detect location button to highlight user’s location (permission required)
 * Hover and popup information for shapes and markers
-
-:::
-::: {.column width="2%"}
-
-:::
-::: {.column width="73%"}
-```{r out.width='100%', out.height='750px', echo=FALSE}
+</div>
+<div class="col-md-9" id="the_map">
+```{r out.width='calc(100% + 15px)', out.height='750px', echo=FALSE}
 library(leaflet)
 readRDS("../../processed_data/national_maps/overall_base_widget.rds")
 ```
-:::
-::::::
+</div>
+</div>
 
 #### Tables
-:::::: {.columns}
-::: {.column width="25%"}
-
-This visualisation enables data exploration and analysis by turning the project's dataset
-into a summary table and then optionally adding a true 2-d drag'n'drop UI to
-allow users to manipulate this summary table, turning it into a pivot table,
-very similar to the one found in older versions of Microsoft Excel with a bunch
-of extra developer-oriented features and some visualization effects.
-We have also included several add-ons, with which the summary table can be
-rendered as various kinds of charts, turning the pivot table into a pivot chart.
+<div class="row">
+<div class="col-md-3" style="padding-top:12px;">
+This visualisation tool facilitates data exploration and analysis by
+transforming the dataset into a concise summary table. Additionally, it offers
+an optional 2-dimensional drag-and-drop user interface that allows users to
+manipulate this summary table, effectively converting it into a pivot table.
+Furthermore, we have included several plugins that allow the summary table to
+be rendered as various types of charts, effectively turning the pivot table
+into a dynamic pivot chart. The information provided in this table excludes
+SA2s with missing climate or socio-economic information. Note that the table
+displays output for attribute values that exist in the data. If there is no
+data related to a specific category, the corresponding cells are left blank.
 
 <h5 style="color:#007C9D">How to use:</h5>
-* Select a plugin from top left dropdown menu, e.g., Table, Bar Chart, etc.
-* Select an aggregator method from the next dropdown menu, e.g., Count, Integer Sum, etc.
-* Drag'n'drop desired attributes in a row or column container
-* Filter by categories for each of the attributes 
-* Sort the results by count or alphabetically
-* Click <a href="https://camo.githubusercontent.com/b26592afe00593d868948da3311b553d3c40fd6922b3875a51b31e7123baacce/68747470733a2f2f7069766f747461626c652e6a732e6f72672f696d616765732f616e696d6174696f6e2e676966" target="_blank">here</a> for a visualised guide 
-
-:::
-::: {.column width="2%"}
-\
-<!-- an empty Div (with a white space), serving as a column separator -->
-:::
-::: {.column style="width:73%;overflow:scroll;padding-top:7px"}
-```{r, out.width='100%', out.height='750px', echo=FALSE}
-library(rpivotTable)
-readRDS("../../processed_data/pivot_table/pivot_widget.rds")
+* From the top-left dropdown menu, select a plugin such as `Table` or
+`Bar Chart`
+* Next, choose an aggregator method from the dropdown menu. Options include
+`Count`, `Sum`, and more
+* Drag and drop the desired attributes into either the row or column container
+* Filter the attributes by categories
+* Arrange the results either by count or alphabetically
+* Click <a href=`r guide_link` target="_blank">here</a> for a visualised guide
+</div>
+<div class="col-md-9" id="the_table"
+     style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
+```{r out.width='100%', out.height='762px', echo=FALSE}
+htmltools::includeHTML("../../output_data/pivot_table/pivot_table.html")
 ```
-:::
-::::::
+</div>
+</div>

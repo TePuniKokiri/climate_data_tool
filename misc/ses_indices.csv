@@ -1,0 +1,49 @@
+﻿Domain,Included Indicators
+"<span style=""text-shadow:0.1px 0px 0px black; color:#007c9d;"">Poverty Risk Index</span>","<ul>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Main Working Age Benefit:</span> Indicates whether any household member received a main working age benefit in the year ending March 2022 (from APC).</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Government Income Support and 'Other' Benefits:</span> Quantifies the amount of government income support and 'other' benefits (e.g., Tiers 2, 3, Paid Parental Leave, Working for Families) for the year ending March 2022 (from APC).</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Low Total Household Taxable Income Indicator:</span> Flags households with low total taxable income (from APC).</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Kāinga Ora Housing Application:</span> Determines whether any household member applied for Kāinga Ora housing since 2020 or is a current resident.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">High Deprivation Area:</span> Identifies whether the household is located in an area of high deprivation (NZDep2018 ≥ 8).</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Child Support Duration:</span> Measures the proportion of time a household member was supported on benefit during childhood (up to 18 years).</li>
+</ul>"
+"<span style=""text-shadow:0.1px 0px 0px black; color:#007c9d;"">Health Risk Index</span>","<span style=""text-shadow:0.1px 0px 0px black; color:#007c9d; padding-left:20px;"">Adult Version:</span>
+<ul>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Ambulatory Sensitive Hospitalisations (ASH):</span> Records the number of ASH incidents for adult household members over the last five years.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Indicators of ASH Events by Type:</span> Includes indicators for specific ASH events, i.e., respiratory-related, diabetes, strokes, cardiovascular-related, and asthma.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Serious Mental Health Diagnosis Indicator:</span> Indicates whether an individual aged 16 and older has received a serious mental health diagnosis based on various data sources over the past two years.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Disability Indicator:</span> Indicates whether households include members with a disability in the past three years.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Residential Care History:</span> Determines whether any household member lived in residential care during 2021.</li>
+</ul>
+<span style=""text-shadow:0.1px 0px 0px black; color:#007c9d; padding-left:20px;"">Child Version:</span>
+<ul>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">ASH:</span> Records the number of ASH incidents experienced during childhood (up to 18 years old) over the last five years.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Serious Mental Health Diagnosis Indicator:</span> Indicates whether an individual aged under 16 has received a serious mental health diagnosis over the past two years.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Prior Year Primary Health Organization (PHO) Enrollment:</span> Identifies whether the child was enrolled in a PHO during the prior year.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Health-Related School Support:</span> Indicates whether any household member has ever received health-related support at school (e.g., High Health Needs, ORS, IRF, physical disability).</li>
+</ul>"
+"<span style=""text-shadow:0.1px 0px 0px black; color:#007c9d;"">Justice Risk Index</span>","<span style=""text-shadow:0.1px 0px 0px black; color:#007c9d; padding-left:20px;"">Adult Version:</span>
+<ul>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Victimisation:</span> Indicates whether any household member was recorded as a victim in the police Recorded Crime Victims Statistics dataset where the offense occurred to a person in the past 10 years.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Community Sentence Duration:</span> Measures the proportion of time spent by a household member in the community over the past 10 years, including post-release sentences and parole.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Custodial Sentence:</span> Determines whether any household member spent time in custody (including prison or on remand) or home detention within the last 10 years.</li>
+</ul>
+<span style=""text-shadow:0.1px 0px 0px black; color:#007c9d; padding-left:20px;"">Child Version:</span>
+<ul>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Oranga Tamariki (OT) Youth Justice Events:</span> Records the number of OT youth justice-related events experienced during childhood (up to 18 years old).</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">OT Care and Protection (CNP) Events:</span> Records the number of OT care and protection-related events experienced during childhood (up to 18 years old).</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">OT CNP Placement or CNP Custody/Guardianship:</span> Indicates whether any household member had an OT CNP placement or spell in CNP custody/guardianship at any point.</li>
+</ul>"
+"<span style=""text-shadow:0.1px 0px 0px black; color:#007c9d;"">Adaptability Risk Index</span>","<ul>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Qualification:</span> Indicates whether any household member holds any qualification, serving as a proxy for literacy.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Urban/Rural Area:</span> Determines whether the household is situated in a rural area.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Internet or Phone Access:</span> Indicates whether households have access to the internet or phone services.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Household Amenities:</span> Indicates that the household lacks access to any of the amenities listed in the 2018 Census.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Employment:</span> Flags households where no one is employed or engaged in education.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Caregiver for Disabled or Ill Individuals:</span> Indicates that someone in the household is caring for disabled or ill family members.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Household Composition (1):</span> Identifies households with only one resident (single-person households).</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Household Composition (2):</span> Identifies households where a single adult is responsible for caring for children.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Age Composition (1):</span> Flags households where only older individuals (aged 65 or older) reside.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Age Composition (2):</span> Identifies households containing at least one person aged 65 or older.</li>
+<li><span style=""text-shadow:0.1px 0px 0px black;"">Truancy:</span> Determines whether any child or youth in the household was flagged for truancy issues at school.</li>
+</ul>"
