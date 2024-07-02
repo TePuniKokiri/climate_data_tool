@@ -1,6 +1,6 @@
 body {
     text-align: justify;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     /*position: relative;*/
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@ body {
     width: 100%;
 }
 table {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .title {
     color: #007c9d;
@@ -483,10 +483,10 @@ label {
     font-weight: 100 !important;
 }
 .leaflet-container {
-    font: 12px/1.5 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 12px/1.5 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .info {
-    font: 14px/16px "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 14px/16px "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .leaflet-popup-content {
     margin: 13px 19px;
