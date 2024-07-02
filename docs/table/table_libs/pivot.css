@@ -113,3 +113,23 @@ table.pvtTable tbody tr td {
 .pvtCheckContainer p{ margin: 5px; }
 
 /* .pvtRendererArea { padding: 5px;} */
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../../site_libs/bootstrap-3.3.5/css/fonts/Lato.ttf) format('truetype');
+    }
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../../site_libs/bootstrap-3.3.5/css/fonts/LatoBold.ttf) format('truetype');
+    }
+@font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: url(../../site_libs/bootstrap-3.3.5/css/fonts/LatoItalic.ttf) format('truetype');  
+    }
+  

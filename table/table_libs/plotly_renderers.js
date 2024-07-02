@@ -100,6 +100,9 @@
           width: window.innerWidth / 1.4,
           // height: window.innerHeight / 1.4 - 50
 		  height: 600,
+		  font: {
+			family:'Lato'
+		  },
 		  colorway: Array(nCol).fill().map((element, index) => d3.scale.linear().domain([0, 0.25, 0.5, 0.75, 1]).range(["#007c9d", "#03b1df", "#bbbbbb", "#ffb975", "#fd8542"])(index / (nCol - 1)))
         };
         if (traceOptions.type === 'pie') {
