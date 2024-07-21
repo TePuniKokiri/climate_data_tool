@@ -97,7 +97,7 @@
         layout = {
           title: titleText,
           hovermode: 'closest',
-          width: window.innerWidth / 1.4,
+          width: window.innerWidth / 1.477,
           // height: window.innerHeight / 1.4 - 50
 		  height: 600,
 		  font: {
