@@ -120,3 +120,35 @@ htmltools::includeHTML("../../output_data/pivot_table/pivot_table.html")
 ```
 </div>
 </div>
+
+#### Location Insights
+<div class="row">
+<div class="col-md-3">
+This tool is designed to help users search for specific locations and gain
+comprehensive insights about them. By simply entering the name of a city, town,
+or suburb into the search bar, users can access detailed information including
+geographic data, demographic statistics, climate variables, and socio-economic
+indicators of the overlapping SA2 areas. The findings provide
+a comprehensive view of the area, making it easier for users to understand the
+characteristics and conditions of different locations. The location data is
+based on New Zealand Suburbs and Localities, a dataset administered by Toitū Te
+Whenua Land Information New Zealand (last updated on August 2024).
+
+<h5 style="color:#007C9D">How to use:</h5>
+* Enter the name of a place into the search bar and select the most relevant
+suggestion
+* The search process includes both main and alternative names, but the
+alternative names are not displayed in the suggestions
+* Select `All Results` to view all overlapping SA2 areas, and select an SA2 to
+expand its information, the search results are ordered by the extent to which a
+place's shape is covered by an SA2
+* Select either the `Climate` or `SES` button to view the corresponding
+visualisation 
+</div>
+<div class="col-md-9" id="the_finder"
+     style="height:750px;overflow:auto;padding-top:0px;padding-left:14px;padding-right:0px;">
+```{r out.width='100%', out.height='762px', echo=FALSE}
+htmltools::includeHTML("../../output_data/finder/finder.html")
+```
+</div>
+</div>

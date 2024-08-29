@@ -1,0 +1,240 @@
+.typeahead-standalone {
+  text-align: left;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+  line-height: 30px;
+  min-width: 720px;
+}
+.typeahead-standalone .tt-input {
+  z-index: 1;
+  background: transparent;
+  padding-left: 8px;
+  padding-bottom: 0px;
+  /*margin-bottom:-6px;*/
+  margin-bottom: -3px;
+  height: 30px;
+  min-width: 720px;
+}
+.typeahead-standalone .tt-hint {
+  cursor: default;
+  user-select: none;
+  background: #fff;
+  color: #767676;
+  z-index: 0;
+  padding-left: 9px;
+  min-width: 720px;
+}
+.typeahead-standalone .tt-list {
+  background: #fff;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: auto;
+  border: 1px solid rgba(50, 50, 50, 0.6);
+  border-radius: 4px;
+  box-shadow: 0 10px 10px #0000001a;
+  position: absolute;
+  max-height: 50vh;
+  margin-top: 30px !important;
+  padding-left: 3px;
+  width: -webkit-fill-available !important;
+  min-width: 720px;
+}
+.typeahead-standalone .tt-list.tt-hide {
+  display: none;
+}
+.typeahead-standalone .tt-list div[class^="tt-"] {
+  padding: 0 4px;
+}
+.typeahead-standalone .tt-list .tt-suggestion:hover,
+.typeahead-standalone .tt-list .tt-suggestion.tt-selected {
+  background: #007c9d52;
+  cursor: pointer;
+  padding-left: 7px;
+  margin-left: -3px;
+}
+.typeahead-standalone .tt-list .tt-suggestion .tt-highlight {
+  font-weight: 900;
+}
+.tt-highlight {
+  color: #00a0cb;
+}
+.typeahead-standalone .tt-list .tt-group {
+  background: #eee;
+}
+#searchInput {
+  border: 1px solid #4b4b4b;
+  border-radius: 3px;
+}
+.tt-hint {
+  margin-top: -27px;
+  border: none;
+}
+.panel-default > .panel-heading {
+  color: #ffffff;
+  background-color: #007c9daa;
+  border-color: #ecf0f1;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.panel-default {
+  border-color: #007c9d5e;
+}
+.panel-group {
+  padding-top: 4px;
+  min-width: 720px;
+}
+.typeahead-standalone:focus-visible,
+#searchInput:focus-visible {
+  outline: none;
+}
+.panel-title a.collapsed {
+  color: black;
+}
+.panel-title a:hover {
+  color: #00566d !important;
+  text-decoration: none;
+}
+.panel-title a.collapsed:focus {
+  color: black;
+  text-decoration: none;
+}
+.panel-title a:focus {
+  color: white;
+  text-decoration: none;
+}
+.btn-group,
+.btn-group-vertical {
+  display: flex;
+}
+.btn-group > .btn,
+.btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+  padding: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.btn-primary {
+  border-color: #04586f;
+  height: 27px;
+  align-content: center;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #04586f;
+  border-color: #04586f;
+}
+.btn-primary {
+  color: #ffffff;
+  background-color: #007c9db8;
+  border-color: transparent;
+}
+.btn-primary:hover {
+  color: #ffffff;
+  background-color: #1a242f;
+  border-color: #161f29;
+}
+.panel-body {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 690px;
+}
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active {
+  outline: none;
+}
+.panel-col {
+  margin: 0em;
+  flex: 1;
+}
+.panel-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: calc(33.33% - 240px);
+  flex: 1;
+}
+[id^="gauges"] {
+  line-height: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 30%;
+  margin-right: 10px;
+}
+[id^="gauges"] div {
+  height: auto;
+}
+.gauge-container {
+  width: 170px;
+  height: 100px !important;
+  text-align: center;
+  vertical-align: middle;
+}
+.gauge-title {
+  position: relative;
+  font-size: 12px;
+  /*margin-bottom: 7%;*/
+  margin-bottom: 10%;
+  /*top: 10%;*/
+  top: 9%;
+}
+.gauge-min {
+  position: relative;
+  left: -27%;
+  font-size: 10px;
+  /*bottom: -10%;*/
+  bottom: -5%;
+}
+.gauge-value {
+  font-size: 11px;
+  color: #888;
+  /*margin-top: -3%;*/
+  margin-top: -6%;
+}
+.gauge-max {
+  position: relative;
+  left: 27%;
+  bottom: -15%;
+  font-size: 10px;
+}
+.dtitle {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 0px;
+}
+.dvalue {
+  font-size: 12px;
+  color: black;
+  margin-top: -3px;
+  margin-bottom: 0px;
+}
+.fdtitle {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 2px;
+}
+.fdvalue {
+  font-size: 12px;
+  color: black;
+  margin-top: -3px;
+  margin-bottom: 3px;
+}
+.loc-dot {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background-color: #007c9d;
+  border-radius: 50%;
+}

@@ -587,8 +587,9 @@ significantly impact people and communities by causing hazards such as
 flooding, landslides, and damage to buildings and infrastructure. In
 this tool, extreme rainfall is defined as the number of days per year
 when rainfall exceeds 30 mm in a day. The indicator is categorised into
-five-day and ten-day bins in the pivot table and maps, respectively.
-Some categories may have been merged due to low counts.</p>
+five-day bins in the pivot table, and ten-day bins in the maps and
+location insights. Some categories may have been merged due to low
+counts.</p>
 <h4 style="color:#007c9d;">
 <img src="img/heatwave.svg" style="margin-right:10px;" alt="Heatwave"/>
 Heatwave
@@ -603,9 +604,9 @@ surge in heat-related deaths, pressure on water and energy resources,
 and challenges to food and livelihood security. In this study, a
 heatwave is defined as a period of three consecutive days (or more)
 during which the temperature exceeds 25 degrees Celsius. The heatwave
-data is categorised into five-day and ten-day bins in the maps and the
-pivot table, respectively. Note that categories with lower counts may
-have been combined in the maps or tables.</p>
+data is categorised into five-day bins in the maps and location
+insights, and ten-day bins in the pivot table. Note that categories with
+lower counts may have been combined in the maps or tables.</p>
 <h4 style="color:#007c9d;">
 <img src="img/hot_days.svg" style="margin-right:10px;" alt="Extreme Hot Days"/>
 Extreme Hot Days
@@ -618,8 +619,9 @@ those in poverty, are particularly susceptible. Additionally, heatwaves
 strain health services, disrupt infrastructure, and reduce productivity.
 In this context, extreme hot days refers to the number of days per year
 where the daily maximum temperature exceeds 30 degrees Celsius. This
-indicator is categorised into one-day and two-day bins in the maps and
-the table, respectively. Lower count levels may have been merged.</p>
+indicator is categorised into one-day bins in the maps and location
+insights, and two-day bins in the pivot table. Lower count levels may
+have been merged.</p>
 <h4 style="color:#007c9d;">
 <img src="img/droughts.svg" style="margin-right:10px;" alt="Droughts"/>
 Droughts
@@ -641,8 +643,8 @@ through evapotranspiration and the actual available water. Measured in
 millimetres, PED represents the rainfall shortfall necessary to maintain
 pastures at their optimal growth levels. In this research, the drought
 indicator is presented as the probability of PED exceeding 200 mm and is
-categorised into 10% and 20% width bins in the maps and the table,
-respectively.</p>
+categorised into 10% and 20% width bins in the maps (and location
+insights) and the table, respectively.</p>
 <h4 style="color:#007c9d;">
 <img src="img/sea_rise.svg" style="margin-right:10px;" alt="Sea Level Rise"/>
 Sea Level Rise
@@ -663,8 +665,8 @@ of the area likely to be inundated due to a 50 cm sea level rise.
 Notably, this threshold value surpasses the mid-century RCP 4.5
 estimation of 26 cm. We chose this higher value to address the
 limitation that the available inundation maps do not account for
-vertical land motion. This data is categorised into 1% and 2% width bins
-in the maps and the table, respectively.</p>
+vertical land motion. This data is categorised into 2% width bins in all
+the outputs.</p>
 <h4 style="color:#007c9d;">
 <img src="img/overall_climate.svg" style="margin-right:10px;" alt="Overall Climate Risk Index"/>
 Overall Climate Risk Index
@@ -674,10 +676,10 @@ climate hazards included in this study. For each SA2, we ranked its
 exposure to various climate hazards and calculated the average rank for
 each area. This combined score is scaled from 0 to 1, where a higher
 number corresponds to a relatively higher exposure to climate hazards.
-In the maps, the climate risk index is presented in ten levels, each
-spanning a 0.1 width. The pivot table summarises the overall climate
-information into five levels, with the same number of SA2s in each level
-(quintiles).</p>
+In the maps and location insights, the climate risk index is presented
+in ten levels, each spanning a 0.1 width. The pivot table summarises the
+overall climate information into five levels, with the same number of
+SA2s in each level (quintiles).</p>
 </div>
 <div id="socio-economic-resilience" class="section level3">
 <h3>Socio-economic Resilience</h3>
@@ -726,10 +728,10 @@ six indicators. Additionally, a weighting factor of 0.5 was assigned to
 each variable that measured adult and child indices separately. The
 resulting score is then scaled into a range of 0 to 1, where a higher
 number indicates an area facing relatively greater risk due to
-socio-economic factors. On the maps, the overall socio-economic risk
-index is depicted across ten levels, each covering a 0.1 width.
-Meanwhile, the pivot table presents this information in five levels,
-each containing an equal number of SA2s.</p>
+socio-economic factors. On the maps and location insights, the overall
+socio-economic risk index is depicted across ten levels, each covering a
+0.1 width. Meanwhile, the pivot table presents this information in five
+levels, each containing an equal number of SA2s.</p>
 <p>The following table provides a summary of the information used to
 construct the resilience indicators.</p>
 <div class="datatables html-widget html-fill-item" id="var_table" style="width:100%;height:auto;"></div>
@@ -765,7 +767,7 @@ characteristics and locations of these entities.</p>
   			localLinks[i].setAttribute('target', '_blank');
   		}
   		document.querySelector(".main-container")
-  			.insertAdjacentHTML('afterend', '<div id="footer" style="left:0;bottom:0;width:calc(100% - 15px)"><h6 style="background-color:#333333;color:white;margin-top: 3px;margin-bottom: 0px;line-height: 60px;margin-left: 0px;margin-right: -15px;padding-left: 15px;font-size: 0.8em;"> Te Puni Kōkiri <span style="color:gray"> Te Puni Whakahaere Tikanga, <a href="mailto:matawhanui@tpk.govt.nz" style="color:gray">Data & Insights</a> - May 2024 </span><a href="https://www.tpk.govt.nz/" target="_blank"><img src="img/footer_logo.svg" style="height:22px;float:right;margin-top:19px;margin-right:15px;" /></a></h6></div>');
+  			.insertAdjacentHTML('afterend', '<div id="footer" style="left:0;bottom:0;width:calc(100% - 15px)"><h6 style="background-color:#333333;color:white;margin-top: 3px;margin-bottom: 0px;line-height: 60px;margin-left: 0px;margin-right: -15px;padding-left: 15px;font-size: 0.8em;"> Te Puni Kōkiri <span style="color:gray"> Te Puni Whakahaere Tikanga, <a href="mailto:matawhanui@tpk.govt.nz" style="color:gray">Data & Insights</a> - May 2024 </span><a href="https://www.tpk.govt.nz/" target="_blank"><img id="footer-img" src="img/footer_logo.svg" style="height:22px;float:right;margin-top:19px;margin-right:15px;" /></a></h6></div>');
   	}, 20);
   });
 </script>

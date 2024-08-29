@@ -54,10 +54,10 @@ table {
     color: #ffffff;
     background-color: transparent;
 }
-#the_map, #the_table {
+#the_map, #the_table, #the_finder {
     margin-right: 0px;
 }
-#the_table {
+#the_table, #the_finder {
     background-color: white;
     margin-bottom: 20px;
 }
@@ -79,7 +79,7 @@ table {
     }
 }
 @media (max-width: 992px){
-    #the_map, #the_table {
+    #the_map, #the_table, #the_finder {
         margin-right: 15px;
     }
 }
@@ -123,6 +123,10 @@ table {
         background-color: transparent;
     }
 }
+.col-md-3 > ul > li {
+    position: relative;
+    margin-left: -20px;
+}
 .img-right {
     float: right;
     margin-left: 30px;
@@ -134,6 +138,11 @@ table {
         display: table;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+@media (max-width: 680px) {
+    #footer-img {
+        display: none;
     }
 }
 h1 {
@@ -481,6 +490,10 @@ table.pvtTable .pvtAxisLabel, table.pvtTable .pvtColLabel {
 }
 label {
     font-weight: 100 !important;
+}
+select:focus-visible {
+    outline-offset: 0px;
+    outline: none;
 }
 .leaflet-container {
     font: 12px/1.5 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;

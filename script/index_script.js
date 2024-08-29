@@ -108,6 +108,7 @@
 
   		$('#toggle_fullscreen').on('click', function() {
   			var theTable = $("#the_table")[0];
+  			var tableContent = $("#data-table")[0];
   			if (theTable.offsetHeight == 762) {
   				theTable.style.position = "absolute";
   				theTable.style.width = "100vw";
@@ -117,6 +118,7 @@
   				theTable.style.background = "white";
   				theTable.style.zIndex = "10000";
   				el.innerHTML = "🗗︎";
+  				document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "none";
   				document.getElementsByClassName('col-md-3')[1].style.display = "none";
   				document.getElementById("footer").style.display = "none";
   			} else {
@@ -125,8 +127,13 @@
   				theTable.style.height = "762px";
   				theTable.style.zIndex = "auto";
   				el.innerHTML = "🗖";
+  				document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "block";
   				document.getElementsByClassName('col-md-3')[1].style.display = "block";
   				document.getElementById("footer").style.display = "block";
+  			}
+  			if (tableContent != null) {
+  				var content = tableContent.innerHTML;
+  				tableContent.innerHTML= content; 
   			}
   		});
 

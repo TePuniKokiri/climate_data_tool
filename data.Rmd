@@ -126,8 +126,8 @@ rain events are often linked to storms and can significantly impact people and
 communities by causing hazards such as flooding, landslides, and damage to
 buildings and infrastructure. In this tool, extreme rainfall is defined as the
 number of days per year when rainfall exceeds 30 mm in a day. The indicator is
-categorised into five-day and ten-day bins in the pivot table and maps,
-respectively. Some categories may have been merged due to low counts.
+categorised into five-day bins in the pivot table, and ten-day bins in the maps
+and location insights. Some categories may have been merged due to low counts.
 
 <h4 style="color:#007c9d;">
   <img src="img/heatwave.svg" style="margin-right:10px;" alt="Heatwave"/>
@@ -143,9 +143,9 @@ social, environmental, and economic dimensions, including surge in heat-related
 deaths, pressure on water and energy resources, and challenges to food and
 livelihood security. In this study, a heatwave is defined as a period of three
 consecutive days (or more) during which the temperature exceeds 25 degrees
-Celsius. The heatwave data is categorised into five-day and ten-day bins in the
-maps and the pivot table, respectively. Note that categories with lower counts
-may have been combined in the maps or tables.
+Celsius. The heatwave data is categorised into five-day bins in the maps and
+location insights, and ten-day bins in the pivot table. Note that categories
+with lower counts may have been combined in the maps or tables.
 
 <h4 style="color:#007c9d;">
   <img src="img/hot_days.svg" style="margin-right:10px;" alt="Extreme Hot Days"/>
@@ -159,9 +159,9 @@ elderly, infants, outdoor workers, and those in poverty, are particularly
 susceptible. Additionally, heatwaves strain health services, disrupt
 infrastructure, and reduce productivity. In this context, extreme hot days
 refers to the number of days per year where the daily maximum temperature
-exceeds 30 degrees Celsius. This indicator is categorised into one-day and
-two-day bins in the maps and the table, respectively. Lower count levels may
-have been merged.
+exceeds 30 degrees Celsius. This indicator is categorised into one-day bins in
+the maps and location insights, and two-day bins in the pivot table. Lower count
+levels may have been merged.
 
 <h4 style="color:#007c9d;">
   <img src="img/droughts.svg" style="margin-right:10px;" alt="Droughts"/>
@@ -185,7 +185,7 @@ evapotranspiration and the actual available water. Measured in millimetres,
 PED represents the rainfall shortfall necessary to maintain pastures at their
 optimal growth levels. In this research, the drought indicator is presented as
 the probability of PED exceeding 200 mm and is categorised into 10% and 20%
-width bins in the maps and the table, respectively.
+width bins in the maps (and location insights) and the table, respectively.
 
 <h4 style="color:#007c9d;">
   <img src="img/sea_rise.svg" style="margin-right:10px;" alt="Sea Level Rise"/>
@@ -208,7 +208,7 @@ area likely to be inundated due to a 50 cm sea level rise. Notably, this
 threshold value surpasses the mid-century RCP 4.5 estimation of 26 cm. We
 chose this higher value to address the limitation that the available inundation
 maps do not account for vertical land motion. This data is categorised into
-1% and 2% width bins in the maps and the table, respectively.
+2% width bins in all the outputs.
 
 <h4 style="color:#007c9d;">
   <img src="img/overall_climate.svg" style="margin-right:10px;" alt="Overall Climate Risk Index"/>
@@ -219,10 +219,10 @@ The overall climate risk index was created by combining all seven climate
 hazards included in this study. For each SA2, we ranked its exposure to various
 climate hazards and calculated the average rank for each area. This combined
 score is scaled from 0 to 1, where a higher number corresponds to a relatively
-higher exposure to climate hazards. In the maps, the climate risk index is
-presented in ten levels, each spanning a 0.1 width. The pivot table summarises
-the overall climate information into five levels, with the same number of SA2s
-in each level (quintiles).
+higher exposure to climate hazards. In the maps and location insights, the
+climate risk index is presented in ten levels, each spanning a 0.1 width. The
+pivot table summarises the overall climate information into five levels, with
+the same number of SA2s in each level (quintiles).
 
 ### Socio-economic Resilience
 
@@ -270,9 +270,10 @@ based on each of the six indicators. Additionally, a weighting factor of 0.5
 was assigned to each variable that measured adult and child indices separately.
 The resulting score is then scaled into a range of 0 to 1, where a higher
 number indicates an area facing relatively greater risk due to socio-economic
-factors. On the maps, the overall socio-economic risk index is depicted across
-ten levels, each covering a 0.1 width. Meanwhile, the pivot table presents this
-information in five levels, each containing an equal number of SA2s.
+factors. On the maps and location insights, the overall socio-economic risk
+index is depicted across ten levels, each covering a 0.1 width. Meanwhile, the
+pivot table presents this information in five levels, each containing an equal
+number of SA2s.
 
 The following table provides a summary of the information used to construct the
 resilience indicators.
