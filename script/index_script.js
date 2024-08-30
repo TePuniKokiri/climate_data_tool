@@ -1,5 +1,6 @@
 <script>
   $(document).ready(function() {
+    //var leafletMap;
   	setTimeout(function() {
 
   		var arrowEl = document.createElement("div");
@@ -163,6 +164,10 @@
         }
       });
 
+      document.querySelector('a[data-toggle=\"tab\"]').addEventListener('click',
+        function() {
+          setTimeout(function() { leafletMap.invalidateSize(); }, 10);
+        });
   	}, 20);
   });
 </script>

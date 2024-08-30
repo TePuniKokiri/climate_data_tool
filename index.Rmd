@@ -8,7 +8,9 @@ output:
         - script/index_script.js
         - script/script.js
 ---
-
+<script>
+  var leafletMap;
+</script>
 ```{r setup, include=FALSE} 
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 paper_link <-
