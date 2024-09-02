@@ -97,7 +97,7 @@
         layout = {
           title: titleText,
           hovermode: 'closest',
-          width: (window.innerWidth <= 480) ? 700 : window.innerWidth / 1.477,
+          width: (window.innerWidth <= 480) ? 800 : window.innerWidth / 1.477,
           // height: window.innerHeight / 1.4 - 50
 		  height: 600,
 		  font: {
@@ -215,7 +215,7 @@
             automargin: true
           },
           //width: window.innerWidth / 1.5,
-		  width : (window.innerWidth <= 480) ? 700 : window.innerWidth / 1.5,
+		  width : (window.innerWidth <= 480) ? 800 : window.innerWidth / 1.5,
           // height: window.innerHeight / 1.4 - 50
 		  height: 600
         };

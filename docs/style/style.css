@@ -556,6 +556,9 @@ table.dataTable.no-footer {
     border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 480px) {
+    .nav.navbar-nav > li.dropdown{
+        display: none;
+    }
     .info.legend.leaflet-control {
         font-size: 11px !important;
     }
@@ -578,9 +581,9 @@ table.dataTable.no-footer {
         left: -57px !important;
     }
     .leaflet-popup-content {
-        width: 255px !important;
-        margin: 10px 11px !important;
-        margin-right: 6px !important
+        /*width: 255px !important;*/
+        margin: 10px 9px !important;
+        /*margin-right: 6px !important*/
     }
     .leaflet-popup-content > table {
         font-size: 9.3px;
@@ -605,7 +608,13 @@ table.dataTable.no-footer {
         padding: 4px 6px !important;
     }
     .pvtRenderer, .pvtAggregator, .pvtAttrDropdown {
-        font-size: 13px
+        font-size: 12px
+    }
+    .pvtTriangle {
+        display: none;
+    }
+    .pvtTable thead tr:first-child th:first-child {
+        position: unset;
     }
 }
 #var_table {

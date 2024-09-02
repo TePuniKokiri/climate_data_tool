@@ -728,35 +728,42 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                             },
 
                             onRefresh: function(config) {
-                                const numRows = config.rows.length;
-                                const numCols = config.cols.length;
-                                const startLeft = -12;
-                                const pvtAxisLabelSticky =
-                                    $('.pvtTable thead tr:last-child .pvtAxisLabel');
-                                let leftRowHeader = [];
-                                let progLeft = startLeft;
-                                pvtAxisLabelSticky.each(function(index) {
-                                    leftRowHeader[index] = progLeft;
-                                    $(this).css('left', progLeft);
-                                    progLeft += $(this).outerWidth(true);
-                                })
-                                const leftRowHeaderLength = leftRowHeader.length;
-                                const pvtRowsSticky = $('.pvtTable tbody tr');
-                                pvtRowsSticky.each(function(index) {
-                                    let pvtRowLabel = $(this).find('.pvtRowLabel');
-                                    let pvtRowLabelLength = pvtRowLabel.length;
-                                    let j = pvtRowLabelLength - 1;
-                                    for (let i = leftRowHeaderLength - 1; i >= (leftRowHeaderLength - pvtRowLabelLength); i--) {
-                                        $(pvtRowLabel[j]).css('left', leftRowHeader[i]);
-                                        j--;
+                                if (window.innerWidth > 480) {
+                                    const numRows = config.rows.length;
+                                    const numCols = config.cols.length;
+                                    const startLeft = -12;
+                                    const pvtAxisLabelSticky =
+                                        $('.pvtTable thead tr:last-child .pvtAxisLabel');
+                                    let leftRowHeader = [];
+                                    let progLeft = startLeft;
+                                    pvtAxisLabelSticky.each(function(index) {
+                                        leftRowHeader[index] = progLeft;
+                                        $(this).css('left', progLeft);
+                                        progLeft += $(this).outerWidth(true);
+                                    })
+                                    const leftRowHeaderLength = leftRowHeader.length;
+                                    const pvtRowsSticky = $('.pvtTable tbody tr');
+                                    pvtRowsSticky.each(function(index) {
+                                        let pvtRowLabel = $(this).find('.pvtRowLabel');
+                                        let pvtRowLabelLength = pvtRowLabel.length;
+                                        let j = pvtRowLabelLength - 1;
+                                        for (let i = leftRowHeaderLength - 1; i >= (leftRowHeaderLength - pvtRowLabelLength); i--) {
+                                            $(pvtRowLabel[j]).css('left', leftRowHeader[i]);
+                                            j--;
+                                        }
+                                    });
+                                    //const pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth(true) + startLeft;
+                                    let pvtFirstW;
+                                    if ($('.pvtAxisContainer.pvtRows.pvtUiCell.ui-sortable')[0].innerHTML == '') {
+                                    pvtFirstW = startLeft;
+                                    } else {
+                                    pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth( true ) + startLeft;
                                     }
-                                });
-
-                                const pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth(true) + startLeft;
-                                for (let i = 1; i <= numCols; i++) {
-                                    $('.pvtTable thead tr:nth-child(' + i + ') .pvtAxisLabel').css('left', pvtFirstW);
+                                    for (let i = 1; i <= numCols; i++) {
+                                        $('.pvtTable thead tr:nth-child(' + i + ') .pvtAxisLabel').css('left', pvtFirstW);
+                                    }
+                                    $('.pvtTable thead tr:last-child th:last-child').css('left', pvtFirstW);
                                 }
-                                $('.pvtTable thead tr:last-child th:last-child').css('left', pvtFirstW);
                             }
                         }, true);
                     }
