@@ -27,7 +27,7 @@ guide_link <-
   )
 ```
 
-<div style="color:#007C9D;font-size:medium;margin-bottom: 21px;"> <em>
+<div id="headline" style="color:#007C9D;font-size:medium;margin-bottom: 21px;"> <em>
     Climate change presents significant challenges that necessitate robust
     policies and implementable strategies to support resilience and avoid
     maladaptation. The first step towards effective policy interventions is
@@ -37,6 +37,7 @@ guide_link <-
     </em>
 </div>
 
+<p id="introbody">
 We have embarked on an initial exploratory analysis to examine what risks exist
 specifically for hapori Māori. By assessing the socio-economic
 circumstances and resilience of hapori Māori exposed to various climate hazards,
@@ -58,6 +59,7 @@ adaptability due to factors like social isolation and lack of support systems.
 
 <br> Before using this application, please take a moment to read the Methodology
 and Data section. Click on the following tabs to see the results: <br>
+</p>
 
 ### <span></span> {.tabset}
 

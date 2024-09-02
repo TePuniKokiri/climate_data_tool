@@ -8,6 +8,18 @@
   		arrowEl.classList.add("bottom-arrow");
   		arrowEl.innerHTML = "Increasing Risk";
 
+  		if (window.innerWidth <= 480) {
+  		  leafletMap.setMinZoom(4.5);
+  		  leafletMap._initialCenter = L.latLng(-41.5, 172.5)
+  		  leafletMap._initialZoom = 5;
+  		  leafletMap._resetView(leafletMap._initialCenter, leafletMap._initialZoom);
+  		}
+  		//else {
+  		//  leafletMap.setMinZoom(5.5);
+  		//  leafletMap._initialCenter = {lat: -41.11631948, lng: 175.133883815};
+  		//  leafletMap._initialZoom = 5.5;
+  		//}
+
   		var pvtRenderer = document.getElementsByClassName('pvtRenderer');
   		if (document.getElementsByClassName('pvtRenderer').length > 0) {
   		  var optionsToHide = pvtRenderer[0].querySelectorAll('option[value="Scatter Chart"],option[value="Treemap"],option[value="TSV Export"]');
@@ -95,7 +107,11 @@
   		el.setAttribute("role", "button");
   		el.setAttribute("title", "Toggle Fullscreen");
   		el.classList.add("pvtRowOrder");
-  		el.innerHTML = "🗖";
+  		if (window.innerWidth <= 480) {
+  			el.innerHTML = "⛶︎";
+  		} else {
+  			el.innerHTML = "🗖︎";
+  		}
 
   		var pvtRenderer = document.getElementsByClassName('pvtRenderer')[0];
   		if (pvtRenderer != null) {
@@ -118,8 +134,15 @@
   				theTable.style.top = "0";
   				theTable.style.background = "white";
   				theTable.style.zIndex = "10000";
-  				el.innerHTML = "🗗︎";
+  				if (window.innerWidth <= 480) {
+  				  el.innerHTML = "⛶︎";
+  				} else {
+  				  el.innerHTML = "🗗︎";
+  				}
   				document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "none";
+  				document.getElementById('headline').style.display = "none";
+  				document.getElementById('introbody').style.display = "none";
+  				document.getElementsByClassName('nav nav-tabs')[0].style.display = "none";
   				document.getElementsByClassName('col-md-3')[1].style.display = "none";
   				document.getElementById("footer").style.display = "none";
   			} else {
@@ -127,8 +150,15 @@
   				theTable.style.width = "revert-layer";
   				theTable.style.height = "762px";
   				theTable.style.zIndex = "auto";
-  				el.innerHTML = "🗖";
+  				if (window.innerWidth <= 480) {
+  				  el.innerHTML = "⛶︎";
+  				} else {
+  				  el.innerHTML = "🗖︎";
+  				}
   				document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "block";
+  				document.getElementById('headline').style.display = "block";
+  				document.getElementById('introbody').style.display = "block";
+  				document.getElementsByClassName('nav nav-tabs')[0].style.display = "block";
   				document.getElementsByClassName('col-md-3')[1].style.display = "block";
   				document.getElementById("footer").style.display = "block";
   			}

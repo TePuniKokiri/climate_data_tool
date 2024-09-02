@@ -31,7 +31,7 @@
             by: "by"
           },
           plotly: {},
-          plotlyConfig: {}
+          plotlyConfig: {'staticPlot': (window.innerWidth <= 480)}
         };
         opts = $.extend(true, {}, defaults, opts);
         rowKeys = pivotData.getRowKeys();
@@ -97,7 +97,7 @@
         layout = {
           title: titleText,
           hovermode: 'closest',
-          width: window.innerWidth / 1.477,
+          width: (window.innerWidth <= 480) ? 700 : window.innerWidth / 1.477,
           // height: window.innerHeight / 1.4 - 50
 		  height: 600,
 		  font: {
@@ -214,7 +214,8 @@
             title: pivotData.rowAttrs.join(' - '),
             automargin: true
           },
-          width: window.innerWidth / 1.5,
+          //width: window.innerWidth / 1.5,
+		  width : (window.innerWidth <= 480) ? 700 : window.innerWidth / 1.5,
           // height: window.innerHeight / 1.4 - 50
 		  height: 600
         };

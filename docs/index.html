@@ -484,7 +484,8 @@ $(document).ready(function () {
 <script>
   var leafletMap;
 </script>
-<div style="color:#007C9D;font-size:medium;margin-bottom: 21px;">
+<div id="headline"
+style="color:#007C9D;font-size:medium;margin-bottom: 21px;">
 <p><em> Climate change presents significant challenges that necessitate
 robust policies and implementable strategies to support resilience and
 avoid maladaptation. The first step towards effective policy
@@ -492,6 +493,7 @@ interventions is gaining a comprehensive understanding of the risks
 faced by our communities. By tailoring adaptation actions to address
 these risks, we can better serve our communities. </em></p>
 </div>
+<p id="introbody">
 <p>We have embarked on an initial exploratory analysis to examine what
 risks exist specifically for hapori Māori. By assessing the
 socio-economic circumstances and resilience of hapori Māori exposed to
@@ -512,9 +514,10 @@ vulnerability of hapori Māori in coastal areas due to sea level rise, as
 well as the challenges faced by older Māori households with lower
 adaptability due to factors like social isolation and lack of support
 systems.</p>
-<p><br> Before using this application, please take a moment to read the
+<br> Before using this application, please take a moment to read the
 Methodology and Data section. Click on the following tabs to see the
-results: <br></p>
+results: <br>
+</p>
 <div id="section" class="section level3 tabset">
 <h3 class="tabset"><span></span></h3>
 <div id="maps" class="section level4">
@@ -625,8 +628,8 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                     complete: function(parsed) {
                         $("#tableOutput").pivotUI(parsed.data, {
                             renderers: renderers,
-                            rows: ["TPK Region"],
-                            cols: ["Overall Climate Risk Index"],
+                            //rows: ["TPK Region"],
+                            //cols: ["Overall Climate Risk Index"],
                             aggregatorName: ["Integer Sum"],
                             vals: ["Number of People in Māori Households"],
                             sorters: function(attr) {
@@ -1416,6 +1419,18 @@ renderFinder();
   		arrowEl.classList.add("bottom-arrow");
   		arrowEl.innerHTML = "Increasing Risk";
 
+  		if (window.innerWidth <= 480) {
+  		  leafletMap.setMinZoom(4.5);
+  		  leafletMap._initialCenter = L.latLng(-41.5, 172.5)
+  		  leafletMap._initialZoom = 5;
+  		  leafletMap._resetView(leafletMap._initialCenter, leafletMap._initialZoom);
+  		}
+  		//else {
+  		//  leafletMap.setMinZoom(5.5);
+  		//  leafletMap._initialCenter = {lat: -41.11631948, lng: 175.133883815};
+  		//  leafletMap._initialZoom = 5.5;
+  		//}
+
   		var pvtRenderer = document.getElementsByClassName('pvtRenderer');
   		if (document.getElementsByClassName('pvtRenderer').length > 0) {
   		  var optionsToHide = pvtRenderer[0].querySelectorAll('option[value="Scatter Chart"],option[value="Treemap"],option[value="TSV Export"]');
@@ -1503,7 +1518,11 @@ renderFinder();
   		el.setAttribute("role", "button");
   		el.setAttribute("title", "Toggle Fullscreen");
   		el.classList.add("pvtRowOrder");
-  		el.innerHTML = "🗖";
+  		if (window.innerWidth <= 480) {
+  			el.innerHTML = "⛶︎";
+  		} else {
+  			el.innerHTML = "🗖︎";
+  		}
 
   		var pvtRenderer = document.getElementsByClassName('pvtRenderer')[0];
   		if (pvtRenderer != null) {
@@ -1526,8 +1545,15 @@ renderFinder();
   				theTable.style.top = "0";
   				theTable.style.background = "white";
   				theTable.style.zIndex = "10000";
-  				el.innerHTML = "🗗︎";
+  				if (window.innerWidth <= 480) {
+  				  el.innerHTML = "⛶︎";
+  				} else {
+  				  el.innerHTML = "🗗︎";
+  				}
   				document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "none";
+  				document.getElementById('headline').style.display = "none";
+  				document.getElementById('introbody').style.display = "none";
+  				document.getElementsByClassName('nav nav-tabs')[0].style.display = "none";
   				document.getElementsByClassName('col-md-3')[1].style.display = "none";
   				document.getElementById("footer").style.display = "none";
   			} else {
@@ -1535,8 +1561,15 @@ renderFinder();
   				theTable.style.width = "revert-layer";
   				theTable.style.height = "762px";
   				theTable.style.zIndex = "auto";
-  				el.innerHTML = "🗖";
+  				if (window.innerWidth <= 480) {
+  				  el.innerHTML = "⛶︎";
+  				} else {
+  				  el.innerHTML = "🗖︎";
+  				}
   				document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "block";
+  				document.getElementById('headline').style.display = "block";
+  				document.getElementById('introbody').style.display = "block";
+  				document.getElementsByClassName('nav nav-tabs')[0].style.display = "block";
   				document.getElementsByClassName('col-md-3')[1].style.display = "block";
   				document.getElementById("footer").style.display = "block";
   			}
