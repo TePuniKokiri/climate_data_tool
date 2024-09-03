@@ -37,7 +37,8 @@
   max-height: 50vh;
   margin-top: 30px !important;
   padding-left: 3px;
-  width: -webkit-fill-available !important;
+  /* width: -webkit-fill-available !important; */
+  width: calc(100% - 14px);
 }
 .typeahead-standalone .tt-list.tt-hide {
   display: none;
