@@ -1159,15 +1159,15 @@ const inputElement = document.getElementById('searchInput');
 const panelGroup = document.getElementsByClassName('panel-group')[0];
 
 async function loadlocData() {
-    return (await (await fetch('https://raw.githubusercontent.com/Dehgs/climate_data_tool/main/docs/data/json_files/sub_loc_sa2.json')).json());
+    return (await (await fetch('https://raw.githubusercontent.com/TePuniKokiri/climate_data_tool/main/docs/data/json_files/sub_loc_sa2.json')).json());
 }
 
 async function loadsaData() {
-    return (await (await fetch('https://raw.githubusercontent.com/Dehgs/climate_data_tool/main/docs/data/json_files/sa2_list.json')).json());
+    return (await (await fetch('https://raw.githubusercontent.com/TePuniKokiri/climate_data_tool/main/docs/data/json_files/sa2_list.json')).json());
 }
 
 async function loadgeosaData() {
-    return (await (await fetch('https://raw.githubusercontent.com/Dehgs/climate_data_tool/main/docs/data/json_files/sa2_geo_data.json')).json());
+    return (await (await fetch('https://raw.githubusercontent.com/TePuniKokiri/climate_data_tool/main/docs/data/json_files/sa2_geo_data.json')).json());
 }
 
 const renderFinder = async () => {
@@ -1178,7 +1178,7 @@ const renderFinder = async () => {
         input: inputElement,
         source: {
             prefetch: {
-                url: 'https://raw.githubusercontent.com/Dehgs/climate_data_tool/main/docs/data/json_files/sub_loc.json'
+                url: 'https://raw.githubusercontent.com/TePuniKokiri/climate_data_tool/main/docs/data/json_files/sub_loc.json'
             },
             keys: ['nam', 'maj', 'add'],
             entity: (suggestion) => `${item['nam']}${item['maj']}`
