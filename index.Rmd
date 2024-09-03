@@ -150,7 +150,7 @@ place's shape is covered by an SA2
 visualisation 
 </div>
 <div class="col-md-9" id="the_finder"
-     style="height:750px;overflow:auto;padding-top:0px;padding-left:14px;padding-right:0px;">
+     style="height:750px;padding-top:0px;padding-left:14px;padding-right:0px;">
 ```{r out.width='100%', out.height='762px', echo=FALSE}
 htmltools::includeHTML("../../output_data/finder/finder.html")
 ```

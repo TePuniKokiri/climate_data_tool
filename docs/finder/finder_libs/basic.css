@@ -5,17 +5,16 @@
   flex-direction: column;
   padding-bottom: 0px;
   line-height: 30px;
-  min-width: 720px;
+  width: 100%;
 }
 .typeahead-standalone .tt-input {
   z-index: 1;
   background: transparent;
   padding-left: 8px;
   padding-bottom: 0px;
-  /*margin-bottom:-6px;*/
   margin-bottom: -3px;
   height: 30px;
-  min-width: 720px;
+  width: 100%;
 }
 .typeahead-standalone .tt-hint {
   cursor: default;
@@ -24,7 +23,7 @@
   color: #767676;
   z-index: 0;
   padding-left: 9px;
-  min-width: 720px;
+  width: 100%;
 }
 .typeahead-standalone .tt-list {
   background: #fff;
@@ -39,7 +38,6 @@
   margin-top: 30px !important;
   padding-left: 3px;
   width: -webkit-fill-available !important;
-  min-width: 720px;
 }
 .typeahead-standalone .tt-list.tt-hide {
   display: none;
@@ -83,7 +81,17 @@
 }
 .panel-group {
   padding-top: 4px;
-  min-width: 720px;
+  overflow: auto;
+  max-height: 687px;
+}
+.panel-group .panel {
+    min-width: 720px;
+}
+.panel-group .panel-heading {
+    min-width: 720px;
+}
+#sub_loc_table_cont {
+	min-width: 720px;
 }
 .typeahead-standalone:focus-visible,
 #searchInput:focus-visible {
