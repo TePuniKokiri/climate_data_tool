@@ -620,6 +620,9 @@ table.dataTable.no-footer {
         position: unset;
         left: unset;
     }
+    .mapDesc {
+      display: none;
+    }
 }
 #var_table {
   overflow-x: auto;

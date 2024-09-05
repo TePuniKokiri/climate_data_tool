@@ -138,7 +138,7 @@ A heatwave is characterised by sustained and significantly higher
 temperatures than the usual climate values of a specific location. Global
 warming has contributed to the increased frequency and intensity of
 heatwaves worldwide. Heatwaves often occur alongside other climate
-hazards, such as droughts and wildfires. The impacts of heatwaves encompass
+hazards, such as droughts and wildfires. The impacts of heatwaves include
 social, environmental, and economic dimensions, including surge in heat-related
 deaths, pressure on water and energy resources, and challenges to food and
 livelihood security. In this study, a heatwave is defined as a period of three
@@ -170,7 +170,7 @@ levels may have been merged.
 
 Droughts occur due to inadequate precipitation over an extended period,
 resulting in soil dryness and reduced water levels in rivers, streams, lakes,
-and dams. The impacts of droughts encompass economic, environmental, and social
+and dams. The impacts of droughts include economic, environmental, and social
 dimensions. Specifically, droughts severely affect agriculture, leading to
 limited food and water availability for both crops and animals. Increased fire
 risk is another consequence of drought conditions. Challenges related to water
@@ -251,7 +251,7 @@ indices capture various facets of resilience, encompassing dimensions such as
 poverty, health, justice and protection, and the capacity to adapt to climate
 change. The latter was derived from measures that were not already included in
 other indices but might be associated with adaptation issues. For instance,
-these measures encompassed having vulnerable members in the household (such as
+these measures included having vulnerable members in the household (such as
 older individuals), not being enrolled in education or training, unemployment
 (which could lead to social isolation), lacking the highest qualification (a
 proxy for literacy issues), and having no access to telecommunication services.

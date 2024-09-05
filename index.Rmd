@@ -70,11 +70,12 @@ This map provides both overall climate and socio-economic information at a
 regional level. You can use the layers control icon to switch between these two
 layers on the map. Additionally, we have included more detailed maps for each
 regional council at the Statistical Area 2 (SA2) level. These maps can be
-accessed via popup windows by clicking on a region or using the navbar at the
-top of this page. The climate-based maps for SA2s include various socio-economic
-filter layers that can be overlaid on climate information. Similarly, the
-socio-economic-based maps can be masked by climate filter layers. Note that a
-higher decile number corresponds to a greater risk level in these maps.
+accessed via popup windows by clicking on a region<span class="mapDesc"> or
+using the navbar at the top of this page</span>. The climate-based maps for SA2s
+include various socio-economic filter layers that can be overlaid on climate
+information. Similarly, the socio-economic-based maps can be masked by climate
+filter layers. Note that a higher decile number corresponds to a greater risk
+level in these maps.
 
 <h5 style="color:#007C9D">How to use:</h5>
 * Zoom in/out using the buttons or the mouse scroll wheel, move by dragging

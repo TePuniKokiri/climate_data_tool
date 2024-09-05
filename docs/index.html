@@ -529,11 +529,12 @@ at a regional level. You can use the layers control icon to switch
 between these two layers on the map. Additionally, we have included more
 detailed maps for each regional council at the Statistical Area 2 (SA2)
 level. These maps can be accessed via popup windows by clicking on a
-region or using the navbar at the top of this page. The climate-based
-maps for SA2s include various socio-economic filter layers that can be
-overlaid on climate information. Similarly, the socio-economic-based
-maps can be masked by climate filter layers. Note that a higher decile
-number corresponds to a greater risk level in these maps.</p>
+region<span class="mapDesc"> or using the navbar at the top of this
+page</span>. The climate-based maps for SA2s include various
+socio-economic filter layers that can be overlaid on climate
+information. Similarly, the socio-economic-based maps can be masked by
+climate filter layers. Note that a higher decile number corresponds to a
+greater risk level in these maps.</p>
 <h5 style="color:#007C9D">
 How to use:
 </h5>
@@ -842,7 +843,7 @@ style="height:750px;padding-top:0px;padding-left:14px;padding-right:0px;">
 <script src="./finder/finder_libs/typeahead-standalone.js"></script>
 </head>
 <p style="margin-bottom:4px">Search for Suburbs and Localities:</p>
-<input type="search" id="searchInput" autocomplete="off" placeholder="Search Places...">
+<input type="search" id="searchInput" autocomplete="off" placeholder="Search Places, e.g., Remuera, Auckland">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
 <script type="module">
 console.warn = () => {};
@@ -1404,7 +1405,7 @@ const renderFinder = async () => {
         diacritics: true,
         limit: 50,
         tokenizer: (words) => {
-            return words.split(/\s+|-/);
+            return words.replace(',', '').split(/\s+|-/);
         }
     });
 }
@@ -1431,6 +1432,10 @@ renderFinder();
   		  leafletMap._initialCenter = L.latLng(-41.5, 172.5)
   		  leafletMap._initialZoom = 5;
   		  leafletMap._resetView(leafletMap._initialCenter, leafletMap._initialZoom);
+  		  var filterLi = $( "li:contains('Filter the attributes by categories')");
+  		  if (filterLi.length != 0) {
+  		    filterLi[0].style.display = 'none';
+  		  }
   		}
   		//else {
   		//  leafletMap.setMinZoom(5.5);

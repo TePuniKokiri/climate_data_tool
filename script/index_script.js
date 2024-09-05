@@ -13,6 +13,10 @@
   		  leafletMap._initialCenter = L.latLng(-41.5, 172.5)
   		  leafletMap._initialZoom = 5;
   		  leafletMap._resetView(leafletMap._initialCenter, leafletMap._initialZoom);
+  		  var filterLi = $( "li:contains('Filter the attributes by categories')");
+  		  if (filterLi.length != 0) {
+  		    filterLi[0].style.display = 'none';
+  		  }
   		}
   		//else {
   		//  leafletMap.setMinZoom(5.5);
