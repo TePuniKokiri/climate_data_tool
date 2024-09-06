@@ -852,6 +852,7 @@ var filteredData, filteredsaData = [],
     filteredgeosaData = [];
 
 const levCor = {"oc":[{"l":"0 to 0.1","il":0},{"l":"0.1 to 0.2","il":1},{"l":"0.2 to 0.3","il":2},{"l":"0.3 to 0.4","il":3},{"l":"0.4 to 0.5","il":4},{"l":"0.5 to 0.6","il":5},{"l":"0.6 to 0.7","il":6},{"l":"0.7 to 0.8","il":7},{"l":"0.8 to 0.9","il":8},{"l":"0.9 to 1","il":9}],"fh":[{"l":"0% to 5%","il":0},{"l":"5% to 10%","il":1},{"l":"10% to 15%","il":2},{"l":"15% to 20%","il":3},{"l":"20% to 25%","il":4},{"l":"25% to 30%","il":5},{"l":"30% to 35%","il":6},{"l":"35% to 40%","il":7},{"l":"40% to 45%","il":8},{"l":"45% to 50%","il":9},{"l":"50% or More","il":10}],"ws":[{"l":"0 to 20","il":0},{"l":"20 to 40","il":1},{"l":"40 to 60","il":2},{"l":"60 to 80","il":3},{"l":"80 to 100","il":4},{"l":"100 to 120","il":5},{"l":"120 to 140","il":6},{"l":"140 to 160","il":7},{"l":"160 to 180","il":8},{"l":"180 to 200","il":9},{"l":"200 or More","il":10}],"er":[{"l":"0 to 10","il":0},{"l":"10 to 20","il":1},{"l":"20 to 30","il":2},{"l":"30 to 40","il":3},{"l":"40 to 50","il":4},{"l":"50 to 60","il":5},{"l":"60 to 70","il":6},{"l":"70 to 80","il":7},{"l":"80 to 90","il":8},{"l":"90 to 100","il":9},{"l":"100 or More","il":10}],"hw":[{"l":"0 to 5","il":0},{"l":"5 to 10","il":1},{"l":"10 to 15","il":2},{"l":"15 to 20","il":3},{"l":"20 to 25","il":4},{"l":"25 to 30","il":5},{"l":"30 to 35","il":6},{"l":"35 to 40","il":7},{"l":"40 to 45","il":8},{"l":"45 to 50","il":9},{"l":"50 or More","il":10}],"eh":[{"l":"0 to 1","il":0},{"l":"1 to 2","il":1},{"l":"2 to 3","il":2},{"l":"3 to 4","il":3},{"l":"4 to 5","il":4},{"l":"5 to 6","il":5},{"l":"6 to 7","il":6},{"l":"7 to 8","il":7},{"l":"8 to 9","il":8},{"l":"9 to 10","il":9},{"l":"10 or More","il":10}],"ped":[{"l":"0% to 10%","il":0},{"l":"10% to 20%","il":1},{"l":"20% to 30%","il":2},{"l":"30% to 40%","il":3},{"l":"40% to 50%","il":4},{"l":"50% to 60%","il":5},{"l":"60% to 70%","il":6},{"l":"70% to 80%","il":7},{"l":"80% to 90%","il":8},{"l":"90% to 100%","il":9}],"slr":[{"l":"0% to 2%","il":0},{"l":"2% to 4%","il":1},{"l":"4% to 6%","il":2},{"l":"6% to 8%","il":3},{"l":"8% to 10%","il":4},{"l":"10% to 12%","il":5},{"l":"12% to 14%","il":6},{"l":"14% to 16%","il":7},{"l":"16% to 18%","il":8},{"l":"18% to 20%","il":9},{"l":"20% or More","il":10}],"oi":[{"l":"0 to 0.1","il":0},{"l":"0.1 to 0.2","il":1},{"l":"0.2 to 0.3","il":2},{"l":"0.3 to 0.4","il":3},{"l":"0.4 to 0.5","il":4},{"l":"0.5 to 0.6","il":5},{"l":"0.6 to 0.7","il":6},{"l":"0.7 to 0.8","il":7},{"l":"0.8 to 0.9","il":8},{"l":"0.9 to 1","il":9}],"pi":[{"l":"Decile 1","il":0},{"l":"Decile 2","il":1},{"l":"Decile 3","il":2},{"l":"Decile 4","il":3},{"l":"Decile 5","il":4},{"l":"Decile 6","il":5},{"l":"Decile 7","il":6},{"l":"Decile 8","il":7},{"l":"Decile 9","il":8},{"l":"Decile 10","il":9}],"hai":[{"l":"Decile 1","il":0},{"l":"Decile 2","il":1},{"l":"Decile 3","il":2},{"l":"Decile 4","il":3},{"l":"Decile 5","il":4},{"l":"Decile 6","il":5},{"l":"Decile 7","il":6},{"l":"Decile 8","il":7},{"l":"Decile 9","il":8},{"l":"Decile 10","il":9}],"hci":[{"l":"Decile 1","il":0},{"l":"Decile 2","il":1},{"l":"Decile 3","il":2},{"l":"Decile 4","il":3},{"l":"Decile 5","il":4},{"l":"Decile 6","il":5},{"l":"Decile 7","il":6},{"l":"Decile 8","il":7},{"l":"Decile 9","il":8},{"l":"Decile 10","il":9}],"jai":[{"l":"Decile 1","il":0},{"l":"Decile 2","il":1},{"l":"Decile 3","il":2},{"l":"Decile 4","il":3},{"l":"Decile 5","il":4},{"l":"Decile 6","il":5},{"l":"Decile 7","il":6},{"l":"Decile 8","il":7},{"l":"Decile 9","il":8},{"l":"Decile 10","il":9}],"jci":[{"l":"Decile 1","il":0},{"l":"Decile 2","il":1},{"l":"Decile 3","il":2},{"l":"Decile 4","il":3},{"l":"Decile 5","il":4},{"l":"Decile 6","il":5},{"l":"Decile 7","il":6},{"l":"Decile 8","il":7},{"l":"Decile 9","il":8},{"l":"Decile 10","il":9}],"ai":[{"l":"Decile 1","il":0},{"l":"Decile 2","il":1},{"l":"Decile 3","il":2},{"l":"Decile 4","il":3},{"l":"Decile 5","il":4},{"l":"Decile 6","il":5},{"l":"Decile 7","il":6},{"l":"Decile 8","il":7},{"l":"Decile 9","il":8},{"l":"Decile 10","il":9}]};
+const regAtr = {"Area Outside Region":"aor","Auckland Region":"akl","Bay of Plenty Region":"bop","Canterbury Region":"cty","Gisborne Region":"gis","Hawke's Bay Region":"hkb","Manawatū-Whanganui Region":"mwa","Marlborough Region":"mrl","Nelson Region":"nel","Northland Region":"ntl","Otago Region":"otg","Southland Region":"stl","Taranaki Region":"tki","Tasman Region":"tas","Waikato Region":"wko","Wellington Region":"wgn","West Coast Region":"wes"};
 const cliVars = ["oc", "fh", "ws", "er", "hw", "eh", "ped", "slr"];
 const cliTitles = ["Overall Climate Risk Index", "Historic Flood Hazard Area", "Wet Spells (Days)", "Extreme Rainfall (Days)", "Heatwave (Days)", "Extreme Hot Days (Days)", "Probability of PED", "Coastal Inundation Area"];
 const sesVars = ["oi", "pi", "hai", "hci", "jai", "jci", "ai", "ai"];
@@ -1077,12 +1078,18 @@ function createTable(i, containerId) {
     tabletopLeft.append(fdvalueC);
     let tabletopRight = document.createElement('div');
     tabletopRight.setAttribute('style', 'height:122px;width:114.22px;float:right;text-align:right;position:relative;');
-    tabletopRight.innerHTML = '<img src="img/nz_map.png" style="height:122px;width:114.22px;">';
     tableTop.append(tabletopRight);
+    let tabletoprightLink = document.createElement('a');
+    tabletoprightLink.setAttribute('href', 'maps/' + regAtr[getValue(filteredgeosaData[i][0], 'rc')] + '_cli.html?target=' + getValue(filteredgeosaData[i][0], 'sa'));
+    tabletoprightLink.setAttribute('class', 'mapLink');
+    tabletoprightLink.setAttribute('target', '_blank');
+    tabletoprightLink.setAttribute('title', 'Click here to view the detailed map');
+    tabletoprightLink.innerHTML = '<img src="img/nz_map.png" style="height:122px;width:114.22px;">';
+    tabletopRight.append(tabletoprightLink);
     let locDot = document.createElement('span');
     locDot.setAttribute('class', 'loc-dot');
     locDot.setAttribute('style', 'top:calc(' + filteredgeosaData[i][0].y + '% - 4px);left:calc(' + filteredgeosaData[i][0].x + '% - 4px);');
-    tabletopRight.append(locDot);
+    tabletoprightLink.append(locDot);
     let tableBottom = document.createElement('div');
     tableBottom.setAttribute('style', 'height:90px;');
     table.append(tableBottom);
@@ -1143,8 +1150,24 @@ function createTable(i, containerId) {
 }
 
 window.handleClick = function(radioId) {
+    
+
+    
     allOptions = document.getElementById('alloptions').checked;
     if (radioId != 'alloptions') {
+    
+    var radInp = (radioId == 'climate' ? '_cli' : '_ses')
+    
+    var mapLinks = document.getElementsByClassName('mapLink');
+    
+    
+    for (var elI = 0; elI < mapLinks.length; elI++) {
+        mapLinks[elI].setAttribute('href', mapLinks[elI].getAttribute('href').replace('_ses', radInp));
+        mapLinks[elI].setAttribute('href', mapLinks[elI].getAttribute('href').replace('_cli', radInp));
+    }
+    
+    
+    
         createGauges(radioId);
     } else {
         var allPanels = document.getElementsByClassName('panel panel-default');
