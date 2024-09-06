@@ -122,11 +122,6 @@
   			insertAfter(pvtRenderer, el);
   		}
 
-  		var pvtRenderer = document.getElementsByClassName('pvtRenderer')[0];
-  		if (pvtRenderer != null) {
-  			insertAfter(pvtRenderer, el);
-  		}
-
   		$('#toggle_fullscreen').on('click', function() {
   			var theTable = $("#the_table")[0];
   			var tableContent = $("#data-table")[0];

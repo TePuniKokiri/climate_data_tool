@@ -493,7 +493,7 @@ interventions is gaining a comprehensive understanding of the risks
 faced by our communities. By tailoring adaptation actions to address
 these risks, we can better serve our communities. </em></p>
 </div>
-<p id="introbody">
+<div id="introbody">
 <p>We have embarked on an initial exploratory analysis to examine what
 risks exist specifically for hapori Māori. By assessing the
 socio-economic circumstances and resilience of hapori Māori exposed to
@@ -514,10 +514,10 @@ vulnerability of hapori Māori in coastal areas due to sea level rise, as
 well as the challenges faced by older Māori households with lower
 adaptability due to factors like social isolation and lack of support
 systems.</p>
-<br> Before using this application, please take a moment to read the
+<p><br> Before using this application, please take a moment to read the
 Methodology and Data section. Click on the following tabs to see the
-results: <br>
-</p>
+results: <br></p>
+</div>
 <div id="section" class="section level3 tabset">
 <h3 class="tabset"><span></span></h3>
 <div id="maps" class="section level4">
@@ -842,7 +842,7 @@ style="height:750px;padding-top:0px;padding-left:14px;padding-right:0px;">
 <link rel="stylesheet" href="./finder/finder_libs/basic.css">
 <script src="./finder/finder_libs/typeahead-standalone.js"></script>
 </head>
-<p style="margin-bottom:4px">Search for Suburbs and Localities:</p>
+<p id="testtest" style="margin-bottom:4px">Search for Suburbs and Localities:</p>
 <input type="search" id="searchInput" autocomplete="off" placeholder="Search Places, e.g., Remuera, Auckland">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
 <script type="module">
@@ -1149,25 +1149,15 @@ function createTable(i, containerId) {
     tablebottomRight.append(dvalueF);
 }
 
-window.handleClick = function(radioId) {
-    
-
-    
+window.handleClick = function(radioId) {    
     allOptions = document.getElementById('alloptions').checked;
     if (radioId != 'alloptions') {
-    
-    var radInp = (radioId == 'climate' ? '_cli' : '_ses')
-    
-    var mapLinks = document.getElementsByClassName('mapLink');
-    
-    
-    for (var elI = 0; elI < mapLinks.length; elI++) {
-        mapLinks[elI].setAttribute('href', mapLinks[elI].getAttribute('href').replace('_ses', radInp));
-        mapLinks[elI].setAttribute('href', mapLinks[elI].getAttribute('href').replace('_cli', radInp));
-    }
-    
-    
-    
+        var radInp = (radioId == 'climate' ? '_cli' : '_ses')
+        var mapLinks = document.getElementsByClassName('mapLink');
+        for (var elI = 0; elI < mapLinks.length; elI++) {
+            mapLinks[elI].setAttribute('href', mapLinks[elI].getAttribute('href').replace('_ses', radInp));
+            mapLinks[elI].setAttribute('href', mapLinks[elI].getAttribute('href').replace('_cli', radInp));
+        }
         createGauges(radioId);
     } else {
         var allPanels = document.getElementsByClassName('panel panel-default');
@@ -1208,6 +1198,11 @@ const renderFinder = async () => {
             entity: (suggestion) => `${item['nam']}${item['maj']}`
         },
         display: (item, event) => {
+        
+        if (event) {
+        document.getElementById('testtest').innerHTML = (event.type + ' p ' + event.key);
+        }
+        /*
             if (event) {
                 if ((event.type == 'keydown' & event.key == 'Enter') | event.pointerType == 'touch' | event.pointerType == 'mouse') {
                     filteredData = locData.filter(element => element.id == item['id']);
@@ -1422,7 +1417,7 @@ const renderFinder = async () => {
                     }
                     createGauges();
                 }
-            }
+            } */
             return `${item['nam']}, ${item['maj']}`;
         },
         diacritics: true,
@@ -1557,11 +1552,6 @@ renderFinder();
   			el.innerHTML = "⛶︎";
   		} else {
   			el.innerHTML = "🗖︎";
-  		}
-
-  		var pvtRenderer = document.getElementsByClassName('pvtRenderer')[0];
-  		if (pvtRenderer != null) {
-  			insertAfter(pvtRenderer, el);
   		}
 
   		var pvtRenderer = document.getElementsByClassName('pvtRenderer')[0];
