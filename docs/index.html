@@ -842,7 +842,7 @@ style="height:750px;padding-top:0px;padding-left:14px;padding-right:0px;">
 <link rel="stylesheet" href="./finder/finder_libs/basic.css">
 <script src="./finder/finder_libs/typeahead-standalone.js"></script>
 </head>
-<p id="testtest" style="margin-bottom:4px">Search for Suburbs and Localities:</p>
+<p style="margin-bottom:4px">Search for Suburbs and Localities:</p>
 <input type="search" id="searchInput" autocomplete="off" placeholder="Search Places, e.g., Remuera, Auckland">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
 <script type="module">
@@ -1198,13 +1198,8 @@ const renderFinder = async () => {
             entity: (suggestion) => `${item['nam']}${item['maj']}`
         },
         display: (item, event) => {
-        
-        if (event) {
-        document.getElementById('testtest').innerHTML = (event.type + ' p ' + event.key);
-        }
-        /*
             if (event) {
-                if ((event.type == 'keydown' & event.key == 'Enter') | event.pointerType == 'touch' | event.pointerType == 'mouse') {
+                if ((event.type == 'keydown' & event.key == 'Enter') | event.pointerType == 'touch' | event.pointerType == 'mouse' | event.type == 'click') {
                     filteredData = locData.filter(element => element.id == item['id']);
                     panelGroup.innerHTML = '';
                     var addName = item['add'];
@@ -1417,7 +1412,7 @@ const renderFinder = async () => {
                     }
                     createGauges();
                 }
-            } */
+            }
             return `${item['nam']}, ${item['maj']}`;
         },
         diacritics: true,
