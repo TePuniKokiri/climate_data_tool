@@ -21,9 +21,7 @@ paper_link <-
   )
 guide_link <-
   paste0(
-    "https://camo.githubusercontent.com",
-    "/b26592afe00593d868948da3311b553d3c40fd6922b3875a51b31e7123baacce",
-    "/68747470733a2f2f7069766f747461626c652e6a732e6f72672f696d616765732f616e696d6174696f6e2e676966"
+    "img/guide.gif"
   )
 ```
 
