@@ -851,12 +851,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         el.setAttribute("role", "button");
                         el.setAttribute("title", "Toggle Fullscreen");
                         el.classList.add("pvtRowOrder");
-                        if (window.innerWidth <= 480) {
-                            el.innerHTML = "⛶︎";
-                            el.setAttribute("style", "vertical-align: middle;");
-                        } else {
-                            el.innerHTML = "🗖︎";
-                        }
+                        el.innerHTML = '<img src="img/fullscreen.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
 
                         var pvtRenderer = document.getElementsByClassName('pvtRenderer')[0];
                         if (pvtRenderer != null) {
@@ -874,12 +869,6 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                                 theTable.style.top = "0";
                                 theTable.style.background = "white";
                                 theTable.style.zIndex = "10000";
-                                if (window.innerWidth <= 480) {
-                                el.innerHTML = "⛶︎";
-                                el.setAttribute("style", "vertical-align: middle;");
-                                } else {
-                                el.innerHTML = "🗗︎";
-                                }
                                 document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "none";
                                 document.getElementById('headline').style.display = "none";
                                 document.getElementById('introbody').style.display = "none";
@@ -891,12 +880,6 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                                 theTable.style.width = "revert-layer";
                                 theTable.style.height = "762px";
                                 theTable.style.zIndex = "auto";
-                                if (window.innerWidth <= 480) {
-                                el.innerHTML = "⛶︎";
-                                el.setAttribute("style", "vertical-align: middle;");
-                                } else {
-                                el.innerHTML = "🗖︎";
-                                }
                                 document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "block";
                                 document.getElementById('headline').style.display = "block";
                                 document.getElementById('introbody').style.display = "block";
@@ -914,9 +897,9 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         el2.setAttribute("id", "resetTable");
                         el2.setAttribute("role", "button");
                         el2.setAttribute("title", "Reset Table");
-                        el2.setAttribute("style", "vertical-align: middle;");
+                        el2.setAttribute("style", "margin-left:3px;");
                         el2.classList.add("pvtRowOrder");
-                        el2.innerHTML = "⟳";
+                        el2.innerHTML = '<img src="img/refresh.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
                         if (el != null) {
                             insertAfter(el, el2);
                         }
@@ -928,8 +911,9 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         el3.setAttribute("id", "sheetjsexport");
                         el3.setAttribute("role", "button");
                         el3.setAttribute("title", "Download Table");
+                        el3.setAttribute("style", "margin-left:3px;margin-right:2px;");
                         el3.classList.add("pvtRowOrder");
-                        el3.innerHTML = "↓";
+                        el3.innerHTML = '<img src="img/download.svg" height="15px" style="display:block;margin-bottom:0%;"></img>';;
                         if (el != null) {
                             insertAfter(el2, el3);
                         }
