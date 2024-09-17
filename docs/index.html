@@ -586,6 +586,56 @@ container</li>
 <li>Click <a href=img/guide.gif target="_blank">here</a> for a
 visualised guide</li>
 </ul>
+<div id="exp_accordion" class="panel-group" role="tablist"
+aria-multiselectable="true">
+<div class="panel panel-default">
+<div id="headingOne" class="panel-heading" role="tab">
+<div class="panel-title">
+<a role="button" data-toggle="collapse" data-parent="#exp_accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+<h5 style="margin-bottom:0">
+Usage examples
+</h5>
+</a>
+</div>
+</div>
+<div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+aria-labelledby="headingOne">
+<div class="panel-body">
+<div style="margin-bottom: 10px;">
+Click on the following examples to view the relevant output:
+</div>
+<div style="margin-bottom:10px;">
+<button type="button" id="example1" class="btn btn-primary btn-table" onclick="applyPreset(this.id)">
+Example 1
+</button>
+<p style="display:inline">
+SA2s that are at the highest risk of floods and simultaneously face the
+greatest risk of poverty by regional council. The areas are arranged in
+descending order by the number of people in Māori households.
+</p>
+</div>
+<div style="margin-bottom:10px;">
+<button type="button" id="example2" class="btn btn-primary btn-table" onclick="applyPreset(this.id)">
+Example 2
+</button>
+<p style="display:inline">
+Number of Māori businesses located in areas with varying coastal
+inundation levels by TPK region.
+</p>
+</div>
+<div>
+<button type="button" id="example3" class="btn btn-primary btn-table" onclick="applyPreset(this.id)">
+Example 3
+</button>
+<p style="display:inline">
+Distribution of marae in terms of overall climate and adaptability risk
+indices, with cells highlighted based on the number of marae.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="the_table" class="col-md-9"
 style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
@@ -610,14 +660,152 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
         <script type="text/javascript" src="./table/table_libs/xlsx.full.min.js"></script>
     </head>
     <script type="text/javascript">
-        $(function() {
-            var renderers = $.extend(
-                $.pivotUtilities.renderers,
-                $.pivotUtilities.plotly_renderers,
-                $.pivotUtilities.d3_renderers,
-                $.pivotUtilities.export_renderers
-            );
+        var renderers = $.extend(
+            $.pivotUtilities.renderers,
+            $.pivotUtilities.plotly_renderers,
+            $.pivotUtilities.d3_renderers,
+            $.pivotUtilities.export_renderers
+        );
+        const tableConfig = {
+            renderers: renderers,
+            aggregatorName: ["Count"],
+            sorters: function(attr) {
+                var sortAs = $.pivotUtilities.sortAs;
+                if (attr == "Overall Climate Risk Index") {
+                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
+                }
+                if (attr == "Historic Flood Hazard Area") {
+                    return sortAs(["0% to 10%", "10% to 20%", "20% to 30%", "30% to 40%", "More Than 40%", "Missing"]);
+                }
+                if (attr == "Wet Spells") {
+                    return sortAs(["0 to 20 Days", "20 to 40 Days", "40 to 60 Days", "60 to 80 Days", "More Than 80 Days", "Missing"]);
+                }
+                if (attr == "Extreme Rainfall") {
+                    return sortAs(["0 to 5 Days", "5 to 10 Days", "10 to 15 Days", "15 to 20 Days", "More Than 20 Days", "Missing"]);
+                }
+                if (attr == "Heatwave") {
+                    return sortAs(["0 to 10 Days", "10 to 20 Days", "20 to 30 Days", "30 to 40 Days", "More Than 40 Days", "Missing"]);
+                }
+                if (attr == "Extreme Hot Days") {
+                    return sortAs(["0 to 2 Days", "2 to 4 Days", "4 to 6 Days", "6 to 8 Days", "More Than 8 Days", "Missing"]);
+                }
+                if (attr == "Probability of PED") {
+                    return sortAs(["0% to 20%", "20% to 40%", "40% to 60%", "60% to 80%", "80% to 100%", "Missing"]);
+                }
+                if (attr == "Coastal Inundation Hazard Area") {
+                    return sortAs(["0% to 2%", "2% to 4%", "4% to 6%", "6% to 8%", "More Than 8%", "Missing"]);
+                }
+                if (attr == "Overall Socio-economic Risk Index") {
+                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
+                }
+                if (attr == "Poverty Risk Index") {
+                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
+                }
+                if (attr == "Health Risk Index (Adult Version)") {
+                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
+                }
+                if (attr == "Health Risk Index (Child Version)") {
+                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
+                }
+                if (attr == "Justice Risk Index (Adult Version)") {
+                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
+                }
+                if (attr == "Justice Risk Index (Child Version)") {
+                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
+                }
+                if (attr == "Adaptability Risk Index") {
+                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
+                }
+            },
+            aggregators: {
+                "Count": $.pivotUtilities.aggregators["Count"],
+                "Count Unique Values": $.pivotUtilities.aggregators["Count Unique Values"],
+                "List Unique Values": $.pivotUtilities.aggregators["List Unique Values"],
+                "Integer Sum": $.pivotUtilities.aggregators["Integer Sum"],
+                "Average": $.pivotUtilities.aggregators["Average"],
+                "Median": $.pivotUtilities.aggregators["Median"],
+                "Sum over Sum": $.pivotUtilities.aggregators["Sum over Sum"],
+                "Count as Fraction of Total": $.pivotUtilities.aggregators["Count as Fraction of Total"],
+                "Count as Fraction of Rows": $.pivotUtilities.aggregators["Count as Fraction of Rows"],
+                "Count as Fraction of Columns": $.pivotUtilities.aggregators["Count as Fraction of Columns"],
+                "Sum as Fraction of Total": $.pivotUtilities.aggregators["Sum as Fraction of Total"],
+                "Sum as Fraction of Rows": $.pivotUtilities.aggregators["Sum as Fraction of Rows"],
+                "Sum as Fraction of Columns": $.pivotUtilities.aggregators["Sum as Fraction of Columns"]
+            },
+            hiddenFromAggregators: [
+                "Overall Climate Risk Index", "Historic Flood Hazard Area", "Wet Spells",
+                "Extreme Rainfall", "Heatwave", "Extreme Hot Days",
+                "Probability of PED", "Coastal Inundation Hazard Area", "Overall Socio-economic Risk Index",
+                "Poverty Risk Index", "Health Risk Index (Adult Version)", "Health Risk Index (Child Version)",
+                "Justice Risk Index (Adult Version)", "Justice Risk Index (Child Version)", "Adaptability Risk Index"
+            ],
+            hiddenFromDragDrop: [
+                "Land Area (km²)", "Total Area (km²)",
+                "Number of Māori Households",
+                "Number of People in Māori Households",
+                "Number of Marae",
+                "Number of Māori Freehold Land Blocks",
+                "Area of Māori Freehold Land Blocks (ha)",
+                "Number of Māori Businesses",
+                "Number of Households",
+                "Number of People"
+            ],
 
+            rendererOptions: {
+                plotlyConfig: {
+                    // displayModeBar: true,
+                    displaylogo: false,
+                    modeBarButtonsToRemove: ['select2d', 'lasso2d', 'toggleSpikelines', 'resetScale2d'],
+                    // responsive: true,
+                    scrollZoom: true
+                }
+            },
+            plotly: {
+                height: 600
+            },
+
+            onRefresh: function(config) {
+                if (window.innerWidth > 480) {
+                    const numRows = config.rows.length;
+                    const numCols = config.cols.length;
+                    const startLeft = -12;
+                    const pvtAxisLabelSticky =
+                        $('.pvtTable thead tr:last-child .pvtAxisLabel');
+                    let leftRowHeader = [];
+                    let progLeft = startLeft;
+                    pvtAxisLabelSticky.each(function(index) {
+                        leftRowHeader[index] = progLeft;
+                        $(this).css('left', progLeft);
+                        progLeft += $(this).outerWidth(true);
+                    })
+                    const leftRowHeaderLength = leftRowHeader.length;
+                    const pvtRowsSticky = $('.pvtTable tbody tr');
+                    pvtRowsSticky.each(function(index) {
+                        let pvtRowLabel = $(this).find('.pvtRowLabel');
+                        let pvtRowLabelLength = pvtRowLabel.length;
+                        let j = pvtRowLabelLength - 1;
+                        for (let i = leftRowHeaderLength - 1; i >= (leftRowHeaderLength - pvtRowLabelLength); i--) {
+                            $(pvtRowLabel[j]).css('left', leftRowHeader[i]);
+                            j--;
+                        }
+                    });
+                    //const pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth(true) + startLeft;
+                    let pvtFirstW;
+                    if ($('.pvtAxisContainer.pvtRows.pvtUiCell.ui-sortable')[0].innerHTML == '') {
+                    pvtFirstW = startLeft;
+                    } else {
+                    pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth( true ) + startLeft;
+                    }
+                    for (let i = 1; i <= numCols; i++) {
+                        $('.pvtTable thead tr:nth-child(' + i + ') .pvtAxisLabel').css('left', pvtFirstW);
+                    }
+                    $('.pvtTable thead tr:last-child th:last-child').css('left', pvtFirstW);
+                }
+            }
+        };
+
+        //console.log(tableConfig);
+        $(function() {
             var parseAndPivot = function(f) {
                 $("#tableOutput").html("<p align='center' style='color:grey;'>(processing...)</p>")
                 Papa.parse(f, {
@@ -626,146 +814,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         alert(e)
                     },
                     complete: function(parsed) {
-                        $("#tableOutput").pivotUI(parsed.data, {
-                            renderers: renderers,
-                            //rows: ["TPK Region"],
-                            //cols: ["Overall Climate Risk Index"],
-                            aggregatorName: ["Integer Sum"],
-                            vals: ["Number of People in Māori Households"],
-                            sorters: function(attr) {
-                                var sortAs = $.pivotUtilities.sortAs;
-                                if (attr == "Overall Climate Risk Index") {
-                                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
-                                }
-                                if (attr == "Historic Flood Hazard Area") {
-                                    return sortAs(["0% to 10%", "10% to 20%", "20% to 30%", "30% to 40%", "More Than 40%", "Missing"]);
-                                }
-                                if (attr == "Wet Spells") {
-                                    return sortAs(["0 to 20 Days", "20 to 40 Days", "40 to 60 Days", "60 to 80 Days", "More Than 80 Days", "Missing"]);
-                                }
-                                if (attr == "Extreme Rainfall") {
-                                    return sortAs(["0 to 5 Days", "5 to 10 Days", "10 to 15 Days", "15 to 20 Days", "More Than 20 Days", "Missing"]);
-                                }
-                                if (attr == "Heatwave") {
-                                    return sortAs(["0 to 10 Days", "10 to 20 Days", "20 to 30 Days", "30 to 40 Days", "More Than 40 Days", "Missing"]);
-                                }
-                                if (attr == "Extreme Hot Days") {
-                                    return sortAs(["0 to 2 Days", "2 to 4 Days", "4 to 6 Days", "6 to 8 Days", "More Than 8 Days", "Missing"]);
-                                }
-                                if (attr == "Probability of PED") {
-                                    return sortAs(["0% to 20%", "20% to 40%", "40% to 60%", "60% to 80%", "80% to 100%", "Missing"]);
-                                }
-                                if (attr == "Coastal Inundation Hazard Area") {
-                                    return sortAs(["0% to 2%", "2% to 4%", "4% to 6%", "6% to 8%", "More Than 8%", "Missing"]);
-                                }
-                                if (attr == "Overall Socio-economic Risk Index") {
-                                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
-                                }
-                                if (attr == "Poverty Risk Index") {
-                                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
-                                }
-                                if (attr == "Health Risk Index (Adult Version)") {
-                                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
-                                }
-                                if (attr == "Health Risk Index (Child Version)") {
-                                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
-                                }
-                                if (attr == "Justice Risk Index (Adult Version)") {
-                                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
-                                }
-                                if (attr == "Justice Risk Index (Child Version)") {
-                                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
-                                }
-                                if (attr == "Adaptability Risk Index") {
-                                    return sortAs(["Very Low", "Low", "Moderate", "High", "Very High", "Missing"]);
-                                }
-                            },
-                            aggregators: {
-                                "Count": $.pivotUtilities.aggregators["Count"],
-                                "Count Unique Values": $.pivotUtilities.aggregators["Count Unique Values"],
-                                "List Unique Values": $.pivotUtilities.aggregators["List Unique Values"],
-                                "Integer Sum": $.pivotUtilities.aggregators["Integer Sum"],
-                                "Average": $.pivotUtilities.aggregators["Average"],
-                                "Median": $.pivotUtilities.aggregators["Median"],
-                                "Sum over Sum": $.pivotUtilities.aggregators["Sum over Sum"],
-                                "Count as Fraction of Total": $.pivotUtilities.aggregators["Count as Fraction of Total"],
-                                "Count as Fraction of Rows": $.pivotUtilities.aggregators["Count as Fraction of Rows"],
-                                "Count as Fraction of Columns": $.pivotUtilities.aggregators["Count as Fraction of Columns"],
-                                "Sum as Fraction of Total": $.pivotUtilities.aggregators["Sum as Fraction of Total"],
-                                "Sum as Fraction of Rows": $.pivotUtilities.aggregators["Sum as Fraction of Rows"],
-                                "Sum as Fraction of Columns": $.pivotUtilities.aggregators["Sum as Fraction of Columns"]
-                            },
-                            hiddenFromAggregators: [
-                                "Overall Climate Risk Index", "Historic Flood Hazard Area", "Wet Spells",
-                                "Extreme Rainfall", "Heatwave", "Extreme Hot Days",
-                                "Probability of PED", "Coastal Inundation Hazard Area", "Overall Socio-economic Risk Index",
-                                "Poverty Risk Index", "Health Risk Index (Adult Version)", "Health Risk Index (Child Version)",
-                                "Justice Risk Index (Adult Version)", "Justice Risk Index (Child Version)", "Adaptability Risk Index"
-                            ],
-                            hiddenFromDragDrop: [
-                                "Land Area (km²)", "Total Area (km²)",
-                                "Number of Māori Households",
-                                "Number of People in Māori Households",
-                                "Number of Marae",
-                                "Number of Māori Freehold Land Blocks",
-                                "Area of Māori Freehold Land Blocks (ha)",
-                                "Number of Māori Businesses",
-                                "Number of Households",
-                                "Number of People"
-                            ],
-
-                            rendererOptions: {
-                                plotlyConfig: {
-                                    // displayModeBar: true,
-                                    displaylogo: false,
-                                    modeBarButtonsToRemove: ['select2d', 'lasso2d', 'toggleSpikelines', 'resetScale2d'],
-                                    // responsive: true,
-                                    scrollZoom: true
-                                }
-                            },
-                            plotly: {
-                                height: 600
-                            },
-
-                            onRefresh: function(config) {
-                                if (window.innerWidth > 480) {
-                                    const numRows = config.rows.length;
-                                    const numCols = config.cols.length;
-                                    const startLeft = -12;
-                                    const pvtAxisLabelSticky =
-                                        $('.pvtTable thead tr:last-child .pvtAxisLabel');
-                                    let leftRowHeader = [];
-                                    let progLeft = startLeft;
-                                    pvtAxisLabelSticky.each(function(index) {
-                                        leftRowHeader[index] = progLeft;
-                                        $(this).css('left', progLeft);
-                                        progLeft += $(this).outerWidth(true);
-                                    })
-                                    const leftRowHeaderLength = leftRowHeader.length;
-                                    const pvtRowsSticky = $('.pvtTable tbody tr');
-                                    pvtRowsSticky.each(function(index) {
-                                        let pvtRowLabel = $(this).find('.pvtRowLabel');
-                                        let pvtRowLabelLength = pvtRowLabel.length;
-                                        let j = pvtRowLabelLength - 1;
-                                        for (let i = leftRowHeaderLength - 1; i >= (leftRowHeaderLength - pvtRowLabelLength); i--) {
-                                            $(pvtRowLabel[j]).css('left', leftRowHeader[i]);
-                                            j--;
-                                        }
-                                    });
-                                    //const pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth(true) + startLeft;
-                                    let pvtFirstW;
-                                    if ($('.pvtAxisContainer.pvtRows.pvtUiCell.ui-sortable')[0].innerHTML == '') {
-                                    pvtFirstW = startLeft;
-                                    } else {
-                                    pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth( true ) + startLeft;
-                                    }
-                                    for (let i = 1; i <= numCols; i++) {
-                                        $('.pvtTable thead tr:nth-child(' + i + ') .pvtAxisLabel').css('left', pvtFirstW);
-                                    }
-                                    $('.pvtTable thead tr:last-child th:last-child').css('left', pvtFirstW);
-                                }
-                            }
-                        }, true);
+                        $("#tableOutput").pivotUI(parsed.data, tableConfig, true);
 
                         var pvtRenderer = document.getElementsByClassName('pvtRenderer');
                         if (document.getElementsByClassName('pvtRenderer').length > 0) {
@@ -785,49 +834,35 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                             pvtAttrSpan[i].setAttribute('tooltip', pvtAttrDesc[pvtAttrNames.indexOf(pvtAttrSpan[i].firstChild.textContent)]);
                             pvtAttrSpan[i].setAttribute('flow', 'right');
                             if (climateVars.indexOf(pvtAttrSpan[i].firstChild.textContent) > -1) {
-                                pvtAttrSpan[i].style.background = 'rgb(208 233 239)';
+                                pvtAttrSpan[i].style.background = 'var(--cCol)';
                             } else if (sesVars.indexOf(pvtAttrSpan[i].firstChild.textContent) > -1) {
-                                pvtAttrSpan[i].style.background = 'rgb(245 226 205)';
+                                pvtAttrSpan[i].style.background = 'var(--sCol)';
                             }
                         }
                         var pvtAggregator = document.getElementsByClassName('pvtAggregator')[0];
                         pvtAggregator.addEventListener('change', changeMargin);
 
+                        var breakSpan = document.createElement('span');
+                        breakSpan.innerHTML = '<br>';
+
                         function changeMargin() {
                             if (pvtAggregator.value.includes('Count') && !pvtAggregator.value.includes('Unique')) {
                                 pvtAggregator.setAttribute('style', 'margin-bottom:0px;');
+                                breakSpan.remove();
                             } else {
                                 pvtAggregator.setAttribute('style', 'margin-bottom:5px;');
+                                setTimeout(function() {
+                                    var pvtAttrDropdown = document.getElementsByClassName('pvtAttrDropdown');
+                                    if (pvtAggregator.value.includes('Sum over Sum')) {
+                                        pvtAttrDropdown[1].before(breakSpan);
+                                        pvtAttrDropdown[0].setAttribute('style', 'margin-bottom:5px;');         
+                                    } else {
+                                        pvtAttrDropdown[0].setAttribute('style', 'margin-bottom:0px;');
+                                        breakSpan.remove();
+                                    }
+                                }, 20);
                             }
-                        } // Moving down the second dropdown attrbute (if exists):
-
-                        var breakSpan = document.createElement('span');
-                        breakSpan.innerHTML = '<br>';
-                        var pvtAttrDropdown = document.getElementsByClassName('pvtAttrDropdown');
-
-                        let observer = new MutationObserver(mutations =>
-                            mutations.forEach(mutation => {
-                                if (pvtAttrDropdown.length == 2) {
-                                    observer.disconnect();
-                                    pvtAttrDropdown[1].before(breakSpan);
-                                    pvtAttrDropdown[0].setAttribute('style', 'margin-bottom:5px;')
-                                    observe();
-                                } else if (pvtAttrDropdown.length == 1) {
-                                    pvtAttrDropdown[0].setAttribute('style', 'margin-bottom:0px;');
-                                    breakSpan.remove();
-                                } else {
-                                    breakSpan.remove();
-                                }
-                            })
-                        );
-
-                        const observe = () => {
-                            observer.observe(document, {
-                                childList: true,
-                                subtree: true,
-                            });
-                        };
-                        observe();
+                        }
 
                         var sumAgg = document.querySelectorAll('option[value="Integer Sum"]');
                         if (sumAgg.length == 1) {
@@ -904,18 +939,84 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                             insertAfter(el, el2);
                         }
                         $('#resetTable').on('click', function() {
+                            tableConfig.aggregatorName = ['Count'];
+                            tableConfig.rows = [];
+                            tableConfig.cols = [];
+                            tableConfig.rowOrder = "key_a_to_z";
+                            tableConfig.exclusions = {};
+                            tableConfig.includions = {};
+                            tableConfig.rendererName = ["Table"];
                             parseAndPivot(dataTxt);
                         })
 
+                        window.applyPreset = function(radioId) {
+                            if (radioId == "example1") {
+                                tableConfig.aggregatorName = ['Integer Sum'];
+                                tableConfig.vals = ["Number of People in Māori Households"];
+                                tableConfig.rows = ["Regional Council", "SA2 Name"];
+                                tableConfig.cols = ["Historic Flood Hazard Area", "Poverty Risk Index"];
+                                tableConfig.rowOrder = "value_z_to_a";
+                                tableConfig.exclusions = {
+                                    "Historic Flood Hazard Area": ["0% to 10%", "10% to 20%", "20% to 30%", "30% to 40%"],
+                                    "Poverty Risk Index": ["Very Low", "Low", "Moderate", "High"]
+                                };
+                                tableConfig.includions = {
+                                    "Historic Flood Hazard Area": ["More Than 40%"],
+                                    "Poverty Risk Index": ["Very High"]
+                                };
+                                tableConfig.rendererName = ["Table"];
+                            } else if (radioId == "example2") {
+                                tableConfig.aggregatorName = ['Sum as Fraction of Columns'];
+                                tableConfig.vals = ["Number of Māori Businesses"];
+                                tableConfig.rows = ["Coastal Inundation Hazard Area"];
+                                tableConfig.cols = ["TPK Region"];
+                                tableConfig.rowOrder = "key_a_to_z";
+                                tableConfig.exclusions = {};
+                                tableConfig.includions = {};
+                                tableConfig.rendererName = ["Multiple Pie Chart"];
+                            } else {
+                                tableConfig.aggregatorName = ['Integer Sum'];
+                                tableConfig.vals = ["Number of Marae"];
+                                tableConfig.rows = ["Overall Climate Risk Index"];
+                                tableConfig.cols = ["Adaptability Risk Index"];
+                                tableConfig.rowOrder = "key_a_to_z";
+                                tableConfig.exclusions = {};
+                                tableConfig.includions = {};
+                                tableConfig.rendererName = ["Heatmap"];
+                            }
+                            parseAndPivot(dataTxt);
+                        }
+
                         var el3 = document.createElement("a");
-                        el3.setAttribute("id", "sheetjsexport");
+                        el3.setAttribute("id", "toggleTooltip");
                         el3.setAttribute("role", "button");
-                        el3.setAttribute("title", "Download Table");
-                        el3.setAttribute("style", "margin-left:3px;margin-right:2px;");
+                        el3.setAttribute("title", "Toggle Tooltip");
+                        el3.setAttribute("style", "margin-left:3px;");
                         el3.classList.add("pvtRowOrder");
-                        el3.innerHTML = '<img src="img/download.svg" height="15px" style="display:block;margin-bottom:0%;"></img>';;
+                        el3.innerHTML = '<img src="img/tooltip.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
                         if (el != null) {
                             insertAfter(el2, el3);
+                        }
+
+                        $('#toggleTooltip').on('click', function() {
+                            document.querySelectorAll('.pvtAttr').forEach((elem) => {
+                                if (elem.classList.contains('no-tooltip')) {
+                                    elem.classList.remove('no-tooltip');
+                                } else {
+                                    elem.classList.add('no-tooltip');
+                                }
+                            })
+                        });
+
+                        var el4 = document.createElement("a");
+                        el4.setAttribute("id", "sheetjsexport");
+                        el4.setAttribute("role", "button");
+                        el4.setAttribute("title", "Download Table");
+                        el4.setAttribute("style", "margin-left:3px;margin-right:2px;");
+                        el4.classList.add("pvtRowOrder");
+                        el4.innerHTML = '<img src="img/download.svg" height="15px" style="display:block;margin-bottom:0%;"></img>';;
+                        if (el != null) {
+                            insertAfter(el3, el4);
                         }
 
                         // https://github.com/nicolaskruchten/pivottable/issues/851
@@ -1009,7 +1110,7 @@ style="height:750px;padding-top:0px;padding-left:14px;padding-right:0px;">
 </head>
 <p style="margin-bottom:4px">Search for Suburbs and Localities:</p>
 <input type="search" id="searchInput" autocomplete="off" placeholder="Search Places, e.g., Remuera, Auckland">
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
+<div class="panel-group finder" id="accordion" role="tablist" aria-multiselectable="true"></div>
 <script type="module">
 console.warn = () => {};
 import * as GaugeChart from 'https://unpkg.com/gauge-chart@next/dist/bundle.mjs'
@@ -1077,7 +1178,7 @@ function createGauges(radioId = 'climate') {
     } else {
         document.getElementById('alloptions').parentNode.setAttribute('class', 'btn btn-primary')
     }
-    var allPanels = document.getElementsByClassName('panel panel-default');
+    var allPanels = document.getElementsByClassName('panel panel-default finder');
         if (allPanels.length > 1) {
             for (let i = 1; i < allPanels.length; i++) {
                 allPanels[i].style.display = (allOptions ? 'block' : 'none');
@@ -1325,7 +1426,7 @@ window.handleClick = function(radioId) {
         }
         createGauges(radioId);
     } else {
-        var allPanels = document.getElementsByClassName('panel panel-default');
+        var allPanels = document.getElementsByClassName('panel panel-default finder');
         if (allPanels.length > 1) {
             for (let i = 1; i < allPanels.length; i++) {
                 allPanels[i].style.display = (allOptions ? 'block' : 'none');
@@ -1335,7 +1436,7 @@ window.handleClick = function(radioId) {
 }
 
 const inputElement = document.getElementById('searchInput');
-const panelGroup = document.getElementsByClassName('panel-group')[0];
+const panelGroup = document.getElementsByClassName('panel-group finder')[0];
 
 async function loadlocData() {
     return (await (await fetch('https://raw.githubusercontent.com/TePuniKokiri/climate_data_tool/main/docs/data/json_files/sub_loc_sa2.json')).json());
@@ -1513,7 +1614,7 @@ const renderFinder = async () => {
                         filteredsaData[i] = saData.filter(element => element.saC == filteredData[i]['saC']);
                         filteredgeosaData[i] = geosaData.filter(element => element.saC == filteredData[i]['saC']);
                         var panelDefault = document.createElement('div');
-                        panelDefault.setAttribute('class', 'panel panel-default' + ((i == 0) ? ' in' : ''));
+                        panelDefault.setAttribute('class', 'panel panel-default finder' + ((i == 0) ? ' in' : ''));
                         if (!allOptions) {
                             panelDefault.setAttribute('style', 'display:' + ((i == 0) ? ' block' : ' none'));
                         }

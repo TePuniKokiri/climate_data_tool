@@ -1,3 +1,8 @@
+:root {
+    --cCol: rgb(208, 233, 239);
+    --sCol: rgb(245, 226, 205);
+    --gCol: rgb(254, 254, 254);
+}
 body {
     text-align: justify;
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -221,6 +226,9 @@ li::marker {
 [tooltip]:hover::after {
     display: block;
 }
+.no-tooltip[tooltip]:hover::before, .no-tooltip[tooltip]:hover::after {
+    display: none;
+}
 /* Don't show empty tooltips */
 [tooltip=""]::before,
 [tooltip=""]::after {
@@ -344,8 +352,9 @@ li::marker {
     border-radius: 4px !important;
 }
 .pvtAxisContainer li.pvtFilteredAttribute span.pvtAttr {
-    filter: brightness(85%);
-    z-index: 99;
+    --cCol: rgb(177, 198, 203);
+    --sCol: rgb(208, 192, 174);
+    --gCol: rgb(216, 216, 216);
 }
 .pvtRendererArea {
     padding: 0px;
@@ -629,4 +638,60 @@ table.dataTable.no-footer {
 }
 #DataTables_Table_0_wrapper {
   min-width: 480px;
+}
+.btn-table {
+    font-size: 13px !important;
+    border-radius: 4px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 5px !important;
+    margin-bottom: -2px !important;
+    border: 0;
+    vertical-align: text-bottom;
+}
+/*
+.btn-primary:focus, .btn-primary:focus-visible, .btn-primary:active, .btn-primary.focus {
+    border-color: transparent;
+    outline: none;
+}
+*/
+.btn-primary:focus, .btn-primary:focus-visible, .btn-primary:active:hover,
+.btn-primary.active:hover, .open>.dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus, .btn-primary.active:focus,
+.open>.dropdown-toggle.btn-primary:focus, .btn-primary:active.focus,
+.btn-primary.active.focus, .open>.dropdown-toggle.btn-primary.focus {
+    border-color: transparent;
+    outline: none;
+}
+
+#exp_accordion .panel-title a:hover {
+  color: #039bc4 !important;
+  text-decoration: none;
+}
+#exp_accordion .panel-title a.collapsed:focus {
+  color: #007C9D;
+  text-decoration: none;
+}
+#exp_accordion .panel-title a:focus {
+  color: #016682;
+  text-decoration: none;
+}
+#exp_accordion .panel-default > .panel-heading {
+    color: #007C9D;
+}
+#exp_accordion .panel-default {
+    border: none;
+}
+#exp_accordion .panel-body {
+    padding: 0;
+    padding-top: 7px;
+}
+#exp_accordion .panel-heading {
+    padding-left: 20px;
+}
+#exp_accordion .btn-primary {
+    height: 23px;
 }

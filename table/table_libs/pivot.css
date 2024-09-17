@@ -56,7 +56,8 @@ table.pvtTable tbody tr td {
 .pvtAxisContainer li span.pvtAttr {
     -webkit-text-size-adjust: 100%;
     /* background: #F3F3F3; */
-    background: #FEfEFE;
+    /* background: #FEfEFE; */
+	background: var(--gCol);
     border: 1px solid #DEDEDE;
     padding: 2px 5px;
     white-space:nowrap;
