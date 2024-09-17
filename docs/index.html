@@ -938,54 +938,6 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         if (el != null) {
                             insertAfter(el, el2);
                         }
-                        $('#resetTable').on('click', function() {
-                            tableConfig.aggregatorName = ['Count'];
-                            tableConfig.rows = [];
-                            tableConfig.cols = [];
-                            tableConfig.rowOrder = "key_a_to_z";
-                            tableConfig.exclusions = {};
-                            tableConfig.includions = {};
-                            tableConfig.rendererName = ["Table"];
-                            parseAndPivot(dataTxt);
-                        })
-
-                        window.applyPreset = function(radioId) {
-                            if (radioId == "example1") {
-                                tableConfig.aggregatorName = ['Integer Sum'];
-                                tableConfig.vals = ["Number of People in Māori Households"];
-                                tableConfig.rows = ["Regional Council", "SA2 Name"];
-                                tableConfig.cols = ["Historic Flood Hazard Area", "Poverty Risk Index"];
-                                tableConfig.rowOrder = "value_z_to_a";
-                                tableConfig.exclusions = {
-                                    "Historic Flood Hazard Area": ["0% to 10%", "10% to 20%", "20% to 30%", "30% to 40%"],
-                                    "Poverty Risk Index": ["Very Low", "Low", "Moderate", "High"]
-                                };
-                                tableConfig.includions = {
-                                    "Historic Flood Hazard Area": ["More Than 40%"],
-                                    "Poverty Risk Index": ["Very High"]
-                                };
-                                tableConfig.rendererName = ["Table"];
-                            } else if (radioId == "example2") {
-                                tableConfig.aggregatorName = ['Sum as Fraction of Columns'];
-                                tableConfig.vals = ["Number of Māori Businesses"];
-                                tableConfig.rows = ["Coastal Inundation Hazard Area"];
-                                tableConfig.cols = ["TPK Region"];
-                                tableConfig.rowOrder = "key_a_to_z";
-                                tableConfig.exclusions = {};
-                                tableConfig.includions = {};
-                                tableConfig.rendererName = ["Multiple Pie Chart"];
-                            } else {
-                                tableConfig.aggregatorName = ['Integer Sum'];
-                                tableConfig.vals = ["Number of Marae"];
-                                tableConfig.rows = ["Overall Climate Risk Index"];
-                                tableConfig.cols = ["Adaptability Risk Index"];
-                                tableConfig.rowOrder = "key_a_to_z";
-                                tableConfig.exclusions = {};
-                                tableConfig.includions = {};
-                                tableConfig.rendererName = ["Heatmap"];
-                            }
-                            parseAndPivot(dataTxt);
-                        }
 
                         var el3 = document.createElement("a");
                         el3.setAttribute("id", "toggleTooltip");
@@ -1028,11 +980,61 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         var visRenderer = ["Table", "Table Barchart", "Heatmap", "Row Heatmap", "Col Heatmap"];
                         pvtRenderer.addEventListener('input', function (evt) {
                             if (visRenderer.indexOf(this.value) >= 0) {
-                            el3.style.visibility = "visible";
+                            el4.style.visibility = "visible";
                             } else {
-                            el3.style.visibility = "hidden";
+                            el4.style.visibility = "hidden";
                             }
                         });
+
+                        $('#resetTable').on('click', function() {
+                            tableConfig.aggregatorName = ['Count'];
+                            tableConfig.rows = [];
+                            tableConfig.cols = [];
+                            tableConfig.rowOrder = "key_a_to_z";
+                            tableConfig.exclusions = {};
+                            tableConfig.includions = {};
+                            tableConfig.rendererName = ["Table"];
+                            parseAndPivot(dataTxt);
+                        })
+
+                        window.applyPreset = function(radioId) {
+                            if (radioId == "example1") {
+                                tableConfig.aggregatorName = ['Integer Sum'];
+                                tableConfig.vals = ["Number of People in Māori Households"];
+                                tableConfig.rows = ["Regional Council", "SA2 Name"];
+                                tableConfig.cols = ["Historic Flood Hazard Area", "Poverty Risk Index"];
+                                tableConfig.rowOrder = "value_z_to_a";
+                                tableConfig.exclusions = {
+                                    "Historic Flood Hazard Area": ["0% to 10%", "10% to 20%", "20% to 30%", "30% to 40%"],
+                                    "Poverty Risk Index": ["Very Low", "Low", "Moderate", "High"]
+                                };
+                                tableConfig.includions = {
+                                    "Historic Flood Hazard Area": ["More Than 40%"],
+                                    "Poverty Risk Index": ["Very High"]
+                                };
+                                tableConfig.rendererName = ["Table"];
+                            } else if (radioId == "example2") {
+                                tableConfig.aggregatorName = ['Sum as Fraction of Columns'];
+                                tableConfig.vals = ["Number of Māori Businesses"];
+                                tableConfig.rows = ["Coastal Inundation Hazard Area"];
+                                tableConfig.cols = ["TPK Region"];
+                                tableConfig.rowOrder = "key_a_to_z";
+                                tableConfig.exclusions = {};
+                                tableConfig.includions = {};
+                                tableConfig.rendererName = ["Multiple Pie Chart"];
+                                setTimeout(function() { document.getElementById('sheetjsexport').style.visibility = "hidden"; }, 20);
+                            } else {
+                                tableConfig.aggregatorName = ['Integer Sum'];
+                                tableConfig.vals = ["Number of Marae"];
+                                tableConfig.rows = ["Overall Climate Risk Index"];
+                                tableConfig.cols = ["Adaptability Risk Index"];
+                                tableConfig.rowOrder = "key_a_to_z";
+                                tableConfig.exclusions = {};
+                                tableConfig.includions = {};
+                                tableConfig.rendererName = ["Heatmap"];
+                            }
+                            parseAndPivot(dataTxt);
+                        }
                     }
                 });
             };
