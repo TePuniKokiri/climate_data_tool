@@ -619,13 +619,23 @@ descending order by the number of people in Māori households.
 Example 2
 </button>
 <p style="display:inline">
+SA2s that are at the highest risk of extreme rainfall and simultaneously
+face the greatest health risk, with cells arranged and highlighted based
+on population density.
+</p>
+</div>
+<div style="margin-bottom:10px;">
+<button type="button" id="example3" class="btn btn-primary btn-table" onclick="applyPreset(this.id)">
+Example 3
+</button>
+<p style="display:inline">
 Number of Māori businesses located in areas with varying coastal
 inundation levels by TPK region.
 </p>
 </div>
 <div>
-<button type="button" id="example3" class="btn btn-primary btn-table" onclick="applyPreset(this.id)">
-Example 3
+<button type="button" id="example4" class="btn btn-primary btn-table" onclick="applyPreset(this.id)">
+Example 4
 </button>
 <p style="display:inline">
 Distribution of marae in terms of overall climate and adaptability risk
@@ -789,12 +799,11 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                             j--;
                         }
                     });
-                    //const pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth(true) + startLeft;
                     let pvtFirstW;
-                    if ($('.pvtAxisContainer.pvtRows.pvtUiCell.ui-sortable')[0].innerHTML == '') {
+                        if ($('.pvtAxisContainer.pvtRows.pvtUiCell.ui-sortable')[0].innerHTML == '') {
                     pvtFirstW = startLeft;
                     } else {
-                    pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth( true ) + startLeft;
+                        pvtFirstW = $('.pvtTable thead tr:first-child th:first-child').outerWidth( true ) + startLeft;
                     }
                     for (let i = 1; i <= numCols; i++) {
                         $('.pvtTable thead tr:nth-child(' + i + ') .pvtAxisLabel').css('left', pvtFirstW);
@@ -804,7 +813,6 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
             }
         };
 
-        //console.log(tableConfig);
         $(function() {
             var parseAndPivot = function(f) {
                 $("#tableOutput").html("<p align='center' style='color:grey;'>(processing...)</p>")
@@ -1025,7 +1033,22 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                                     "Poverty Risk Index": ["Very High"]
                                 };
                                 tableConfig.rendererName = ["Table"];
-                            } else if (radioId == "example2") {
+                            } else if (radioId == "example2"){
+                                tableConfig.aggregatorName = ['Sum over Sum'];
+                                tableConfig.vals = ["Number of People in Māori Households", "Total Area (km²)"];
+                                tableConfig.rows = ["SA2 Name"];
+                                tableConfig.cols = [];
+                                tableConfig.rowOrder = "value_z_to_a";
+                                tableConfig.exclusions = {
+                                    "Extreme Rainfall": ["0 to 5 Days", "5 to 10 Days", "10 to 15 Days", "15 to 20 Days"],
+                                    "Health Risk Index (Adult Version)": ["Very Low", "Low", "Moderate", "High"]
+                                };
+                                tableConfig.includions = {
+                                    "Extreme Rainfall": ["More Than 20 Days"],
+                                    "Health Risk Index (Adult Version)": ["Very High"]
+                                };
+                                tableConfig.rendererName = ["Col Heatmap"];
+                            }else if (radioId == "example3") {
                                 tableConfig.aggregatorName = ['Sum as Fraction of Columns'];
                                 tableConfig.vals = ["Number of Māori Businesses"];
                                 tableConfig.rows = ["Coastal Inundation Hazard Area"];
@@ -1723,10 +1746,12 @@ renderFinder();
   		  leafletMap._initialCenter = L.latLng(-41.5, 172.5)
   		  leafletMap._initialZoom = 5;
   		  leafletMap._resetView(leafletMap._initialCenter, leafletMap._initialZoom);
+  		  /*
   		  var filterLi = $( "li:contains('Filter the attributes by categories')");
   		  if (filterLi.length != 0) {
   		    filterLi[0].style.display = 'none';
   		  }
+  		  */
   		}
 
   		let observer = new MutationObserver(mutations =>

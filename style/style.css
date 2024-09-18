@@ -619,9 +619,11 @@ table.dataTable.no-footer {
     .pvtRenderer, .pvtAggregator, .pvtAttrDropdown {
         font-size: 12px
     }
+    /*
     .pvtTriangle {
         display: none;
     }
+    */
     .pvtTable thead tr:first-child th:first-child {
         position: unset;
     }

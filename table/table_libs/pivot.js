@@ -1453,11 +1453,23 @@
             valueList.find(".changed:not(:checked)").removeClass("changed").prop("checked", true);
             return closeFilterBox();
           });
+		  /*
           triangleLink = $("<span>").addClass('pvtTriangle').html(" &#x25BE;").bind("click", function(e) {
             var left, ref2, top;
             // https://github.com/nicolaskruchten/pivottable/issues/1332
             // ref2 = $(e.currentTarget).position(), left = ref2.left, top = ref2.top;
 			parrRef = document.querySelector("#tableOutput").getBoundingClientRect();
+            ref2 = e.currentTarget.getBoundingClientRect(), left = ref2.left - parrRef.left, top = ref2.top - parrRef.top;
+            return valueList.css({
+              left: left + 10 + 9,
+              top: top + 10 + 9
+            }).show();
+          });
+		  */
+		  triangleLink = $("<span>").addClass('pvtTriangle').html(" &#x25BE;").on("click touchstart", function(e) {
+            e.preventDefault();
+            var left, ref2, top;
+            parrRef = document.querySelector("#tableOutput").getBoundingClientRect();
             ref2 = e.currentTarget.getBoundingClientRect(), left = ref2.left - parrRef.left, top = ref2.top - parrRef.top;
             return valueList.css({
               left: left + 10 + 9,
