@@ -591,7 +591,7 @@ aria-multiselectable="true">
 <div class="panel panel-default">
 <div id="headingOne" class="panel-heading" role="tab">
 <div class="panel-title">
-<a role="button" data-toggle="collapse" data-parent="#exp_accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+<a role="button" data-toggle="collapse" data-parent="#exp_accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="outline:none;">
 <h5 style="margin-bottom:0">
 Usage examples
 </h5>
@@ -886,7 +886,13 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         el.setAttribute("role", "button");
                         el.setAttribute("title", "Toggle Fullscreen");
                         el.classList.add("pvtRowOrder");
-                        el.innerHTML = '<img src="img/fullscreen.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
+                        //setTimeout(function() {
+                            if ($("#the_table")[0].offsetHeight == 762) {
+                                el.innerHTML = '<img src="img/fullscreen.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
+                            } else {
+                                el.innerHTML = '<img src="img/fullscreen_grey.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
+                            }
+                        //}, 20);
 
                         var pvtRenderer = document.getElementsByClassName('pvtRenderer')[0];
                         if (pvtRenderer != null) {
@@ -904,6 +910,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                                 theTable.style.top = "0";
                                 theTable.style.background = "white";
                                 theTable.style.zIndex = "10000";
+                                el.innerHTML = '<img src="img/fullscreen_grey.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
                                 document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "none";
                                 document.getElementById('headline').style.display = "none";
                                 document.getElementById('introbody').style.display = "none";
@@ -915,6 +922,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                                 theTable.style.width = "revert-layer";
                                 theTable.style.height = "762px";
                                 theTable.style.zIndex = "auto";
+                                el.innerHTML = '<img src="img/fullscreen.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
                                 document.getElementsByClassName('navbar navbar-default navbar-fixed-top')[0].style.display = "block";
                                 document.getElementById('headline').style.display = "block";
                                 document.getElementById('introbody').style.display = "block";
@@ -951,7 +959,13 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         }
 
                         $('#toggleTooltip').on('click', function() {
-                            document.querySelectorAll('.pvtAttr').forEach((elem) => {
+                            var allpvtAttr = document.querySelectorAll('.pvtAttr');
+                            if (allpvtAttr[0].classList.contains('no-tooltip')) {
+                                el3.innerHTML = '<img src="img/tooltip.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
+                            } else {
+                                el3.innerHTML = '<img src="img/tooltip_grey.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
+                            }
+                            allpvtAttr.forEach((elem) => {
                                 if (elem.classList.contains('no-tooltip')) {
                                     elem.classList.remove('no-tooltip');
                                 } else {
