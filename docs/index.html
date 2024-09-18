@@ -886,13 +886,11 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         el.setAttribute("role", "button");
                         el.setAttribute("title", "Toggle Fullscreen");
                         el.classList.add("pvtRowOrder");
-                        //setTimeout(function() {
-                            if ($("#the_table")[0].offsetHeight == 762) {
-                                el.innerHTML = '<img src="img/fullscreen.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
-                            } else {
-                                el.innerHTML = '<img src="img/fullscreen_grey.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
-                            }
-                        //}, 20);
+                        if ($("#the_table")[0].offsetHeight == 762) {
+                            el.innerHTML = '<img src="img/fullscreen.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
+                        } else {
+                            el.innerHTML = '<img src="img/fullscreen_grey.svg" height="15px" style="display:block;margin-bottom:-13%;"></img>';
+                        }
 
                         var pvtRenderer = document.getElementsByClassName('pvtRenderer')[0];
                         if (pvtRenderer != null) {

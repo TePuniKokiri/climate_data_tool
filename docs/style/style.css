@@ -681,13 +681,17 @@ table.dataTable.no-footer {
 }
 #exp_accordion .panel-default > .panel-heading {
     color: #007C9D;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 #exp_accordion .panel-default {
     border: none;
+    box-shadow: none;
 }
 #exp_accordion .panel-body {
     padding: 0;
     padding-top: 7px;
+    border: none;
 }
 #exp_accordion .panel-heading {
     padding-left: 20px;
