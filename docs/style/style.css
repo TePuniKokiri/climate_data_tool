@@ -701,3 +701,6 @@ table.dataTable.no-footer {
 #exp_accordion .btn-primary {
     height: 23px;
 }
+.nav > li > a:hover, .nav > li > a:focus {
+	outline: none;
+}

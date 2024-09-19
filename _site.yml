@@ -117,7 +117,7 @@ output:
   html_document:
     theme: flatly
     includes:
-      in_header: misc/favicon.html
+      in_header: [misc/favicon.html, misc/analytics.html]
       after_body:
         - script/script.js
     css: style/style.css
