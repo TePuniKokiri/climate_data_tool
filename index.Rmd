@@ -133,8 +133,8 @@ htmltools::includeHTML("../../output_data/pivot_table/pivot_table.html")
 This tool is designed to help users search for specific locations and gain
 comprehensive insights about them. By simply entering the name of a city, town,
 or suburb into the search bar, users can access detailed information including
-geographic data, demographic statistics, climate variables, and socio-economic
-indicators of the overlapping SA2 areas. The findings provide
+geographic data, demographic statistics, infrastructure, climate variables, and
+socio-economic indicators of the overlapping SA2 areas. The findings provide
 a comprehensive view of the area, making it easier for users to understand the
 characteristics and conditions of different locations. The location data is
 based on New Zealand Suburbs and Localities, a dataset administered by Toitū Te
@@ -148,6 +148,8 @@ alternative names are not displayed in the suggestions
 * Select `All Results` to view all overlapping SA2 areas, and select an SA2 to
 expand its information, the search results are ordered by the extent to which a
 place's shape is covered by an SA2
+* Click on the mini map to view a detailed map of the area, or click on the SA2
+name to open the infrastructure popover
 * Select either the `Climate` or `SES` button to view the corresponding
 visualisation
 </div>

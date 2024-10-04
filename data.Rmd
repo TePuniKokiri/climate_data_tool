@@ -334,9 +334,8 @@ geographical, demographic, climate, and socio-economic information for 2,163
 SA2 boundaries in 2022, as defined by Statistics NZ. This list excludes SA2s
 with null geometries or those with zero land area.
 In addition to climate and socio-economic indicators, our tool incorporates
-data on marae, whenua (Māori freehold land), and Māori businesses (a Māori
-business is defined as a business with at least one working proprietor who is of
-Māori ethnicity or descent). These are visualised through layers on the maps or
+data on marae, whenua (Māori freehold land), Māori businesses, and key
+infrastructure. These are visualised through layers on the maps or
 aggregated information in the pivot table, offering insights into the
 characteristics and locations of these entities.
 

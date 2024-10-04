@@ -194,28 +194,24 @@
 .gauge-title {
   position: relative;
   font-size: 12px;
-  /*margin-bottom: 7%;*/
-  margin-bottom: 10%;
-  /*top: 10%;*/
-  top: 9%;
+  margin-bottom: 17px;
+  top: 9px;
 }
 .gauge-min {
   position: relative;
   left: -27%;
   font-size: 10px;
-  /*bottom: -10%;*/
-  bottom: -5%;
+  bottom: -5px;
 }
 .gauge-value {
   font-size: 11px;
   color: #888;
-  /*margin-top: -3%;*/
-  margin-top: -6%;
+  margin-top: -10px;
 }
 .gauge-max {
   position: relative;
-  left: 27%;
-  bottom: -15%;
+  left: 46px;
+  bottom: -15px;
   font-size: 10px;
 }
 .dtitle {
@@ -246,4 +242,43 @@
   width: 8px;
   background-color: #007c9d;
   border-radius: 50%;
+}
+.panel-col div[role="tooltip"] {
+  padding: 0 !important;
+  z-index: 1 !important;
+}
+.panel-col div[role="tooltip"] > div.popover-content > table td:nth-child(2) {
+  text-align: end;
+}
+.panel-col div[role="tooltip"] > div.popover-content > table td {
+  padding-right: 15px;
+}
+.panel-col div[role="tooltip"] > div.popover-content{
+  padding-right: 0;
+  padding-bottom: 6px;
+}
+.panel-col div[role="tooltip"] > div.popover-content > table{
+  white-space:nowrap;
+}
+.panel-col div[role="tooltip"] > div.popover-content > table td{
+  padding-bottom: 3px;
+}
+.panel-col div[role="tooltip"] > h3.popover-title {
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+  margin-top: 0 !important;
+  font-size: 13px;
+  background-color: #007c9d29;
+  color: #016b87;
+}
+.panel-col a:hover, .panel-col a:focus {
+  color: #007c9d;
+  text-decoration: none;
+  outline: none;
+}
+.mapLink:hover {
+  opacity: 0.8 !important;
+}
+.insight-popover:hover {
+  color: #019cc4 !important;
 }
