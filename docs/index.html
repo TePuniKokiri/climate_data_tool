@@ -878,12 +878,25 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                                 setTimeout(function() {
                                     var pvtAttrDropdown = document.getElementsByClassName('pvtAttrDropdown');
                                     [].forEach.call(pvtAttrDropdown, function (pvtAttrDropdownEl) {
-                                        if (pvtAttrDropdownEl.getElementsByTagName('hr').length == 0) {
-                                            [].forEach.call(pvtAttrDropdownEl, function (el) {
-                                                if (el.value == "Total Area (km²)" | el.value == "Number of Māori Businesses") {
-                                                    hrEl = document.createElement('hr');
-                                                    hrEl.setAttribute('style', 'pointer-events:none;');
-                                                    el.insertAdjacentElement('afterend', hrEl);
+                                        if (pvtAttrDropdownEl.getElementsByTagName('optgroup').length == 0) {
+                                            let elgr1 = document.createElement("optgroup");
+                                            elgr1.setAttribute('label', 'Geographic');
+                                            pvtAttrDropdownEl.appendChild(elgr1);
+                                            let elgr2 = document.createElement("optgroup");
+                                            elgr2.setAttribute('label', 'Demographic');
+                                            pvtAttrDropdownEl.appendChild(elgr2);
+                                            let elgr3 = document.createElement("optgroup");
+                                            elgr3.setAttribute('label', 'Infrastructure');
+                                            pvtAttrDropdownEl.appendChild(elgr3);
+                                            let options = Array.from(pvtAttrDropdownEl.getElementsByTagName('option'));
+                                            options.forEach(function (el, i) {
+                                                if (i === 0) return;
+                                                if (i != 0 && i < 7) {
+                                                    elgr1.appendChild(el);
+                                                } else if (i < 15) {
+                                                    elgr2.appendChild(el);
+                                                } else {
+                                                    elgr3.appendChild(el);
                                                 }
                                             });
                                         }
