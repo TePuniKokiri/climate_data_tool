@@ -97,8 +97,7 @@
         layout = {
           title: titleText,
           hovermode: 'closest',
-          width: (window.innerWidth <= 480) ? 800 : window.innerWidth / 1.52,
-          // height: window.innerHeight / 1.4 - 50
+		  width: (window.innerWidth <= 480) ? 800 : Math.max(845, window.innerWidth - 15 - document.getElementsByClassName('pvtUnused')[0].offsetWidth - 4 - document.getElementsByClassName('pvtRows')[0].offsetWidth - 4 - 15 - 12),
 		  height: 600,
 		  font: {
 			  family:'"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif'
@@ -214,9 +213,7 @@
             title: pivotData.rowAttrs.join(' - '),
             automargin: true
           },
-          //width: window.innerWidth / 1.5,
-		  width : (window.innerWidth <= 480) ? 800 : window.innerWidth / 1.5,
-          // height: window.innerHeight / 1.4 - 50
+		  width: (window.innerWidth <= 480) ? 800 : Math.max(845, window.innerWidth - 15 - document.getElementsByClassName('pvtUnused')[0].offsetWidth - 4 - document.getElementsByClassName('pvtRows')[0].offsetWidth - 4 - 15 - 12),
 		  height: 600
         };
         renderArea = $("<div>", {
