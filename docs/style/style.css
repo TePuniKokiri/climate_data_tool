@@ -356,6 +356,12 @@ li::marker {
     --sCol: rgb(208, 192, 174);
     --gCol: rgb(216, 216, 216);
 }
+.pvtVertList li, .pvtRows li {
+    display: block;
+    float: left;
+    clear: left;
+    white-space: nowrap;
+}
 .pvtRendererArea {
     padding: 0px;
 }
