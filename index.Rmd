@@ -110,7 +110,7 @@ data related to a specific category, the corresponding cells are left blank.
 * From the top-left dropdown menu, select a plugin such as `Table` or
 `Bar Chart`
 * Next, choose an aggregator method from the dropdown menu. Options include
-`Count`, `Sum`, and more
+`SA2 Count`, `Sum`, and more
 * Drag and drop the desired attributes into either the row or column container
 * Filter the attributes by categories
 * Arrange the results either by count or alphabetically

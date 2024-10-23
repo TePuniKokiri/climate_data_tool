@@ -31,7 +31,9 @@
             by: "by"
           },
           plotly: {},
-          plotlyConfig: {'staticPlot': (window.innerWidth <= 480)}
+          plotlyConfig: {
+            'staticPlot': (window.innerWidth <= 480)
+          }
         };
         opts = $.extend(true, {}, defaults, opts);
         rowKeys = pivotData.getRowKeys();
@@ -45,7 +47,6 @@
           datumKeys.push([]);
         }
         fullAggName = pivotData.aggregatorName;
-		fullAggName = fullAggName.replace(/Integer Sum/g, "Sum");
         if (pivotData.valAttrs.length) {
           fullAggName += "(" + (pivotData.valAttrs.join(", ")) + ")";
         }
@@ -65,13 +66,48 @@
           if (traceOptions.type === "pie") {
             trace.values = values;
             trace.labels = labels.length > 1 ? labels : [fullAggName];
+            trace.hovertemplate = '%{label}<br>' + '%{customdata}<extra></extra>';
+            trace.customdata = values.map(function(value) {
+              var tooltipVal;
+              var aggEl = document.getElementsByClassName("pvtAggregator")[0];
+              var aggelText = aggEl.options[aggEl.selectedIndex].text;
+			  if (aggelText.includes('%')) {
+                tooltipVal = (Math.round(value * 1000) / 10).toFixed(1) + '%';
+              } else if (["Average", "Sum over Sum"].some(el => aggelText.includes(el))) {
+                if (value != null) {
+                  tooltipVal = value.toLocaleString(undefined, {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                  })
+                };
+              } else if (aggelText == "Sum") {
+                if (value != null) {
+                  tooltipVal = value.toLocaleString(undefined, {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                  });
+                }
+              } else if (aggelText == "Median") {
+                if (value != null) {
+                  tooltipVal = value.toLocaleString(undefined, {
+                    minimumFractionDigits: 1,
+                    maximumFractionDigits: 1
+                  });
+                }
+              } else {
+                if (value != null) {
+                  tooltipVal = value.toLocaleString();
+                }
+              }
+              return tooltipVal;
+            });
           } else {
             trace.x = transpose ? values : labels;
             trace.y = transpose ? labels : values;
           }
-		  if (traceOptions.type === "pie") {
-			trace.sort = false;
-		  }
+          if (traceOptions.type === "pie") {
+            trace.sort = false;
+          }
           return $.extend(trace, traceOptions);
         });
         if (transpose) {
@@ -88,26 +124,26 @@
         if (groupByTitle !== "") {
           titleText += " " + opts.localeStrings.by + " " + groupByTitle;
         }
-		var nCol;		
-		if (traceOptions.type === "pie") {
-		  nCol = data[0].labels.length;
+        var nCol;
+        if (traceOptions.type === "pie") {
+          nCol = data[0].labels.length;
         } else {
           nCol = data.length;
         }
         layout = {
           title: titleText,
           hovermode: 'closest',
-		  width: (window.innerWidth <= 480) ? 800 : Math.max(845, window.innerWidth - 15 - document.getElementsByClassName('pvtUnused')[0].offsetWidth - 4 - document.getElementsByClassName('pvtRows')[0].offsetWidth - 4 - 15 - 12),
-		  height: 600,
-		  font: {
-			  family:'"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif'
-		  },
-		  hoverlabel: {
-		    font: {
-			    family:'"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif'
-		    }
-      },
-		  colorway: Array(nCol).fill().map((element, index) => d3.scale.linear().domain([0, 0.25, 0.5, 0.75, 1]).range(["#007c9d", "#03b1df", "#bbbbbb", "#ffb975", "#fd8542"])(index / (nCol - 1)))
+          width: (window.innerWidth <= 480) ? 800 : Math.max(845, window.innerWidth - 15 - document.getElementsByClassName('pvtUnused')[0].offsetWidth - 4 - document.getElementsByClassName('pvtRows')[0].offsetWidth - 4 - 15 - 12),
+          height: 600,
+          font: {
+            family: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif'
+          },
+          hoverlabel: {
+            font: {
+              family: '"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }
+          },
+          colorway: Array(nCol).fill().map((element, index) => d3.scale.linear().domain([0, 0.25, 0.5, 0.75, 1]).range(["#007c9d", "#03b1df", "#bbbbbb", "#ffb975", "#fd8542"])(index / (nCol - 1)))
         };
         if (traceOptions.type === 'pie') {
           columns = Math.ceil(Math.sqrt(data.length));
@@ -126,39 +162,54 @@
               d.title = d.name;
             }
           }
-		  layout.legend = {
-			//traceorder: 'reversed',
-			title: {
-				text: pivotData.rowAttrs.join(' - ')
-			}
-		  };
+          layout.legend = {
+            title: {
+              text: pivotData.rowAttrs.join(' - ')
+            }
+          };
           if (data[0].labels.length === 1) {
             layout.showlegend = false;
           }
-		  for (var i = 0; i < data[0].values.length; i++) {
+          for (var i = 0; i < data[0].values.length; i++) {
             if (data[0].values[i] === null) {
               data[0].values[i] = 0;
             }
           }
         } else {
+          var hoverFormat;
+          var aggEl = document.getElementsByClassName("pvtAggregator")[0];
+          var aggelText = aggEl.options[aggEl.selectedIndex].text;
+          if (aggelText.includes('%')) {
+            hoverFormat = ',.1%';
+          } else if (["Average", "Sum over Sum"].some(el => aggelText.includes(el))) {
+            hoverFormat = ',.2f';
+          } else if (aggelText == "Sum") {
+            hoverFormat = ',.0f';
+          } else if (aggelText == "Median") {
+            hoverFormat = ',.1f';
+          } else {
+            hoverFormat = ',';
+          }
           layout.xaxis = {
             title: transpose ? fullAggName : pivotData.colAttrs.join(' - '),
-            automargin: true
+            automargin: true,
+            separatethousands: true,
+            hoverformat: hoverFormat
           };
           layout.yaxis = {
             title: transpose ? pivotData.rowAttrs.join(' - ') : fullAggName,
-            automargin: true
+            automargin: true,
+            separatethousands: true,
+            hoverformat: hoverFormat
           };
-		  layout.legend = {
-			//traceorder: (traceOptions.type == 'area') ? 'reversed' : 'normal',
-			traceorder: 'normal',
-			title: {
-				text: transpose ? pivotData.colAttrs.join(' - ') : pivotData.rowAttrs.join(' - ')
-			}
-		  };
+          layout.legend = {
+            traceorder: 'normal',
+            title: {
+              text: transpose ? pivotData.colAttrs.join(' - ') : pivotData.rowAttrs.join(' - ')
+            }
+          };
         }
         result = $("<div>").appendTo($("body"));
-		// console.log(pivotData);
         Plotly.newPlot(result[0], data, $.extend(layout, layoutOptions, opts.plotly), opts.plotlyConfig);
         return result.detach();
       };
@@ -207,14 +258,16 @@
           hovermode: 'closest',
           xaxis: {
             title: pivotData.colAttrs.join(' - '),
-            automargin: true
+            automargin: true,
+            separatethousands: true
           },
           yaxis: {
             title: pivotData.rowAttrs.join(' - '),
-            automargin: true
+            automargin: true,
+            separatethousands: true
           },
-		  width: (window.innerWidth <= 480) ? 800 : Math.max(845, window.innerWidth - 15 - document.getElementsByClassName('pvtUnused')[0].offsetWidth - 4 - document.getElementsByClassName('pvtRows')[0].offsetWidth - 4 - 15 - 12),
-		  height: 600
+          width: (window.innerWidth <= 480) ? 800 : Math.max(845, window.innerWidth - 15 - document.getElementsByClassName('pvtUnused')[0].offsetWidth - 4 - document.getElementsByClassName('pvtRows')[0].offsetWidth - 4 - 15 - 12),
+          height: 600
         };
         renderArea = $("<div>", {
           style: "display:none;"
@@ -251,7 +304,7 @@
       }),
       "Line Chart": makePlotlyChart(),
       "Area Chart": makePlotlyChart({
-		type: 'area',
+        type: 'area',
         stackgroup: 1
       }),
       "Scatter Chart": makePlotlyScatterChart(),

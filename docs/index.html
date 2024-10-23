@@ -586,7 +586,7 @@ How to use:
 <li>From the top-left dropdown menu, select a plugin such as
 <code>Table</code> or <code>Bar Chart</code></li>
 <li>Next, choose an aggregator method from the dropdown menu. Options
-include <code>Count</code>, <code>Sum</code>, and more</li>
+include <code>SA2 Count</code>, <code>Sum</code>, and more</li>
 <li>Drag and drop the desired attributes into either the row or column
 container</li>
 <li>Filter the attributes by categories</li>
@@ -666,7 +666,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
         <script type="text/javascript" src="./table/table_libs/d3.min.js"></script>
         <script type="text/javascript" src="./table/table_libs/jquery.ui.touch-punch.min.js"></script>
         <script type="text/javascript" src="./table/table_libs/papaparse.min.js"></script>
-        <script src="./table/table_libs/plotly-basic-latest.min.js"></script>
+        <script src="./table/table_libs/plotly-basic.min.js"></script>
         <style id="plotly.js-style-global"></style>
         <!-- PivotTable.js libs from ../dist -->
         <link rel="stylesheet" type="text/css" href="./table/table_libs/pivot.css">
@@ -685,7 +685,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
         );
         const tableConfig = {
             renderers: renderers,
-            aggregatorName: ["Count"],
+            aggregatorName: ["SA2 Count"],
             sorters: function(attr) {
                 var sortAs = $.pivotUtilities.sortAs;
                 if (attr == "Overall Climate Risk Index") {
@@ -735,19 +735,19 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                 }
             },
             aggregators: {
-                "Count": $.pivotUtilities.aggregators["Count"],
+                "SA2 Count": $.pivotUtilities.aggregators["Count"],
                 "Count Unique Values": $.pivotUtilities.aggregators["Count Unique Values"],
                 "List Unique Values": $.pivotUtilities.aggregators["List Unique Values"],
-                "Integer Sum": $.pivotUtilities.aggregators["Integer Sum"],
+                "Sum": $.pivotUtilities.aggregators["Integer Sum"],
                 "Average": $.pivotUtilities.aggregators["Average"],
                 "Median": $.pivotUtilities.aggregators["Median"],
                 "Sum over Sum": $.pivotUtilities.aggregators["Sum over Sum"],
-                "Count as Fraction of Total": $.pivotUtilities.aggregators["Count as Fraction of Total"],
-                "Count as Fraction of Rows": $.pivotUtilities.aggregators["Count as Fraction of Rows"],
-                "Count as Fraction of Columns": $.pivotUtilities.aggregators["Count as Fraction of Columns"],
-                "Sum as Fraction of Total": $.pivotUtilities.aggregators["Sum as Fraction of Total"],
-                "Sum as Fraction of Rows": $.pivotUtilities.aggregators["Sum as Fraction of Rows"],
-                "Sum as Fraction of Columns": $.pivotUtilities.aggregators["Sum as Fraction of Columns"]
+                "SA2 Count as % of Total": $.pivotUtilities.aggregators["Count as Fraction of Total"],
+                "SA2 Count as % of Row Total": $.pivotUtilities.aggregators["Count as Fraction of Rows"],
+                "SA2 Count as % of Col Total": $.pivotUtilities.aggregators["Count as Fraction of Columns"],
+                "Sum as % of Total": $.pivotUtilities.aggregators["Sum as Fraction of Total"],
+                "Sum as % of Row Total": $.pivotUtilities.aggregators["Sum as Fraction of Rows"],
+                "Sum as % of Col Total": $.pivotUtilities.aggregators["Sum as Fraction of Columns"]
             },
             hiddenFromAggregators: [
                 "Overall Climate Risk Index", "Historic Flood Hazard Area", "Wet Spells",
@@ -913,13 +913,6 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         }
 
                         changeMargin();
-
-                        var sumAgg = document.querySelectorAll('option[value="Integer Sum"]');
-                        if (sumAgg.length == 1) {
-                            document.querySelectorAll('option[value="Integer Sum"]')[0]
-                                .text = 'Sum';
-                        }
-
                         if (document.getElementsByClassName('pvtRowOrder')[0] != null) {
                             document.getElementsByClassName('pvtRowOrder')[0]
                                 .setAttribute("title", "Sort Rows");
@@ -1050,7 +1043,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                         });
 
                         $('#resetTable').on('click', function() {
-                            tableConfig.aggregatorName = ['Count'];
+                            tableConfig.aggregatorName = ['SA2 Count'];
                             tableConfig.rows = [];
                             tableConfig.cols = [];
                             tableConfig.rowOrder = "key_a_to_z";
@@ -1062,7 +1055,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
 
                         window.applyPreset = function(radioId) {
                             if (radioId == "example1") {
-                                tableConfig.aggregatorName = ['Integer Sum'];
+                                tableConfig.aggregatorName = ['Sum'];
                                 tableConfig.vals = ["Number of People in Māori Households"];
                                 tableConfig.rows = ["Regional Council", "SA2 Name"];
                                 tableConfig.cols = ["Historic Flood Hazard Area", "Poverty Risk Index"];
@@ -1092,7 +1085,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                                 };
                                 tableConfig.rendererName = ["Col Heatmap"];
                             }else if (radioId == "example3") {
-                                tableConfig.aggregatorName = ['Sum as Fraction of Columns'];
+                                tableConfig.aggregatorName = ['Sum as % of Col Total'];
                                 tableConfig.vals = ["Number of Māori Businesses"];
                                 tableConfig.rows = ["Coastal Inundation Hazard Area"];
                                 tableConfig.cols = ["TPK Region"];
@@ -1102,7 +1095,7 @@ style="height:762px;overflow:auto;padding-top:8px;padding-left:11px;">
                                 tableConfig.rendererName = ["Multiple Pie Chart"];
                                 setTimeout(function() { document.getElementById('sheetjsexport').style.visibility = "hidden"; }, 20);
                             } else {
-                                tableConfig.aggregatorName = ['Integer Sum'];
+                                tableConfig.aggregatorName = ['Sum'];
                                 tableConfig.vals = ["Number of Marae"];
                                 tableConfig.rows = ["Overall Climate Risk Index"];
                                 tableConfig.cols = ["Adaptability Risk Index"];
