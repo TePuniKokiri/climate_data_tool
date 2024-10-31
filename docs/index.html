@@ -1247,10 +1247,12 @@ function createGauges(radioId = 'climate') {
         gaugeTitle = sesTitles;
         vars = sesVars;
     }
-    if (allOptions) {
-        document.getElementById('alloptions').parentNode.setAttribute('class', 'btn btn-primary active');
-    } else {
-        document.getElementById('alloptions').parentNode.setAttribute('class', 'btn btn-primary')
+    if (filteredData.length != 1) {
+        if (allOptions) {
+            document.getElementById('alloptions').parentNode.setAttribute('class', 'btn btn-primary active');
+        } else {
+            document.getElementById('alloptions').parentNode.setAttribute('class', 'btn btn-primary')
+        }
     }
     var allPanels = document.getElementsByClassName('panel panel-default finder');
         if (allPanels.length > 1) {
@@ -1666,12 +1668,14 @@ const renderFinder = async () => {
                     btngroupWrapper.setAttribute('style', 'float:right;margin-top:-24px');
                     buttonBar.appendChild(btngroupWrapper);
                     var btnGroup = document.createElement('div');
-                    btnGroup.setAttribute('class', 'btn-group');
+                    //btnGroup.setAttribute('class', 'btn-group');
+                    btnGroup.setAttribute('class', 'btn-group' + (filteredData.length == 1 ? ' disabled-btn-group' : ''));
                     btnGroup.setAttribute('data-toggle', 'buttons');
                     btnGroup.setAttribute('style', 'margin-right:0px;float:left');
                     btngroupWrapper.appendChild(btnGroup);
                     var allLabel = document.createElement('label');
-                    allLabel.setAttribute('class', 'btn btn-primary');
+                    //allLabel.setAttribute('class', 'btn btn-primary');
+                    allLabel.setAttribute('class', 'btn btn-primary' + (filteredData.length == 1 ? ' disabled-label' : ''));
                     allLabel.setAttribute('style', 'font-size:13px;padding-right:4px;border-bottom-right-radius:0;border-top-right-radius:0;border-right:solid 1px #007c9d69;');
                     allLabel.innerHTML = '<input type="checkbox" name="finder_options" id="alloptions" autocomplete="off"' + (allOptions ? ' checked=""' : '') + ' onchange="handleClick(this.id)">All Results';
                     btnGroup.appendChild(allLabel);

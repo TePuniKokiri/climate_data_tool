@@ -282,3 +282,12 @@
 .insight-popover:hover {
   color: #019cc4 !important;
 }
+.disabled-btn-group {
+  cursor: not-allowed;
+}
+.disabled-label {
+  background-color: #d5d5d5;
+  border-right: solid 1px #d5d5d5 !important;
+  color: #fbfbfb;
+  pointer-events: none;
+}
